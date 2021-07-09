@@ -40,7 +40,7 @@ def index():
     ## For Region and SubRegion
     global selected_country
     global region_selected
-    set_reset_global()
+    reset_global()
 
     index.country = request.form.get("search-country")
     if index.country:
@@ -67,11 +67,17 @@ def index():
 
     return render_template('index.html', regions=regions, country=selected_country, region_selected='All', news=news, plot=graphJSON)
 
+selected_data_ts = 'confirmed' 
+selected_type_ts = 'new'
+selected_scale_ts = 'linear'
 
-def set_reset_global():
-    global selected_data_ts = 'confirmed' 
-    global selected_type_ts = 'new'
-    global selected_scale_ts = 'linear'
+def reset_global():
+    global selected_data_ts 
+    global selected_type_ts 
+    global selected_scale_ts
+    selected_data_ts = 'confirmed' 
+    selected_type_ts = 'new'
+    selected_scale_ts = 'linear'
 
 @server.route('/data_ts', methods=['GET', 'POST'])
 def change_data_ts():
@@ -88,6 +94,16 @@ def change_type_ts():
     global selected_type_ts 
 
     selected_type_ts = request.args['selected']
+    fig = ts.get_fig(country=selected_country, data=selected_data_ts, type=selected_type_ts, scale=selected_scale_ts)
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+
+    return graphJSON
+
+@server.route('/scale_ts', methods=['GET', 'POST'])
+def change_scale_ts():
+    global selected_scale_ts 
+
+    selected_scale_ts = request.args['selected']
     fig = ts.get_fig(country=selected_country, data=selected_data_ts, type=selected_type_ts, scale=selected_scale_ts)
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 

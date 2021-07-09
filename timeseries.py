@@ -60,7 +60,7 @@ class TimeSeries:
 
         return fig
 
-    def get_fig(self, country='World', data='confirmed', type='total', scale='linear'):
+    def get_fig(self, country='World', data='confirmed', type='new', scale='linear'):
         """
             Returns a plotly figure of time series data
             country: 

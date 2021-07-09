@@ -31,3 +31,20 @@ $('#change_type').on('change',function(){
         }
     });
 })
+
+$$(".change_scale").on('change',function(){
+
+    $.ajax({
+        url: "/scale_ts",
+        type: "GET",
+        contentType: 'application/json;charset=UTF-8',
+        data: {
+            'selected': document.getElementById('change_scale').value
+
+        },
+        dataType:"json",
+        success: function (data) {
+            Plotly.newPlot('bargraph', data );
+        }
+    });
+})
