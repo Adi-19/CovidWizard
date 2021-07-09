@@ -134,7 +134,7 @@ class OxfordGormint:
         )
         fig.update_layout(
             autosize=True,
-            margin=dict(t=50, b=10, r=10, l=10))
+            margin=dict(t=10, b=10, r=10, l=10))
 
         return fig
 

@@ -43,7 +43,6 @@ class Wendor:
         else:
             url = self.baseurl + self.api + '&country=' + country2code(country) + '&' + self.category + self.language
         request = requests.get(url)
-        print(request.status_code)
         if ((request.status_code!=200) or (request.json()['totalResults']<k)):
             url = self.baseurl + self.api + '&' + self.category + self.language     # Go Global
             request = requests.get(url)

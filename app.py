@@ -1,59 +1,69 @@
-from flask import Flask, request, render_template
-from flask import Markup
+from flask import request, render_template
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
 from werkzeug.serving import run_simple
-import json
 import plotly
-import plotly.express as px
-import pandas as pd
+import json
+
+from server import server
 from subregion import SubRegion
 from news import Wendor
 from maps_viz import OxfordGormint
+from timeseries import TimeSeries
+from cases_dash import app as time_dash
+
 
 DEBUG = True
 
-server = Flask(__name__)
 subreg = SubRegion()
 wendi = Wendor()
 
 oxgormint = OxfordGormint(fetch=not(DEBUG))
 ## Real Map
 fig = oxgormint.animate()
-graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
-dash_app = dash.Dash(name='mydash', server=server, url_base_pathname='/mydash/')
+dash_app = dash.Dash(name='world-map', server=server, url_base_pathname='/world-map/')
 dash_app.layout = html.Div([
     dcc.Graph(figure=fig)
 ])
-application = DispatcherMiddleware(server, {'/dash': dash_app.server})
 
-## Debug
+application = DispatcherMiddleware(server, {'/dash': dash_app.server, '/dash2': time_dash.server})
 
-selected_country = 'Global'
+selected_country = 'World'
+region_selected = 'All'
 
 @server.route('/', methods=['GET', 'POST'])
 def index():
     ## For Region and SubRegion
     global selected_country
+    global region_selected
     index.country = request.form.get("search-country")
     if index.country:
         selected_country = index.country
     regions = subreg.find(selected_country)
-    region_selected = request.form.get("search-region")
+    index.region_selected = request.form.get("search-region")
+    if index.region_selected:
+        region_selected = index.region_selected
 
     ## For getting country News
     news = wendi.get_news(selected_country)
+
+    if selected_country:
+        if region_selected=='All':
+            ts = TimeSeries()
+            fig = ts.get_fig()
+   
+            graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+
+        else:
+            pass
     
     if region_selected:
-        return render_template('index.html', regions=regions, country=selected_country, region_selected=region_selected, news=news, fig=graphJSON)
+        return render_template('index.html', regions=regions, country=selected_country, region_selected=region_selected, news=news, plot=graphJSON)
 
-    return render_template('index.html', regions=regions, country=selected_country, region_selected='All', news=news, fig=graphJSON)
-   
-
-index.country = 'Global'
+    return render_template('index.html', regions=regions, country=selected_country, region_selected='All', news=news, plot=graphJSON)
 
 @server.route('/analysis.html')
 def analysis():
