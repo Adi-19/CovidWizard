@@ -186,10 +186,12 @@
                                             <option value="total">Cumulative</option>
                                         </select>
                                     </div>
-                                    <select class="form-control" id='change_scale'>
-                                        <option value="linear">Linear</option>
-                                        <option value="log">Log</option>
-                                    </select>
+                                    <div class="col-xs-3">
+                                        <select class="form-control" id='change_scale'>
+                                            <option value="linear">Linear</option>
+                                            <option value="log">Log</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="container">
                                     <div class="row">
@@ -233,14 +235,31 @@
                             <div class="card shadow mb-4">
                                 <div class="card-header d-flex justify-content-between align-items-center">
                                     <h6 class="text-primary fw-bold m-0">Gender Distribution</h6>
-                                    <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
-                                        <div class="dropdown-menu shadow dropdown-menu-end animated--fade-in">
-                                            <p class="text-center dropdown-header">Age Group</p><a class="dropdown-item" href="#">&nbsp;0-10</a><a class="dropdown-item" href="#">&nbsp;10-20</a><a class="dropdown-item" href="#">&nbsp;20-30</a><a class="dropdown-item" href="#">&nbsp;30-40</a><a class="dropdown-item" href="#">&nbsp;50-60</a><a class="dropdown-item" href="#">&nbsp;60-70</a><a class="dropdown-item" href="#">&nbsp;70-80</a><a class="dropdown-item" href="#">&nbsp;80-90</a><a class="dropdown-item" href="#">&nbsp;90-100</a><a class="dropdown-item" href="#">&nbsp;100+</a>
-                                        </div>
+                                    <div class="col-xs-3">
+                                        <select class="form-control" id='change_grp'>
+                                            <option value="0-10">0-10</option>
+                                            <option value="10-20">10-20</option>
+                                            <option value="20-30">20-30</option>
+                                            <option value="30-40">30-40</option>
+                                            <option value="40-50">40-50</option>
+                                            <option value="50-60">50-60</option>
+                                            <option value="60-70">60-70</option>
+                                            <option value="70-80">70-80</option>
+                                            <option value="80-90">80-90</option>
+                                            <option value="90-100">90-100</option>
+                                            <option value="100+">100+</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <div class="chart-area"><canvas data-bss-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Direct&quot;,&quot;Social&quot;,&quot;Referral&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;#4e73df&quot;,&quot;#1cc88a&quot;,&quot;#36b9cc&quot;],&quot;borderColor&quot;:[&quot;#ffffff&quot;,&quot;#ffffff&quot;,&quot;#ffffff&quot;],&quot;data&quot;:[&quot;50&quot;,&quot;30&quot;,&quot;15&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false,&quot;labels&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}},&quot;title&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}}}"></canvas></div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="chart" id="agegrpplt">
+                                            <script>
+                                                    var graphs = {{agegrpplt | safe}};
+                                                    Plotly.plot('agegrpplt',graphs,{});
+                                            </script>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
