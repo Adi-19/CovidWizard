@@ -17,6 +17,7 @@ from cases_dash import app as time_dash
 
 DEBUG = True
 
+ts = TimeSeries()
 subreg = SubRegion()
 wendi = Wendor()
 
@@ -39,6 +40,8 @@ def index():
     ## For Region and SubRegion
     global selected_country
     global region_selected
+    set_reset_global()
+
     index.country = request.form.get("search-country")
     if index.country:
         selected_country = index.country
@@ -52,8 +55,7 @@ def index():
 
     if selected_country:
         if region_selected=='All':
-            ts = TimeSeries()
-            fig = ts.get_fig()
+            fig = ts.get_fig(country=selected_country)
    
             graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
@@ -64,6 +66,33 @@ def index():
         return render_template('index.html', regions=regions, country=selected_country, region_selected=region_selected, news=news, plot=graphJSON)
 
     return render_template('index.html', regions=regions, country=selected_country, region_selected='All', news=news, plot=graphJSON)
+
+
+def set_reset_global():
+    global selected_data_ts = 'confirmed' 
+    global selected_type_ts = 'new'
+    global selected_scale_ts = 'linear'
+
+@server.route('/data_ts', methods=['GET', 'POST'])
+def change_data_ts():
+    global selected_data_ts  
+
+    selected_data_ts = request.args['selected']
+    fig = ts.get_fig(country=selected_country, data=selected_data_ts, type=selected_type_ts, scale=selected_scale_ts)
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+
+    return graphJSON
+
+@server.route('/type_ts', methods=['GET', 'POST'])
+def change_type_ts():
+    global selected_type_ts 
+
+    selected_type_ts = request.args['selected']
+    fig = ts.get_fig(country=selected_country, data=selected_data_ts, type=selected_type_ts, scale=selected_scale_ts)
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+
+    return graphJSON
+
 
 @server.route('/analysis.html')
 def analysis():

@@ -32,13 +32,13 @@ class TimeSeries:
 
         return data
 
-    def make_fig(self, country_idx, data, type, roll_window=7):
+    def make_fig(self, country_idx, data, type, name, roll_window=7):
         fig = go.Figure()
 
         fig.add_trace(go.Histogram(x=self.data.iloc[country_idx][4:].index, 
                                  y=data, marker_color='royalblue',
                                  histfunc="avg", xbins_size="M1",
-                                 name=f'{type.title()} Cases'))
+                                 name=f'{type.title()} {name} Cases'))
 
         fig.add_trace(go.Scatter(x=self.data.iloc[country_idx][4:].index, 
                                  y=pd.DataFrame(data).rolling(roll_window).mean()[0], mode='lines', 
@@ -60,7 +60,7 @@ class TimeSeries:
 
         return fig
 
-    def get_fig(self, country='World', data='confirmed', type='total', scale='percent'):
+    def get_fig(self, country='World', data='confirmed', type='total', scale='linear'):
         """
             Returns a plotly figure of time series data
             country: 
@@ -93,14 +93,14 @@ class TimeSeries:
         country_idx = self.find_country(country)
 
         if type=='new':
-            data = self.calc_newcases(country_idx)
+            data_t = self.calc_newcases(country_idx)
         else:
-            data = self.data.loc[country_idx][2:].values
+            data_t = self.data.loc[country_idx][2:].values
 
         if scale=='log':
-            data = self.tolog(data)
+            data_t = self.tolog(data_t)
 
-        fig = self.make_fig(country_idx, data, type)
+        fig = self.make_fig(country_idx, data_t, type, data)
 
         return fig
 
