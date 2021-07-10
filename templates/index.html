@@ -43,7 +43,7 @@
                         <button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
                         <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search" method="POST" action="{{ url_for('index') }}">
                             <div class="input-group">
-                                <input class="bg-light form-control border-0 small" type="text" name="search-country" id="search-country" placeholder="Search for Global" autocomplete="on">
+                                <input class="bg-light form-control border-0 small" type="text" name="search-country" id="search-country" placeholder="Search for World" autocomplete="on">
                                 <button class="btn btn-primary py-0" role="button" type="submit"><i class="fas fa-search"></i></button>
                             </div>
                         </form>
@@ -77,12 +77,14 @@
                             {{ country }}
                         </h3>
                     </div>
-                    <div class="card textwhite bg-danger text-white shadow" style="margin: 16px;">
-                        <div class="card-body">
-                            <p class="m-0">Danger</p>
-                            <p class="text-white-50 small m-0">#e74a3b</p>
+                    {% if lvl=='MA Warning' %}
+                        <div class="card textwhite bg-danger text-white shadow" style="margin: 16px;">
+                            <div class="card-body">
+                                <p class="m-0">Warning! Weekly New Average Cases Rising Above Two Weeks Average</p>
+                                <p class="m-0">Stay Home, Stay Safe!</p>
+                            </div>
                         </div>
-                    </div>
+                    {% endif %}
                     <div class="d-flex d-xl-flex justify-content-center align-self-center justify-content-xl-center align-items-xl-center blog-slider" style="margin-bottom: 23px;">
                         <div class="blog-slider__wrp swiper-wrapper">
                             {% for article in news %}
@@ -115,7 +117,7 @@
                                     <div class="row align-items-center no-gutters">
                                         <div class="col me-2">
                                             <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>Confirmed</span></div>
-                                            <div class="text-dark fw-bold h5 mb-0"><span>400,000</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span>{{ cnf }}</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>
                                     </div>
@@ -128,7 +130,7 @@
                                     <div class="row align-items-center no-gutters">
                                         <div class="col me-2">
                                             <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>Active</span></div>
-                                            <div class="text-dark fw-bold h5 mb-0"><span>25,000</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span>{{ actv }}</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
                                     </div>
@@ -143,11 +145,11 @@
                                             <div class="text-uppercase text-info fw-bold text-xs mb-1"><span>Recovered</span></div>
                                             <div class="row g-0 align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="text-dark fw-bold h5 mb-0 me-3"><span>90%</span></div>
+                                                    <div class="text-dark fw-bold h5 mb-0 me-3"><span>{{ recv }}%</span></div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm">
-                                                        <div class="progress-bar bg-info" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"><span class="visually-hidden">90%</span></div>
+                                                        <div class="progress-bar bg-info" aria-valuenow="{{ recv }}" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"><span class="visually-hidden">{{ recv }}</span></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -163,7 +165,7 @@
                                     <div class="row align-items-center no-gutters">
                                         <div class="col me-2">
                                             <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span>deaths</span></div>
-                                            <div class="text-dark fw-bold h5 mb-0"><span>40,000</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span>{{ dead }}</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-comments fa-2x text-gray-300"></i></div>
                                     </div>
@@ -284,7 +286,7 @@
                                     </div>
                                 </div>
                             </div>
-                                
+
                         </div>
                     </div>
                 </div>

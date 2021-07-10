@@ -14,10 +14,12 @@ from maps_viz import OxfordGormint
 from timeseries import TimeSeries
 from cases_dash import app as time_dash
 from age_gender import AgeGender
+from stats import Stat
 
 
 DEBUG = True
 
+stats = Stat()
 ts = TimeSeries()
 subreg = SubRegion()
 wendi = Wendor()
@@ -34,8 +36,8 @@ dash_app.layout = html.Div([
 
 application = DispatcherMiddleware(server, {'/dash': dash_app.server, '/dash2': time_dash.server})
 
-selected_country = 'US'
-region_selected = 'Washington'
+selected_country = 'World'
+region_selected = 'All'
 
 @server.route('/', methods=['GET', 'POST'])
 def index():
@@ -57,14 +59,11 @@ def index():
     news = wendi.get_news(selected_country)
 
     if selected_country:
-        if region_selected=='All':
-            fig = ts.get_fig(country=selected_country)
+        lvl = ts.get_trigger(selected_country)
+        fig = ts.get_fig(country=selected_country, region=region_selected)
    
-            graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-        else:
-            fig = ts.get_fig(country=selected_country, region=region_selected)
-   
-            graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+        graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+        
 
     if selected_country == 'US':
         ag.split_data('USA', region_selected)
@@ -73,11 +72,16 @@ def index():
 
     agegrpplt = ag.get_agegrp(AGE_GRP=selected_agegrp)
     allageplt = ag.get_ageplot()
-    
-    if region_selected:
-        return render_template('index.html', regions=regions, country=selected_country, region_selected=region_selected, news=news, plot=graphJSON, agegrpplt=agegrpplt, allageplt=allageplt)
 
-    return render_template('index.html', regions=regions, country=selected_country, region_selected='All', news=news, plot=graphJSON)
+    cnf, actv, recv, dead = stats.get_stat(selected_country, region_selected)
+    recv = 1 - ((cnf-actv-recv)/cnf)
+    
+    return render_template('index.html', regions=regions, 
+                           country=selected_country, region_selected=region_selected, 
+                           news=news, lvl=lvl,
+                           cnf=int(cnf), actv=int(actv), recv=round(100*recv), dead=int(dead), 
+                           plot=graphJSON, agegrpplt=agegrpplt, allageplt=allageplt)
+
 
 selected_data_ts = 'confirmed' 
 selected_type_ts = 'new'

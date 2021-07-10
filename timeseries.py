@@ -10,9 +10,11 @@ class TimeSeries:
             self.baseurl = baseurl
         self.baseurl = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/'
         self.usurl = 'https://github.com/nytimes/covid-19-data/raw/master/us-states.csv'
+        self.triggerurl = 'https://covid.ourworldindata.org/data/jhu/new_cases.csv'
+        self.triggerdata = pd.read_csv(self.triggerurl)
 
 
-    def find_country(self, country):
+    def find_country(self, country, region='All'):
         country_idx = self.data[self.data['Country/Region']==country].index[0] if len(self.data[self.data['Country/Region']==country]) else len(self.data)+1
        
         return country_idx
@@ -20,11 +22,13 @@ class TimeSeries:
     def calc_newcases(self, country_idx):
         new = []
         ### Add first entry
+
         new.append(self.data.iloc[country_idx][4])
         ### Iterate over rest
         for i in range(4+1, len(self.data.iloc[country_idx])):
             new.append(self.data.iloc[country_idx][i]-self.data.iloc[country_idx][i-1])
         new = [0 if ele<0 else ele for ele in new]
+
 
         return new
 
@@ -72,7 +76,7 @@ class TimeSeries:
                                  y=data[col], marker_color='royalblue',
                                  histfunc="avg", xbins_size="D1",
                                  name=f'{type.title()} {name}'))
-        print(data)
+
         fig.add_trace(go.Scatter(x=data['date'].astype(str), 
                                  y=data[col].rolling(roll_window).mean(), mode='lines', 
                                  line=dict(color='firebrick', width=4,),
@@ -109,7 +113,7 @@ class TimeSeries:
                 > linear
                 > log
         """
-        if country=='US':
+        if ((country=='US') and (region!='All')):
             url = self.usurl
         else:
             url = self.baseurl + 'time_series_covid19_' + data + '_global' + '.csv'
@@ -121,7 +125,7 @@ class TimeSeries:
             self.data.loc[len(self.data)]= self.data.sum(axis=0)
             self.data['Country/Region'].loc[len(self.data)-1] = 'World'
 
-        if country!='US':
+        if ((country!='US') or ((country=='US') and (region=='All'))):
             self.data['Province/State'] = self.data['Province/State'].fillna('All')
 
             country_idx = self.find_country(country)
@@ -136,7 +140,9 @@ class TimeSeries:
 
             fig = self.make_fig(country_idx, data_t, type, data)
 
-        if country=='US':
+
+        elif country=='US':
+
             statedata = self.data[self.data['state']==region]
             ## Recovered not available on NYTimes
             statedata = statedata.drop(columns='fips')
@@ -154,39 +160,27 @@ class TimeSeries:
             if scale=='log':
                 statedata['new'] = self.tolog(statedata['new'])
 
-
             fig = self.make_usfig(statedata, type, us_col)
 
         return fig
 
+    def trigger_war(self, data, roll=[7, 14]):
+        fastma = data.rolling(roll[0]).mean()
+        slowma = data.rolling(roll[1]).mean()
+        if (fastma.iloc[-1] > slowma.iloc[-1]):
+            return 'MA Warning'
+        else:
+            return 'MA Fail'
 
-    
+    def get_trigger(self, country):
+        if country=='US':
+            country = 'United States'
 
-from flask import Flask, render_template,request
-import plotly
-import plotly.graph_objs as go
+        lvl = self.trigger_war(self.triggerdata[country], roll=[7, 14])
 
-import pandas as pd
-import numpy as np
-import json
-
-app = Flask(__name__)
-
-
-@app.route('/')
-def index():
-    feature = 'Bar'
-    bar = create_plot(feature)
-    return render_template('test.html', plot=bar)
-
-def create_plot(feature):
-    ts = TimeSeries()
-    fig = ts.get_fig(country='US', region='Michigan')
-   
-    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-
-    return graphJSON
-
+        return lvl
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    ts = TimeSeries()
+    fig = ts.get_fig(country='World', region='All')
+    fig.show()
