@@ -47,6 +47,7 @@ def index():
     index.country = request.form.get("search-country")
     if index.country:
         selected_country = index.country
+        region_selected = 'All'
     regions = subreg.find(selected_country)
     index.region_selected = request.form.get("search-region")
     if index.region_selected:
@@ -71,11 +72,10 @@ def index():
         ag.split_data(selected_country, region_selected)
 
     agegrpplt = ag.get_agegrp(AGE_GRP=selected_agegrp)
-    ageplt = ag.get_ageplot()
-
+    allageplt = ag.get_ageplot()
     
     if region_selected:
-        return render_template('index.html', regions=regions, country=selected_country, region_selected=region_selected, news=news, plot=graphJSON, agegrpplt=agegrpplt, ageplt=ageplt)
+        return render_template('index.html', regions=regions, country=selected_country, region_selected=region_selected, news=news, plot=graphJSON, agegrpplt=agegrpplt, allageplt=allageplt)
 
     return render_template('index.html', regions=regions, country=selected_country, region_selected='All', news=news, plot=graphJSON)
 
@@ -92,7 +92,7 @@ def reset_global():
     selected_data_ts = 'confirmed' 
     selected_type_ts = 'new'
     selected_scale_ts = 'linear'
-    selected_agegrp = '20-30'
+    selected_agegrp = '0-10'
 
 @server.route('/data_ts', methods=['GET', 'POST'])
 def change_data_ts():
@@ -149,4 +149,4 @@ def analysis():
     return render_template('analysis.html')
 
 if __name__ == '__main__':
-    run_simple('localhost', 5000, application)
+    run_simple('localhost', 5000, application, use_debugger=DEBUG)

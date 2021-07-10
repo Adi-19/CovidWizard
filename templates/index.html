@@ -39,41 +39,43 @@
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                    <div class="container-fluid">
+                        <button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
                         <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search" method="POST" action="{{ url_for('index') }}">
                             <div class="input-group">
-				<input class="bg-light form-control border-0 small" type="text" name="search-country" id="search-country" placeholder="Search for Global" autocomplete="on">
-				<button class="btn btn-primary py-0" role="button" type="submit"><i class="fas fa-search"></i></button>
-			    </div>
+                                <input class="bg-light form-control border-0 small" type="text" name="search-country" id="search-country" placeholder="Search for Global" autocomplete="on">
+                                <button class="btn btn-primary py-0" role="button" type="submit"><i class="fas fa-search"></i></button>
+                            </div>
                         </form>
                     </div>
                 </nav><!-- Split dropend button -->
-<div class="btn-group dropend" style="margin-left: 24px; padding-left: 16px; padding-bottom: 16px;">
-<form method="POST" action="{{ url_for('index') }}">  
+                <div class="btn-group dropend" style="margin-left: 24px; padding-left: 16px; padding-bottom: 16px;">
+                    <form method="POST" action="{{ url_for('index') }}">
 
-    <select class="dropdown btn btn-primary dropdown-toggle" name="search-region" id="search-region">
-    <!-- Dropdown menu links -->
-	<div class="dropdown-menu">
-        {% for region in regions %}
-	  {% if region_selected==region %}
-            <option value="{{ region }}" class="dropdown-item" selected>{{ region }}</option>
-	  {% else %}
-	    <option value="{{ region }}" class="dropdown-item">{{ region }}</option>
-	  {% endif %}
-	{% endfor %}
-	</div>
-    </select>
-    <button class="btn btn-secondary" type="submit">Find</button>
-  </form>
-</div>
+                        <select class="dropdown btn btn-primary dropdown-toggle" name="search-region" id="search-region">
+                            <!-- Dropdown menu links -->
+                            <div class="dropdown-menu">
+                                {% for region in regions %}
+                                {% if region_selected==region %}
+                                <option value="{{ region }}" class="dropdown-item" selected>{{ region }}</option>
+                                {% else %}
+                                <option value="{{ region }}" class="dropdown-item">{{ region }}</option>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                        </select>
+                        <button class="btn btn-secondary" type="submit">Find</button>
+                    </form>
+                </div>
                 <div class="container-fluid">
                     <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                        <h3 class="text-dark mb-0">Dashboard for
-			{% if region_selected!='All' %}
-			    {{ region_selected }},
-			{% endif %}
-			{{ country }}
-			</h3>
+                        <h3 class="text-dark mb-0">
+                            Dashboard for
+                            {% if region_selected!='All' %}
+                            {{ region_selected }},
+                            {% endif %}
+                            {{ country }}
+                        </h3>
                     </div>
                     <div class="card textwhite bg-danger text-white shadow" style="margin: 16px;">
                         <div class="card-body">
@@ -83,17 +85,18 @@
                     </div>
                     <div class="d-flex d-xl-flex justify-content-center align-self-center justify-content-xl-center align-items-xl-center blog-slider" style="margin-bottom: 23px;">
                         <div class="blog-slider__wrp swiper-wrapper">
-			    {% for article in news %}
-                                <div class="blog-slider__item swiper-slide">
-                                    <div></div>
-                                    <div class="blog-slider__img"><img src={{ article[0] }}></div>
-                                    <div class="blog-slider__content">
-					<span class="blog-slider__code">{{ article[1] }}</span>
-				        <div class="blog-slider__title">{{ article[2] }}</div>
-				    <div class="blog-slider__text">{{ article[3] }}</div>
-				<a class="class=&quot;blog-slider__button" href={{ article[4] }}>READ MORE</a></div>
+                            {% for article in news %}
+                            <div class="blog-slider__item swiper-slide">
+                                <div></div>
+                                <div class="blog-slider__img"><img src={{ article[0] }}></div>
+                                <div class="blog-slider__content">
+                                    <span class="blog-slider__code">{{ article[1] }}</span>
+                                    <div class="blog-slider__title">{{ article[2] }}</div>
+                                    <div class="blog-slider__text">{{ article[3] }}</div>
+                                    <a class="class=&quot;blog-slider__button" href={{ article[4] }}>READ MORE</a>
+                                </div>
                             </div>
-			    {% endfor %}
+                            {% endfor %}
                             <div class="blog-slider__pagination"></div>
                         </div>
                     </div>
@@ -101,9 +104,9 @@
                         <div class="card-header d-flex justify-content-between align-items-center" style="padding-top: 12px;padding-left: 12px;">
                             <h6 class="text-primary fw-bold m-0">New Weekly Confirmed Cases</h6>
                         </div>
-                            <div class="chart">
-				                <iframe src="{{ url_for('/world-map/') }}" style="max-width: 100%; max-height: 100%; width: 1200px; height: 400px"></iframe>
-			                </div>
+                        <div class="chart">
+                            <iframe src="{{ url_for('/world-map/') }}" style="max-width: 100%; max-height: 100%; width: 1200px; height: 400px"></iframe>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-xl-3 mb-4">
@@ -195,12 +198,12 @@
                                 </div>
                                 <div class="container">
                                     <div class="row">
-                                            <div class="chart" id="bargraph">
-                                                <script>
-                                                    var graphs = {{plot | safe}};
-                                                    Plotly.plot('bargraph',graphs,{});
-                                                </script>
-                                            </div>
+                                        <div class="chart" id="bargraph">
+                                            <script>
+                                                var graphs = {{plot | safe}};
+                                                Plotly.plot('bargraph',graphs,{responsive: true});
+                                            </script>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -210,8 +213,10 @@
                                 <div class="card-header d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
                                     <h6 class="text-primary fw-bold m-0">Coronavirus Self-Checker</h6>
                                 </div>
-                                <div class="card-body text-center"><div data-cdc-widget='healthBot' data-cdc-theme='theme1' class='cdc-widget-color-white'  data-cdc-language='en-us'></div>
-<script src='https://t.cdc.gov/1M1B'></script></div>
+                                <div class="card-body text-center">
+                                    <div data-cdc-widget='healthBot' data-cdc-theme='theme1' class='cdc-widget-color-white' data-cdc-language='en-us'></div>
+                                    <script src='https://t.cdc.gov/1M1B'></script>
+                                </div>
                             </div>
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3" style="padding: 12px 16px;">
@@ -256,64 +261,30 @@
                                         <div class="chart" id="agegrpplt">
                                             <script>
                                                     var graphs = {{agegrpplt | safe}};
-                                                    Plotly.plot('agegrpplt',graphs,{});
+                                                    Plotly.plot('agegrpplt',graphs,{responsive: true});
                                             </script>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="row">
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card textwhite bg-primary text-white shadow">
-                                        <div class="card-body">
-                                            <p class="m-0">Primary</p>
-                                            <p class="text-white-50 small m-0">#4e73df</p>
-                                        </div>
-                                    </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="card shadow mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                    <h6 class="text-primary fw-bold m-0">Age Group Distribution</h6>
                                 </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card textwhite bg-success text-white shadow">
-                                        <div class="card-body">
-                                            <p class="m-0">Success</p>
-                                            <p class="text-white-50 small m-0">#1cc88a</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card textwhite bg-info text-white shadow">
-                                        <div class="card-body">
-                                            <p class="m-0">Info</p>
-                                            <p class="text-white-50 small m-0">#36b9cc</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card textwhite bg-warning text-white shadow">
-                                        <div class="card-body">
-                                            <p class="m-0">Warning</p>
-                                            <p class="text-white-50 small m-0">#f6c23e</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card textwhite bg-danger text-white shadow">
-                                        <div class="card-body">
-                                            <p class="m-0">Danger</p>
-                                            <p class="text-white-50 small m-0">#e74a3b</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card textwhite bg-secondary text-white shadow">
-                                        <div class="card-body">
-                                            <p class="m-0">Secondary</p>
-                                            <p class="text-white-50 small m-0">#858796</p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="chart" id="allageplt">
+                                            <script>
+                                            var graphs = {{allageplt | safe}};
+                                            Plotly.plot('allageplt',graphs,{responsive: true});
+                                            </script>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                                
                         </div>
                     </div>
                 </div>

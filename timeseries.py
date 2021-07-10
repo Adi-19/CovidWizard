@@ -11,6 +11,7 @@ class TimeSeries:
         self.baseurl = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/'
         self.usurl = 'https://github.com/nytimes/covid-19-data/raw/master/us-states.csv'
 
+
     def find_country(self, country):
         country_idx = self.data[self.data['Country/Region']==country].index[0] if len(self.data[self.data['Country/Region']==country]) else len(self.data)+1
        
@@ -151,7 +152,7 @@ class TimeSeries:
                 statedata['new'] = statedata[us_col] - statedata[us_col].shift(1)
 
             if scale=='log':
-                data_t = self.tolog(data_t)
+                statedata['new'] = self.tolog(statedata['new'])
 
 
             fig = self.make_usfig(statedata, type, us_col)
