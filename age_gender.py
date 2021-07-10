@@ -112,7 +112,7 @@ class AgeGender:
 
         if (title == "No Data Available!"):
             try:
-                t = pd.DataFrame(self.j['data'][self._country]['CasesbyAgeSex'])
+                t = pd.DataFrame(self.j['data'][self._country]['CasebyAgeSex'])
                 t.age_begin = t.age_begin.astype(int).map(self.age_grp)
                 df_tt = t[t['age_begin']==AGE_GRP][['casesF', 'casesM']].T.reset_index()
                 df_tt.columns = ['Sex', 'Cases']
@@ -123,7 +123,10 @@ class AgeGender:
                          hole=.6)
             except:
                 # Can't do anything more
-                pass
+                fig = px.pie(pd.concat([self.df_m[AGE_GRP][-7:], self.df_f[AGE_GRP][-7:]], axis=0), 
+                         values=values, names='Sex', 
+                         title=title,
+                         hole=.6)
         else:
             fig = px.pie(pd.concat([self.df_m[AGE_GRP][-7:], self.df_f[AGE_GRP][-7:]], axis=0), 
                          values=values, names='Sex', 
@@ -155,7 +158,7 @@ class AgeGender:
 
         if (title == "No Data Available!"):
             try:
-                t = pd.DataFrame(self.j['data'][self._country]['CasesbyAgeSex'])
+                t = pd.DataFrame(self.j['data'][self._country]['CasebyAgeSex'])
                 t['casesB'] = t['casesM'] + t['casesF']
 
                 fig = px.pie(t,
@@ -164,12 +167,15 @@ class AgeGender:
                          hole=.6)
             except:
                 # Can't do anything more
-                pass
-    
-        fig = px.pie(all_age, 
+                fig = px.pie(all_age, 
                      values=values, names='Age', 
                      title=title,
                      hole=.6)
+        else:
+            fig = px.pie(all_age, 
+                         values=values, names='Age', 
+                         title=title,
+                         hole=.6)
         if convert2json:
             graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
             return graphJSON
@@ -178,6 +184,6 @@ class AgeGender:
 
 if __name__ == '__main__':
     ag = AgeGender()
-    ag.split_data('USA', 'Michigan')
-    agegrpplt = ag.get_agegrp(AGE_GRP='20-30', convert2json=False)
+    ag.split_data('USA', 'Washington')
+    agegrpplt = ag.get_agegrp(AGE_GRP='0-10', convert2json=False)
     agegrpplt.show()

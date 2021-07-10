@@ -82,7 +82,7 @@ def index():
 selected_data_ts = 'confirmed' 
 selected_type_ts = 'new'
 selected_scale_ts = 'linear'
-selected_agegrp = '20-30'
+selected_agegrp = '0-10'
 
 def reset_global():
     global selected_data_ts 
