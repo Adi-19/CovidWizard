@@ -21,9 +21,9 @@ DEBUG = True
 ts = TimeSeries()
 subreg = SubRegion()
 wendi = Wendor()
-ag = AgeGender()
+ag = AgeGender(fetch=not(DEBUG))                    # For downloading data, change fetch to True
 
-oxgormint = OxfordGormint(fetch=not(DEBUG))
+oxgormint = OxfordGormint(fetch=not(DEBUG))         # For downloading data, change fetch to True
 ## Real Map
 fig = oxgormint.animate()
 

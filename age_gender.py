@@ -4,12 +4,18 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly
+import requests
+import zipfile
 
 
 class AgeGender:
-    def __init__(self, url=None):
-        if url:
-            pass
+    def __init__(self, fetch=False):
+        if fetch:
+            zip_file = requests.get('https://osf.io/43ucn/download')
+            open('zip_file.zip', 'wb').write(zip_file.content)      # Save File
+            with zipfile.ZipFile('zip_file', 'r') as zip_ref:       # Unzip
+                zip_ref.extractall('data/')
+            self.data = pd.read_csv(os.path.join('data', 'Data', 'Output_10.csv'), encoding='GBK', skiprows=3)
         else:
             self.data = pd.read_csv(os.path.join('data', 'Output_10.csv'), encoding='GBK')
             self.age2grp()
