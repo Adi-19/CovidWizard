@@ -1,4 +1,4 @@
-#CovidWizard
+# CovidWizard
 
 CovidWizard is a webapp solution for giving insights to the healthcare workers.
 
