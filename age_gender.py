@@ -13,7 +13,7 @@ class AgeGender:
         if fetch:
             zip_file = requests.get('https://osf.io/43ucn/download')
             open('zip_file.zip', 'wb').write(zip_file.content)      # Save File
-            with zipfile.ZipFile('zip_file', 'r') as zip_ref:       # Unzip
+            with zipfile.ZipFile('zip_file.zip', 'r') as zip_ref:       # Unzip
                 zip_ref.extractall('data/')
             path = os.path.join('data', 'Data', 'Output_10.csv')
         else:
