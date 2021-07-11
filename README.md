@@ -13,7 +13,10 @@ pip install -r requirements.txt
 ## Usage
 
 ```python
-Run app.py
+1. Clone the Repository 
+2. Make a new environment 
+3. Install required packages from 'requirements.txt'
+4. Run 'app.py'
 ```
 
 ## Contributing
