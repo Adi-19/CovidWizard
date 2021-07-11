@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Dashboard - Brand</title>
+    <title>Dashboard - CovidWizard</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
     <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css">
@@ -27,9 +27,9 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link active" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="analysis.html"><i class="fas fa-user"></i><span>Analysis</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="resources.html"><i class="fas fa-table"></i><span>Resources</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('index') }}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('analysis') }}"><i class="fas fa-user"></i><span>Analysis</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('resources') }}"><i class="fas fa-table"></i><span>Resources</span></a></li>
                     <li class="nav-item"></li>
                     <li class="nav-item"></li>
                 </ul>

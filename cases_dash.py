@@ -47,7 +47,10 @@ app.layout = html.Div([
 
     html.Div([
         dcc.Graph(id='dd-output-container')
-    ])
+    ]),
+    html.Div(
+        id='textarea-example-output',
+        style={'whiteSpace': 'pre-line'})
 ])
 
 
@@ -61,6 +64,13 @@ def update_output(data, type, scale):
     fig = ts.get_fig(data=data, type=type, scale=scale)
     return fig
 
+@app.callback(
+    dash.dependencies.Output('textarea-example-output', 'children'),
+    [dash.dependencies.Input('data-dropdown', 'value'),
+     dash.dependencies.Input('type-dropdown', 'value'),
+     dash.dependencies.Input('scale', 'value')])
+def update_txt(data, type, scale):
+    return f'Selected {data}, {type}, {scale}'
 
 if __name__ == '__main__':
     app.run_server(debug=True)

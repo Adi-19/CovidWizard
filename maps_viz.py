@@ -1,6 +1,7 @@
 ﻿import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
+import plotly.express as px
 
 
 class OxfordGormint:
@@ -11,26 +12,73 @@ class OxfordGormint:
             self.data = pd.read_csv('data/OxCGRT_latest.csv')
         self.cr = pd.read_csv('data/CountryStateLL.csv')
         self.access_token = 'pk.eyJ1IjoiZW5yaWNvamFjb2JzIiwiYSI6ImNrcXN5cTR0MjBvM2cyb28zdzF5dnM2bG8ifQ.H55kEL_vM4bTRLhS3CdytQ'
+        self.gormintdata = None
+        self.fetched = False
+        self.indexes = ['ContainmentHealthIndex', 'EconomicSupportIndex', 'GovernmentResponseIndex', 'StringencyIndex']
 
     def day2week(self, data_mod, date_col='Date', format='%Y%m%d'):
         data_mod['Year-Week'] = pd.to_datetime(data_mod[date_col], format=format).dt.strftime('%Y-%U')
         return data_mod
 
-    def add_latlong(self, data_mod):
+    def init_gormint(self, ):
+        self.gormintdata = self.data.copy()
+        self.gormintdata['Year-Week'] = pd.to_datetime(self.gormintdata['Date'], format='%Y%m%d').dt.strftime('%Y-%U')
+
+        self.gormintdata['NewCases'] = self.gormintdata['ConfirmedCases'] - self.gormintdata['ConfirmedCases'].shift(1)
+
+        self.gormintdata['ThisWkCases'] = self.gormintdata['NewCases'].rolling(window=7).sum()
+        indexer = pd.api.indexers.FixedForwardWindowIndexer(window_size=7)
+        self.gormintdata['NxtWkCases'] = self.gormintdata['NewCases'].rolling(window=indexer).sum()
+        self.fetched = True
+
+    def analysisviz(self, POLICY):
+        if POLICY in self.indexes:
+            title = POLICY
+            POLICY = POLICY + 'ForDisplay'
+        else:
+            title = POLICY[3:]
+        if not(self.fetched):
+            self.init_gormint()
+        try:
+            self.gormintdata[f'{POLICY} Wk']
+        except:
+            self.gormintdata[f'{POLICY} Wk'] = self.gormintdata[POLICY].rolling(window=7).min()
+
+        range_color = [self.gormintdata[POLICY].min(), self.gormintdata[POLICY].max()]
+        fig = px.choropleth(self.gormintdata, locations="CountryCode",
+                            color=POLICY,
+                            hover_name="CountryName",
+                            title = title,
+                            animation_frame="Year-Week",
+                            hover_data=['ThisWkCases', 'NxtWkCases'], 
+                            color_continuous_scale=px.colors.sequential.PuRd,
+                            range_color=range_color,)
+        
+        fig.update_layout(
+        autosize=True,
+        margin=dict(t=50, b=10, r=10, l=10))
+
+        fig.layout.updatemenus[0].buttons[0].args[1]['frame']['duration'] = 3
+        fig.layout.updatemenus[0].buttons[0].args[1]['transition']['duration'] = 2
+
+        return fig
+
+
+    def add_latlong(self, data):
         ## Use Pivot tables
         country_region = pd.pivot_table(self.cr, index=['CountryName', 'RegionName'])
-        data_mod = pd.pivot_table(data_mod, index=['Year-Week', 'CountryName', 'RegionName'])
-        data_mod = data_mod.drop(columns=['C1_Flag', 'C3_Flag', 'C4_Flag', 'C5_Flag', 'C6_Flag', 'C7_Flag',
-                                        'E1_Flag', 
-                                        'H1_Flag', 'H6_Flag', 'H7_Flag', 'H8_Flag',
-                                        'ContainmentHealthIndex', 'EconomicSupportIndex', 'GovernmentResponseIndex',
-                                        'StringencyIndex', 'StringencyLegacyIndex', 'StringencyLegacyIndexForDisplay'])
-        ## Add Lattitude and Longitude
-        data_mod = data_mod.join(country_region)
-        ## Re-Pivot data to make indexing easier: Year-Week > CountryName > RegionName
-        data_mod = pd.pivot_table(data_mod, index=['Year-Week', 'CountryName', 'RegionName'])
+        data_t = pd.pivot_table(data, index=['Year-Week', 'CountryName', 'RegionName']).drop(columns=['C1_Flag', 'C2_Flag', 'C3_Flag', 'C4_Flag', 'C5_Flag', 'C6_Flag', 'C7_Flag',
+                                                                                            'E1_Flag', 
+                                                                                            'H1_Flag', 'H6_Flag', 'H7_Flag', 'H8_Flag',
+                                                                                            'ContainmentHealthIndex', 'EconomicSupportIndex', 'GovernmentResponseIndex',
+                                                                                            'StringencyIndex', 'StringencyLegacyIndex', 'StringencyLegacyIndexForDisplay'])
 
-        return data_mod
+        ## Add Lattitude and Longitude
+        data_t = data_t.join(country_region)
+        ## Re-Pivot data to make indexing easier: Year-Week > CountryName > RegionName
+        data_t = pd.pivot_table(data_t, index=['Year-Week', 'CountryName', 'RegionName'])
+
+        return data_t
 
     def make_frames(self, data_mod, weeks, cmax=1000000, cases='ConfirmedCases', 
                     lat_col='latitude', lon_col='longitude',
@@ -141,6 +189,7 @@ class OxfordGormint:
     def animate(self, region_col='RegionName'):
         data = self.data.copy(deep=True)
         data = self.day2week(data)
+      
         data[region_col] = data[region_col].fillna('All')
         data = self.add_latlong(data)
 
@@ -155,7 +204,7 @@ class OxfordGormint:
 
 if __name__ == '__main__':
     oxgormint = OxfordGormint(fetch=False)
-    fig = oxgormint.animate()
+    fig = oxgormint.analysisviz(POLICY='C4_Restrictions on gatherings')
 
     import dash
     import dash_core_components as dcc

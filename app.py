@@ -10,9 +10,11 @@ import json
 from server import server
 from subregion import SubRegion
 from news import Wendor
-from maps_viz import OxfordGormint
+from mapspolicy import oxgormint
 from timeseries import TimeSeries
-from cases_dash import app as time_dash
+from analysis_index import app as index_dash
+from analysis_policycc import app as cclose_dash
+from analysis_econpol import app as econ_dash
 from age_gender import AgeGender
 from stats import Stat
 
@@ -25,7 +27,6 @@ subreg = SubRegion()
 wendi = Wendor()
 ag = AgeGender(fetch=not(DEBUG))                    # For downloading data, change fetch to True
 
-oxgormint = OxfordGormint(fetch=not(DEBUG))         # For downloading data, change fetch to True
 ## Real Map
 fig = oxgormint.animate()
 
@@ -34,7 +35,8 @@ dash_app.layout = html.Div([
     dcc.Graph(figure=fig)
 ])
 
-application = DispatcherMiddleware(server, {'/dash': dash_app.server, '/dash2': time_dash.server})
+application = DispatcherMiddleware(server, {'/dash': dash_app.server, '/dash2': index_dash.server, 
+                                            '/dash3': cclose_dash.server, '/dash4': econ_dash.server})
 
 selected_country = 'World'
 region_selected = 'All'
@@ -150,9 +152,26 @@ def change_grp():
     return graphJSON
 
 
-@server.route('/analysis.html')
+@server.route('/analysis')
 def analysis():
     return render_template('analysis.html')
+
+@server.route('/analysis-1')
+def analysis1():
+    return render_template('analysis-1.html')
+
+@server.route('/analysis-2')
+def analysis2():
+    return render_template('analysis-2.html')
+
+@server.route('/analysis-3')
+def analysis3():
+    return render_template('analysis-3.html')
+
+
+@server.route('/resources')
+def resources():
+    return render_template('resources.html')
 
 if __name__ == '__main__':
     run_simple('localhost', 5000, application, use_debugger=DEBUG)
