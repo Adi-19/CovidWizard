@@ -1,0 +1,16 @@
+{% extends "analysis-template.html" %}
+
+{% block heading %} Economic policies {% endblock %}
+
+{% block description %} Visualize Economic policies. Change Index type by clicking on dropdown menu. <strong>Viz may take some time to load.</strong> {% endblock %}
+
+{% block content %}
+<div class="card shadow mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center" style="padding-top: 12px;padding-left: 12px;">
+        <h6 class="text-primary fw-bold m-0">Economic policies Viz</h6>
+    </div>
+    <div class="chart">
+        <iframe src="{{ url_for('/econpolicy/') }}" style="max-width: 100%; max-height: 100%; width: 1200px; height: 400px"></iframe>
+    </div>
+</div>
+{% endblock %}

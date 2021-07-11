@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Table - Brand</title>
+    <title>Resources - CovidWizard</title>
     <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="static/assets/fonts/fontawesome-all.min.css">
@@ -25,9 +25,9 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="analysis.html"><i class="fas fa-user"></i><span>Analysis</span></a></li>
-                    <li class="nav-item"><a class="nav-link active" href="resources.html"><i class="fas fa-table"></i><span>Resources</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('analysis') }}"><i class="fas fa-user"></i><span>Analysis</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('resources') }}"><i class="fas fa-table"></i><span>Resources</span></a></li>
                     <li class="nav-item"></li>
                     <li class="nav-item"></li>
                 </ul>
@@ -54,56 +54,44 @@
                                 <table class="table my-0" id="dataTable">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
+                                            <th>Database / Organization</th>
                                             <th>Link</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="static/assets/img/avatars/avatar1.jpeg">Airi Satou</td>
-                                            <td>Accountant</td>
+                                            <td><img class="rounded-circle me-2" width="30" height="30" src="static/assets/img/resources/coverage.png">COVerAGE-Db</td>
+                                            <td><a href="https://osf.io/mpwjq/">https://osf.io/mpwjq/</a></td>
                                         </tr>
                                         <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="static/assets/img/avatars/avatar2.jpeg">Angelica Ramos</td>
-                                            <td>Chief Executive Officer(CEO)</td>
+                                            <td><img class="rounded-circle me-2" width="30" height="30" src="static/assets/img/resources/global5050.png">The Sex, Gender and Covid-19 Project</td>
+                                            <td><a href="https://globalhealth5050.org/the-sex-gender-and-covid-19-project">https://globalhealth5050.org/the-sex-gender-and-covid-19-project</a></td>
                                         </tr>
                                         <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="static/assets/img/avatars/avatar3.jpeg">Ashton Cox</td>
-                                            <td>Junior Technical Author</td>
+                                            <td><img class="rounded-circle me-2" width="30" height="30" src="static/assets/img/resources/oxford.png">Oxford Covid-19 Government Response Tracker</td>
+                                            <td><a href="https://www.bsg.ox.ac.uk/research/research-projects/covid-19-government-response-tracker">https://www.bsg.ox.ac.uk/research/research-projects/covid-19-government-response-tracker</a></td>
                                         </tr>
                                         <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="static/assets/img/avatars/avatar4.jpeg">Bradley Greer</td>
-                                            <td>Software Engineer</td>
+                                            <td><img class="rounded-circle me-2" width="30" height="30" src="static/assets/img/resources/newsdata.png">NEWSDATA.IO</td>
+                                            <td><a href="https://newsdata.io/">https://newsdata.io</a></td>
                                         </tr>
                                         <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="static/assets/img/avatars/avatar5.jpeg">Brenden Wagner</td>
-                                            <td>Software Engineer</td>
+                                            <td><img class="rounded-circle me-2" width="30" height="30" src="static/assets/img/resources/jhu.png">Center for Systems Science and Engineering (CSSE)</td>
+                                            <td><a href="https://github.com/CSSEGISandData/COVID-19">https://github.com/CSSEGISandData/COVID-19</a></td>
                                         </tr>
                                         <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="static/assets/img/avatars/avatar1.jpeg">Brielle Williamson</td>
-                                            <td>Integration Specialist</td>
+                                            <td><img class="rounded-circle me-2" width="30" height="30" src="static/assets/img/resources/owid.png">COVID-19 Dataset by Our World in Data</td>
+                                            <td><a href="https://github.com/owid/covid-19-data">https://github.com/owid/covid-19-data</a></td>
                                         </tr>
                                         <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="static/assets/img/avatars/avatar2.jpeg">Bruno Nash<br></td>
-                                            <td>Software Engineer</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar3.jpeg">Caesar Vance</td>
-                                            <td>Pre-Sales Support</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="static/assets/img/avatars/avatar4.jpeg">Cara Stevens</td>
-                                            <td>Sales Assistant</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="static/assets/img/avatars/avatar5.jpeg">Cedric Kelly</td>
-                                            <td>Senior JavaScript Developer</td>
+                                            <td><img class="rounded-circle me-2" width="30" height="30" src="static/assets/img/resources/nytimes.png">covid-19-data by The New York Times</td>
+                                            <td><a href="https://github.com/nytimes/covid-19-data">https://github.com/nytimes/covid-19-data</a></td>
                                         </tr>
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <td><strong>Name</strong></td>
-                                            <td><strong>Position</strong></td>
+                                            <td><strong>Database / Organization</strong></td>
+                                            <td><strong>Link</strong></td>
                                         </tr>
                                     </tfoot>
                                 </table>
