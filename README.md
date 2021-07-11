@@ -3,6 +3,22 @@
 
 CovidWizard is a webapp solution for giving insights to the healthcare workers.
 
+## Overview
+
+This challenge presents a curated collection of datasets from global sources and asks to model solutions for the below key tasks that were developed and evaluated by a global frontline of healthcare providers, hospitals, suppliers, and policymakers.
+
+## Task
+
+Propose and build a solution that can help identify, predict and address pain points similar, but not limited to the sample ideas listed below:
+
+- Predict the following:  
+  - Populations that have the highest risk of contracting Covid-19.
+  - Possible severity of illness in a particular patient/demographic.  
+
+- Identify the following:  
+  - Incidence of Covid-19 infection among cancer patients.
+  - How the implementation of strategies impacts rates of Covid-19 infection?
+
 ## Installation
 
 Install the required Python packages from requirements.txt.
