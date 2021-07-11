@@ -74,12 +74,14 @@ def index():
     allageplt = ag.get_ageplot()
 
     cnf, actv, recv, dead = stats.get_stat(selected_country, region_selected)
-    recv = 1 - ((cnf-actv-recv)/cnf)
+    recv = 1 - ((cnf-actv-recv)/(cnf-actv))
+    per_fvax, per_svax = stats.get_vax(selected_country)
     
     return render_template('index.html', regions=regions, 
                            country=selected_country, region_selected=region_selected, 
                            news=news, lvl=lvl,
-                           cnf=int(cnf), actv=int(actv), recv=round(100*recv), dead=int(dead), 
+                           cnf=int(cnf), actv=int(actv), recv=round(100*recv, 1), dead=int(dead), 
+                           per_fvax=per_fvax, per_svax=per_svax,
                            plot=graphJSON, agegrpplt=agegrpplt, allageplt=allageplt)
 
 
