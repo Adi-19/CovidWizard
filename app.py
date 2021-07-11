@@ -19,7 +19,7 @@ from age_gender import AgeGender
 from stats import Stat
 
 
-DEBUG = True
+DEBUG = False
 
 stats = Stat()
 ts = TimeSeries()
@@ -76,13 +76,38 @@ def index():
     allageplt = ag.get_ageplot()
 
     cnf, actv, recv, dead = stats.get_stat(selected_country, region_selected)
-    recv = 1 - ((cnf-actv-recv)/(cnf-actv))
+    if (cnf==float('NaN')):
+        cnf=0
+    if (actv==float('NaN')):
+        actv=0
+    if (recv==float('NaN')):
+        recv=0
+    if (dead==float('NaN')):
+        dead=0
+    recv = 1 - ((cnf-actv-recv)/(cnf-actv+1))
     per_fvax, per_svax = stats.get_vax(selected_country)
+
+    try:
+        cnf=int(cnf) 
+    except:
+        cnf=0
+    try:
+        actv=int(actv)
+    except:
+        actv=0
+    try:
+        recv=round(100*recv, 1) 
+    except:
+        recv=0
+    try:
+        dead=int(dead)
+    except:
+        dead=0
     
     return render_template('index.html', regions=regions, 
                            country=selected_country, region_selected=region_selected, 
                            news=news, lvl=lvl,
-                           cnf=int(cnf), actv=int(actv), recv=round(100*recv, 1), dead=int(dead), 
+                           cnf=cnf, actv=actv, recv=recv, dead=dead, 
                            per_fvax=per_fvax, per_svax=per_svax,
                            plot=graphJSON, agegrpplt=agegrpplt, allageplt=allageplt)
 
