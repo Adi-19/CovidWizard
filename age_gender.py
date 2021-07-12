@@ -15,11 +15,12 @@ class AgeGender:
             open('zip_file.zip', 'wb').write(zip_file.content)      # Save File
             with zipfile.ZipFile('zip_file.zip', 'r') as zip_ref:       # Unzip
                 zip_ref.extractall('data/')
-                
-        path = os.path.join('data', 'Data', 'Output_10.csv')
-        
+            path = os.path.join('data', 'Data', 'Output_10.csv')
+            self.data = pd.read_csv(path, encoding='GBK', skiprows=3)
+        else:
+            path = os.path.join('data', 'Output_10.csv')
+            self.data = pd.read_csv(path, encoding='GBK')
 
-        self.data = pd.read_csv(path, encoding='GBK', skiprows=3)
         self.data = self.data.dropna(subset=['Country'])
         self.data.Date = pd.to_datetime(self.data.Date, format='%d.%m.%Y', errors = 'coerce')
         self.age2grp()
