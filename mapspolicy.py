@@ -1,5 +1,5 @@
 from maps_viz import OxfordGormint
 
-DEBUG = False
+DEBUG = True
 
 oxgormint = OxfordGormint(fetch=not(DEBUG))

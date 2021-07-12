@@ -38,8 +38,6 @@ dash_app.layout = html.Div([
 application = DispatcherMiddleware(server, {'/dash': dash_app.server, '/dash2': index_dash.server, 
                                             '/dash3': cclose_dash.server, '/dash4': econ_dash.server})
 
-application_server = application.server
-
 selected_country = 'World'
 region_selected = 'All'
 
