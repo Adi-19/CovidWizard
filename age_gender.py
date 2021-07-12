@@ -21,7 +21,7 @@ class AgeGender:
 
         self.data = pd.read_csv(path, encoding='GBK', skiprows=3)
         self.data = self.data.dropna(subset=['Country'])
-        self.data.Date = pd.to_datetime(self.data.Date, format='%d.%m.%Y')
+        self.data.Date = pd.to_datetime(self.data.Date, format='%d.%m.%Y', errors = 'coerce')
         self.age2grp()
 
         self.g5050 = 'https://api.globalhealth5050.org/api/v1/agesex'
