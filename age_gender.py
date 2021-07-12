@@ -20,6 +20,7 @@ class AgeGender:
             path = os.path.join('data', 'Output_10.csv')
 
         self.data = pd.read_csv(path, encoding='GBK', skiprows=3)
+        self.data = self.data.dropna(subset=['Country'])
         self.data.Date = pd.to_datetime(self.data.Date, format='%d.%m.%Y')
         self.age2grp()
 
