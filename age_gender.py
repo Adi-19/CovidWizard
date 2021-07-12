@@ -15,9 +15,9 @@ class AgeGender:
             open('zip_file.zip', 'wb').write(zip_file.content)      # Save File
             with zipfile.ZipFile('zip_file.zip', 'r') as zip_ref:       # Unzip
                 zip_ref.extractall('data/')
-            path = os.path.join('data', 'Data', 'Output_10.csv')
-        else:
-            path = os.path.join('data', 'Output_10.csv')
+                
+        path = os.path.join('data', 'Data', 'Output_10.csv')
+        
 
         self.data = pd.read_csv(path, encoding='GBK', skiprows=3)
         self.data = self.data.dropna(subset=['Country'])

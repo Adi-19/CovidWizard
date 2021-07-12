@@ -19,7 +19,7 @@ from age_gender import AgeGender
 from stats import Stat
 
 
-DEBUG = False
+DEBUG = True
 
 stats = Stat()
 ts = TimeSeries()
@@ -199,4 +199,4 @@ def resources():
     return render_template('resources.html')
 
 if __name__ == '__main__':
-    run_simple('0.0.0.0', 5000, application, use_debugger=DEBUG)
+    run_simple('0.0.0.0', 5000, application)
