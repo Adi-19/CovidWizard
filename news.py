@@ -22,7 +22,7 @@ class Wendor:
 
     def get_top_k(self, response, k=3):
         results = np.array(response['results'])
-        print(results)
+        #print(results)
         clean = []
         for i in range(k):
             url = '#' if results[i]['image_url']==None else results[i]['image_url']
