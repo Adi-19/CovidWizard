@@ -35,7 +35,7 @@ dash_app.layout = html.Div([
     dcc.Graph(figure=fig)
 ])
 
-application = DispatcherMiddleware(server, {'/dash': dash_app.server, '/dash2': index_dash.server, 
+app = DispatcherMiddleware(server, {'/dash': dash_app.server, '/dash2': index_dash.server, 
                                             '/dash3': cclose_dash.server, '/dash4': econ_dash.server})
 
 selected_country = 'World'
@@ -199,4 +199,4 @@ def resources():
     return render_template('resources.html')
 
 if __name__ == '__main__':
-    run_simple('localhost', 5000, application)
+    run_simple('localhost', 5000, app)
