@@ -38,7 +38,10 @@ class Wendor:
 
         return clean
 
-    def get_news(self, country, k=5):
+    def get_news(self, country, k=5, dummy=False):
+        if dummy:
+            return [['#', '2021-04-25 05:14:05', 'Coronavirus dummy updates', 
+                     'Coronavirus dummy Live Updates: Dummy records x lakh new Covid cases, 2,767 deaths', '#']*5]
         if (country=='Global'):
             url = self.baseurl + self.api + '&' + self.category + self.language
         else:

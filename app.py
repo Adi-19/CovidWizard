@@ -41,6 +41,12 @@ app = DispatcherMiddleware(server, {'/dash': dash_app.server, '/dash2': index_da
 selected_country = 'World'
 region_selected = 'All'
 
+def reset_home():
+    global selected_country
+    global region_selected
+    selected_country = 'World'
+    region_selected = 'All'
+
 @server.route('/', methods=['GET', 'POST'])
 def index():
     ## For Region and SubRegion
@@ -50,7 +56,14 @@ def index():
 
     index.country = request.form.get("search-country")
     if index.country:
-        selected_country = index.country
+        if (index.country.lower() in ['us', 'usa', 'america', 'united states of america']):
+                selected_country = 'US'
+        elif (index.country.lower() in ['uk', 'united kingdom']):
+                selected_country = 'UK'
+        elif (index.country.title() in oxgormint.data.CountryName.unique().tolist()):
+            selected_country = index.country.title()
+        else:
+            selected_country = 'World'
         region_selected = 'All'
     regions = subreg.find(selected_country)
     index.region_selected = request.form.get("search-region")
@@ -58,7 +71,7 @@ def index():
         region_selected = index.region_selected
 
     ## For getting country News
-    news = wendi.get_news(selected_country)
+    news = wendi.get_news(selected_country, dummy=DEBUG)
 
     if selected_country:
         lvl = ts.get_trigger(selected_country)
@@ -179,23 +192,28 @@ def change_grp():
 
 @server.route('/analysis')
 def analysis():
+    reset_home()
     return render_template('analysis.html')
 
 @server.route('/analysis-1')
 def analysis1():
+    reset_home()
     return render_template('analysis-1.html')
 
 @server.route('/analysis-2')
 def analysis2():
+    reset_home()
     return render_template('analysis-2.html')
 
 @server.route('/analysis-3')
 def analysis3():
+    reset_home()
     return render_template('analysis-3.html')
 
 
 @server.route('/resources')
 def resources():
+    reset_home()
     return render_template('resources.html')
 
 if __name__ == '__main__':
