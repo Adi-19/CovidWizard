@@ -199,4 +199,4 @@ def resources():
     return render_template('resources.html')
 
 if __name__ == '__main__':
-    run_simple('localhost', 5000, app)
+    run_simple('0.0.0.0', 8000, app)
