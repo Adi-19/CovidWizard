@@ -1,7 +1,7 @@
 # Accenture AI Hackathon Project
 # CovidWizard
 
-CovidWizard is a webapp solution for giving insights to the healthcare workers.
+[CovidWizard](https://covidwizard.herokuapp.com/) is a webapp solution for giving insights to the healthcare workers.
 
 ## Overview
 
@@ -35,6 +35,11 @@ pip install -r requirements.txt
 3. Install required packages from 'requirements.txt'
 4. Run 'app.py'
 ```
+## Screenshots
+|    |    |
+| ---| ---|
+|![Screenshot](static/assets/img/DemoSS/Picture1.jpg)| ![Screenshot](static/assets/img/DemoSS/Picture2.jpg) |
+|![Screenshot](static/assets/img/DemoSS/Picture3.jpg)| ![Screenshot](static/assets/img/DemoSS/Picture4.jpg) |
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

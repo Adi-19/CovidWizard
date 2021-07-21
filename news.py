@@ -16,12 +16,13 @@ class Wendor:
         if api:
             self.api = api
         else:
-            self.api = 'pub_48323a34fefa3b526c810996a514b8f44c2'
+            self.api = 'pub_53281c22a3fd5612af826a5631d17cf166e'
         self.category = 'category=health&q=coronavirus%20OR%20covid'
         self.language = '&language=en'
 
     def get_top_k(self, response, k=3):
         results = np.array(response['results'])
+        #print(results)
         clean = []
         for i in range(k):
             url = '#' if results[i]['image_url']==None else results[i]['image_url']
