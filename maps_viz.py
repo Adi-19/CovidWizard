@@ -29,6 +29,8 @@ class OxfordGormint:
         self.gormintdata['ThisWkCases'] = self.gormintdata['NewCases'].rolling(window=7).sum()
         indexer = pd.api.indexers.FixedForwardWindowIndexer(window_size=7)
         self.gormintdata['NxtWkCases'] = self.gormintdata['NewCases'].rolling(window=indexer).sum()
+        self.gormintdata['New Cases Percentage Change'] = 100*(self.gormintdata['NxtWkCases']-self.gormintdata['ThisWkCases'])/(self.gormintdata['ThisWkCases']+1)
+        self.gormintdata['New Cases Percentage Change'] = self.gormintdata['New Cases Percentage Change'].round(1).fillna(0)
         self.fetched = True
 
     def analysisviz(self, POLICY):
@@ -50,16 +52,13 @@ class OxfordGormint:
                             hover_name="CountryName",
                             title = title,
                             animation_frame="Year-Week",
-                            hover_data=['ThisWkCases', 'NxtWkCases'], 
+                            hover_data=['New Cases Percentage Change'], 
                             color_continuous_scale=px.colors.sequential.PuRd,
                             range_color=range_color,)
         
-        fig.update_layout(
-        autosize=True,
-        margin=dict(t=50, b=10, r=10, l=10))
-
-        fig.layout.updatemenus[0].buttons[0].args[1]['frame']['duration'] = 3
-        fig.layout.updatemenus[0].buttons[0].args[1]['transition']['duration'] = 2
+        fig.update_layout(autosize=True, margin=dict(l=5, r=5, t=40, b=5))
+        fig['layout']['updatemenus'][0]['pad']=dict(r= 10, t= 10)
+        fig['layout']['sliders'][0]['pad']=dict(r= 10, t= 0,)
 
         return fig
 
