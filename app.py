@@ -88,6 +88,8 @@ def index():
     agegrpplt = ag.get_agegrp(AGE_GRP=selected_agegrp)
     allageplt = ag.get_ageplot()
 
+    ml_war = oxgormint.predict_nxt(selected_country, region_selected)
+
     cnf, actv, recv, dead = stats.get_stat(selected_country, region_selected)
     if (cnf==float('NaN')):
         cnf=0
@@ -119,7 +121,7 @@ def index():
     
     return render_template('index.html', regions=regions, 
                            country=selected_country, region_selected=region_selected, 
-                           news=news, lvl=lvl,
+                           news=news, lvl=lvl, ml_war=ml_war,
                            cnf=cnf, actv=actv, recv=recv, dead=dead, 
                            per_fvax=per_fvax, per_svax=per_svax,
                            plot=graphJSON, agegrpplt=agegrpplt, allageplt=allageplt)

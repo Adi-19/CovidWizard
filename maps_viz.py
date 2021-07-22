@@ -1,5 +1,6 @@
 ﻿import numpy as np
 import pandas as pd
+from sklearn.ensemble import RandomForestRegressor
 import plotly.graph_objects as go
 import plotly.express as px
 
@@ -63,19 +64,19 @@ class OxfordGormint:
         return fig
 
 
-    def add_latlong(self, data):
+    def add_latlong(self, data, index=['Year-Week','CountryName','RegionName'],):
         ## Use Pivot tables
         country_region = pd.pivot_table(self.cr, index=['CountryName', 'RegionName'])
-        data_t = pd.pivot_table(data, index=['Year-Week', 'CountryName', 'RegionName']).drop(columns=['C1_Flag', 'C2_Flag', 'C3_Flag', 'C4_Flag', 'C5_Flag', 'C6_Flag', 'C7_Flag',
-                                                                                            'E1_Flag', 
-                                                                                            'H1_Flag', 'H6_Flag', 'H7_Flag', 'H8_Flag',
-                                                                                            'ContainmentHealthIndex', 'EconomicSupportIndex', 'GovernmentResponseIndex',
-                                                                                            'StringencyIndex', 'StringencyLegacyIndex', 'StringencyLegacyIndexForDisplay'])
+        data_t = pd.pivot_table(data, index=index).drop(columns=['C1_Flag', 'C2_Flag', 'C3_Flag', 'C4_Flag', 'C5_Flag', 'C6_Flag', 'C7_Flag',
+                                                                 'E1_Flag', 
+                                                                 'H1_Flag', 'H6_Flag', 'H7_Flag', 'H8_Flag',
+                                                                 'ContainmentHealthIndex', 'EconomicSupportIndex', 'GovernmentResponseIndex',
+                                                                 'StringencyIndex', 'StringencyLegacyIndex', 'StringencyLegacyIndexForDisplay'])
 
         ## Add Lattitude and Longitude
         data_t = data_t.join(country_region)
         ## Re-Pivot data to make indexing easier: Year-Week > CountryName > RegionName
-        data_t = pd.pivot_table(data_t, index=['Year-Week', 'CountryName', 'RegionName'])
+        data_t = pd.pivot_table(data_t, index=index)
 
         return data_t
 
@@ -193,7 +194,7 @@ class OxfordGormint:
         data = self.add_latlong(data)
 
         weeks = data.index.levels[0].tolist()
-
+        
         frames = self.make_frames(data, weeks)
         sliders = self.make_sliders(weeks)
         play_button = self.make_playbutton()
@@ -201,17 +202,49 @@ class OxfordGormint:
 
         return fig
 
+    def getXy(self, data, COUNTRY, REGION):
+        X = data[(data.CountryName==COUNTRY) & (data.RegionName==REGION)].drop(columns=['Year-Week', 'CountryName', 'RegionName'])
+        X.ConfirmedCases = 100*(X.ConfirmedCases-X.ConfirmedCases.shift(1))/(X.ConfirmedCases.shift(1)+1)
+        X = X.fillna(0)
+
+        y = X.ConfirmedCases.shift(-1)
+        return X, y
+
+    def model(self, criterion='mse', n_estimators=150, 
+                    max_depth=20, min_samples_leaf=2):
+        rf = RandomForestRegressor(criterion=criterion, 
+                                   random_state=101, 
+                                   n_estimators=n_estimators, 
+                                   max_depth=max_depth, 
+                                   min_samples_leaf=min_samples_leaf, 
+                                   bootstrap=False)
+        
+        return rf
+
+    def predict_nxt(self, country='India', region='All'):
+        data = self.data.copy(deep=True)
+        data = self.day2week(data)
+        data['RegionName'] = data['RegionName'].fillna('All')
+
+        if country in data.CountryName.unique().tolist():
+            COUNTRY = country
+            if region in data[data.CountryName==COUNTRY].RegionName.unique().tolist():
+                REGION = region
+            else:
+                REGION = 'All'
+
+            data = self.add_latlong(data, index=['CountryName', 'RegionName', 'Year-Week'])
+            data = data.drop(columns=['Date', 'latitude', 'longitude'])
+            data = pd.DataFrame(data.to_records())
+
+            X, y = self.getXy(data, COUNTRY, REGION)
+            rf = self.model()
+            rf.fit(X[:-1], y[:-1])
+
+            return rf.predict(X[-1:])[0]
+        else:
+            return -1
+
 if __name__ == '__main__':
     oxgormint = OxfordGormint(fetch=False)
-    fig = oxgormint.analysisviz(POLICY='C4_Restrictions on gatherings')
-
-    import dash
-    import dash_core_components as dcc
-    import dash_html_components as html
-
-    app = dash.Dash()
-    app.layout = html.Div([
-        dcc.Graph(figure=fig)
-    ])
-
-    app.run_server(debug=True, use_reloader=False)
+    print(oxgormint.predict_nxt())

@@ -78,10 +78,32 @@
                             {{ country }}
                         </h3>
                     </div>
-                    {% if lvl=='MA Warning' %}
+                    {% if ((lvl=='MA Warning') and (ml_war>=2)) %}
+                        <div class="card textwhite bg-danger text-white shadow" style="margin: 16px;">
+                            <div class="card-body">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <p class="m-0">
+                                    Danger! Weekly New Average Cases Rising Above Two Weeks Average and
+                                    Machine Learning predicts worse condition!
+                                </p>
+                                <p class="m-0">Stay Home and Stay Safe!</p>
+                            </div>
+                        </div>
+                    {% elif (lvl=='MA Warning') %}
                         <div class="card textwhite bg-danger text-white shadow" style="margin: 16px;">
                             <div class="card-body">
                                 <p class="m-0">Warning! Weekly New Average Cases Rising Above Two Weeks Average</p>
+                                <p class="m-0">Stay Home, Stay Safe!</p>
+                            </div>
+                        </div>
+                    {% elif (ml_war>=2) %}
+                        <div class="card textwhite bg-warning text-white shadow" style="margin: 16px;">
+                            <div class="card-body">
+                                <p class="m-0">
+                                    Lookout! Machine Learning Model Predicts rise in cases!<br>
+                                    Stay Home and Prove ML wrong.
+                                    <i class="fas fa-smile"></i>
+                                </p>
                                 <p class="m-0">Stay Home, Stay Safe!</p>
                             </div>
                         </div>
