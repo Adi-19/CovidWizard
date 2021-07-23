@@ -202,10 +202,19 @@ def analysis1():
     reset_home()
     return render_template('analysis-1.html')
 
+def changeencode(data, cols):
+    for col in cols:
+        data[col] = data[col].astype('str').str.encode('utf-8')
+    return data 
+
 @server.route('/analysis-2')
 def analysis2():
     reset_home()
-    return render_template('analysis-2.html')
+    prediction, increase, decrease = oxgormint.predict_bstpolicy()
+    prediction = prediction.values.tolist()
+    increase = increase.tolist()
+    decrease = decrease.tolist()
+    return render_template('analysis-2.html', prediction=prediction, increase=increase, decrease=decrease)
 
 @server.route('/analysis-3')
 def analysis3():

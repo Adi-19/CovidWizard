@@ -13,4 +13,65 @@
         <iframe src="{{ url_for('/policycc/') }}" style="max-width: 100%; max-height: 100%; width: 1200px; height: 400px"></iframe>
     </div>
 </div>
+
+<div class="card shadow">
+    <div class="card-header py-3">
+        <p class="text-primary m-0 fw-bold">Prediction of next week's Restriction Level</p>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+            <table class="table my-0" id="dataTable">
+                <thead>
+                    <tr>
+                        <th><br /><strong>Country</strong><br /></th>
+                        <th>State / Sub-Region</th>
+                        <th>School Closing</th>
+                        <th>Workplace Closing</th>
+                        <th>Cancel Public Events</th>
+                        <th>Restrictions on gatherings</th>
+                        <th>Close Public Transport</th>
+                        <th>Stay at Home Requirements</th>
+                        <th>Restrictions on Internal movements</th>
+                        <th>International Travel Controls</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in range(prediction|length) %}
+                    {% if i%2==0 %}
+                    <tr style="background: #e6e6e6;">
+                        {% else %}
+                    <tr>
+                        {% endif %}
+                        {%for j in range(10) %}
+                        <td>
+                            {{ prediction[i][j] }}
+                            {% if j>1 %}
+                            {% if increase[i][j-2] %}
+                            <i class="fas fa-arrow-up" style="color: rgb(241,79,79);"></i>
+                            {% elif decrease[i][j-2] %}
+                            <i class="fas fa-arrow-down" style="color: rgb(178,90,229);"></i>
+                            {% endif %}
+                            {% endif %}
+                        </td>
+                        {% endfor %}
+                        {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td><strong>Country<br /></strong></td>
+                        <td><strong>State / Sub-Region<br /></strong></td>
+                        <td><strong>School Closing<br /></strong></td>
+                        <td><strong>Workplace Closing</strong></td>
+                        <td><strong>Cancel Public Events</strong></td>
+                        <td><strong>Restriction on gatherings</strong></td>
+                        <td><strong>Close Public Transport</strong></td>
+                        <td><strong>Stay at Home Requirements</strong></td>
+                        <td><strong>Restrictions on Internal movements</strong></td>
+                        <td><strong>International Travel Controls</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
 {% endblock %}

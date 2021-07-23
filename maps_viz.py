@@ -1,8 +1,9 @@
 ﻿import numpy as np
 import pandas as pd
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
 import plotly.graph_objects as go
 import plotly.express as px
+from sklearn.preprocessing import LabelEncoder
 
 
 class OxfordGormint:
@@ -221,10 +222,54 @@ class OxfordGormint:
         
         return rf
 
-    def predict_nxt(self, country='India', region='All'):
+    def get_dataml(self):
         data = self.data.copy(deep=True)
         data = self.day2week(data)
         data['RegionName'] = data['RegionName'].fillna('All')
+
+        data = self.add_latlong(data, index=['CountryName', 'RegionName', 'Year-Week'])
+        data = data.drop(columns=['Date', 'latitude', 'longitude'])
+        data = pd.DataFrame(data.to_records())
+
+        return data
+
+    def predict_bstpolicy(self, ):
+        data = self.get_dataml()
+        le_c, le_r = LabelEncoder(), LabelEncoder()
+        data['CountryName'] = le_c.fit_transform(data['CountryName'])
+        data['RegionName'] = le_r.fit_transform(data['RegionName'])
+        X = data.drop(columns=['Year-Week'])
+        X.ConfirmedCases = 100*(X.ConfirmedCases-X.ConfirmedCases.shift(1))/(X.ConfirmedCases.shift(1)+1)
+        X = X.fillna(0)
+
+        pols = ['C1_School closing',
+            'C2_Workplace closing', 'C3_Cancel public events',
+            'C4_Restrictions on gatherings', 'C5_Close public transport',
+            'C6_Stay at home requirements', 'C7_Restrictions on internal movement',
+            'C8_International travel controls']
+        X[pols] = X[pols].astype('int')
+
+        X_find = X[(X.CountryName!=X.CountryName.shift(-1)) | (X.RegionName!=X.RegionName.shift(-1))]
+
+        X = X[(X.CountryName==X.CountryName.shift(-1)) & (X.RegionName==X.RegionName.shift(-1))].copy()
+        y = X[pols].shift(-1)
+
+        rf = RandomForestClassifier(random_state=101, n_estimators=150, max_depth=20, min_samples_leaf=2, bootstrap=False)
+        rf.fit(X[:-1], y[:-1])
+
+        _X = pd.DataFrame()
+        _X['CountryName'] = le_c.inverse_transform(X_find['CountryName']).copy()
+        _X['RegionName'] = le_r.inverse_transform(X_find['RegionName']).copy()
+        _X[pols] = rf.predict(X_find).astype('int')   
+
+        decrease = _X[pols].values < X_find[pols].values
+        increase = _X[pols].values > X_find[pols].values
+
+        return _X, increase, decrease
+
+
+    def predict_nxt(self, country='India', region='All'):
+        data = self.get_dataml()
 
         if country in data.CountryName.unique().tolist():
             COUNTRY = country
@@ -232,10 +277,6 @@ class OxfordGormint:
                 REGION = region
             else:
                 REGION = 'All'
-
-            data = self.add_latlong(data, index=['CountryName', 'RegionName', 'Year-Week'])
-            data = data.drop(columns=['Date', 'latitude', 'longitude'])
-            data = pd.DataFrame(data.to_records())
 
             X, y = self.getXy(data, COUNTRY, REGION)
             rf = self.model()
@@ -247,4 +288,5 @@ class OxfordGormint:
 
 if __name__ == '__main__':
     oxgormint = OxfordGormint(fetch=False)
-    print(oxgormint.predict_nxt())
+    _X, inc, dec = oxgormint.predict_bstpolicy()
+    print(_X.head())
