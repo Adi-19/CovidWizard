@@ -1,5 +1,5 @@
 CountryName,RegionName,latitude,longitude
-Afghanistan,All,33.0,65.0
+Afghanistan,All,33,65
 Afghanistan,Badakhshan,36.7347725,70.8119953
 Afghanistan,Badghis,35.1671339,63.7695384
 Afghanistan,Baghlan,36.1789026,68.7453064
@@ -34,7 +34,7 @@ Afghanistan,Takhar,36.6698013,69.4784541
 Afghanistan,Urozgan,32.9271287,66.1415263
 Afghanistan,Zabul,32.1918782,67.1894488
 Aland Islands,All,60.116667,19.9
-Albania,All,41.0,20.0
+Albania,All,41,20
 Albania,Berat County,40.6953012,20.0449662
 Albania,Berat District,40.7086377,19.9437314
 Albania,Bulqizë District,41.4942587,20.2147157
@@ -84,7 +84,7 @@ Albania,Vlorë County,40.150096,19.8067916
 Albania,Vlorë District,40.4660668,19.491356
 Algeria,Adrar,26.418131,-0.6014717
 Algeria,Algiers,36.6997294,3.0576199
-Algeria,All,28.0,3.0
+Algeria,All,28,3
 Algeria,Annaba,36.8020508,7.5247243
 Algeria,Aïn Defla,36.2509429,1.9393815
 Algeria,Aïn Témouchent,35.2992698,-1.1392792
@@ -141,7 +141,7 @@ Algeria,Tizi Ouzou,36.706911,4.2333355
 Algeria,Tlemcen,34.6780284,-1.366216
 Algeria,Touggourt,33.1248476,5.7832715
 Algeria,Tébessa,35.1290691,7.9592863
-American Samoa,All,-14.33333333,-170.0
+American Samoa,All,-14.33333333,-170
 Andorra,All,42.5,1.5
 Andorra,Andorra la Vella,42.5063174,1.5218355
 Andorra,Canillo,42.5978249,1.6566377
@@ -174,7 +174,7 @@ Antigua And Barbuda,All,17.05,-61.8
 Antigua and Barbuda,Barbuda,17.6266242,-61.7713028
 Antigua and Barbuda,Redonda,16.938416,-62.3455148
 Antigua and Barbuda,Saint Philip Parish,40.4368258,-80.0685532
-Argentina,All,-34.0,-64.0
+Argentina,All,-34,-64
 Argentina,Autonomous City Of Buenos Aires,-34.6036844,-58.3815591
 Argentina,Buenos Aires Province,-37.2017285,-59.8410697
 Argentina,Catamarca Province,-28.4715877,-65.7877209
@@ -197,7 +197,7 @@ Argentina,Santa Fe Province,-31.5855109,-60.7238016
 Argentina,Santiago del Estero Province,-27.7833574,-64.264167
 Argentina,Tierra del Fuego Province,-54.8053998,-68.3242061
 Argentina,Tucumán Province,-26.8221127,-65.2192903
-Armenia,All,40.0,45.0
+Armenia,All,40,45
 Armenia,Aragatsotn Region,40.3347301,44.3748296
 Armenia,Ararat Province,39.9139415,44.7200004
 Armenia,Armavir Region,40.1554631,44.0372446
@@ -210,7 +210,7 @@ Armenia,Tavush Region,40.8866296,45.339349
 Armenia,Vayots Dzor Region,39.7641996,45.3337528
 Armenia,Yerevan,40.1872023,44.515209
 Aruba,All,12.5,-69.96666666
-Australia,All,-27.0,133.0
+Australia,All,-27,133
 Australia,Australian Capital Territory,-35.4734679,149.0123679
 Australia,New South Wales,-31.2532183,146.921099
 Australia,Northern Territory,-19.4914108,132.5509603
@@ -346,13 +346,13 @@ Bahamas,South Andros,23.9713556,-77.6077865
 Bahamas,South Eleuthera,24.7708562,-76.2131474
 Bahamas,Spanish Wells,26.3250599,-81.7980328
 Bahamas,West Grand Bahama,26.659447,-78.52065
-Bahamas The,All,24.25,-76.0
-Bahrain,All,26.0,50.55
+Bahamas The,All,24.25,-76
+Bahrain,All,26,50.55
 Bahrain,Central Governorate,26.1426093,50.5653294
 Bahrain,Muharraq Governorate,26.2685653,50.6482517
 Bahrain,Northern Governorate,26.1551914,50.4825173
 Bahrain,Southern Governorate,25.9381018,50.5756887
-Bangladesh,All,24.0,90.0
+Bangladesh,All,24,90
 Bangladesh,Bagerhat District,22.6602436,89.7895478
 Bangladesh,Bahadia,23.7898712,90.1671483
 Bangladesh,Bandarban District,21.8311002,92.3686321
@@ -434,7 +434,7 @@ Barbados,Saint Michael,36.035977,-95.849052
 Barbados,Saint Peter,37.0827119,-94.517125
 Barbados,Saint Philip,35.233114,-89.4364042
 Barbados,Saint Thomas,18.3380965,-64.8940946
-Belarus,All,53.0,28.0
+Belarus,All,53,28
 Belarus,Brest Region,52.5296641,25.460648
 Belarus,Gomel Region,52.1648754,29.1333251
 Belarus,Grodno Region,53.6599945,25.3448571
@@ -442,7 +442,7 @@ Belarus,Minsk,53.9006011,27.558972
 Belarus,Minsk Region,54.1067889,27.4129245
 Belarus,Mogilev Region,53.5101791,30.4006444
 Belarus,Vitebsk Region,55.2959833,28.7583627
-Belgium,All,50.83333333,4.0
+Belgium,All,50.83333333,4
 Belgium,Antwerp,51.2194475,4.4024643
 Belgium,Brussels-Capital Region,50.8503463,4.3517211
 Belgium,East Flanders,51.0362101,3.7373124
@@ -507,7 +507,7 @@ Bhutan,Trongsa District,27.5002269,90.5080634
 Bhutan,Tsirang District,27.032207,90.1869644
 Bhutan,Wangdue Phodrang District,27.4526046,90.0674928
 Bhutan,Zhemgang District,27.076975,90.8294002
-Bolivia,All,-17.0,-65.0
+Bolivia,All,-17,-65
 Bolivia,Beni Department,-14.3782747,-65.0957792
 Bolivia,Chuquisaca Department,-20.0249144,-64.1478236
 Bolivia,Cochabamba Department,-17.5681675,-65.475736
@@ -517,7 +517,7 @@ Bolivia,Potosí Department,-20.624713,-66.9988011
 Bolivia,Santa Cruz Department,-16.7476037,-62.0750998
 Bolivia,Tarija Department,-21.5831595,-63.9586111
 "Bonaire, Sint Eustatius and Saba",All,12.15,-68.266667
-Bosnia and Herzegovina,All,44.0,18.0
+Bosnia and Herzegovina,All,44,18
 Bosnia and Herzegovina,Bosnian Podrinje Canton,43.68749,18.8244394
 Bosnia and Herzegovina,Brčko District,44.8405944,18.742153
 Bosnia and Herzegovina,Canton 10,43.9534155,16.9425187
@@ -531,7 +531,7 @@ Bosnia and Herzegovina,Tuzla Canton,44.5343463,18.6972797
 Bosnia and Herzegovina,Una-Sana Canton,44.6503116,16.3171629
 Bosnia and Herzegovina,West Herzegovina Canton,43.4369244,17.3848831
 Bosnia and Herzegovina,Zenica-Doboj Canton,44.2127109,18.1604625
-Botswana,All,-22.0,24.0
+Botswana,All,-22,24
 Botswana,Ghanzi District,-21.8652314,21.8568586
 Botswana,Kgalagadi District,-24.7550285,21.8568586
 Botswana,Kgatleng District,-24.1970445,26.2304616
@@ -541,9 +541,9 @@ Botswana,North-East District,37.5884461,-94.6863782
 Botswana,North-West District,39.3446307,-76.6854283
 Botswana,South-East District,31.2163798,-82.3527044
 Bouvet Island,All,-54.43333333,3.4
-Brazil,Acre,32.933052,35.082678
+Brazil,Acre,-8.75,-67.38333333
 Brazil,Alagoas,-9.5713058,-36.7819505
-Brazil,All,-10.0,-55.0
+Brazil,All,-10,-55
 Brazil,Amapá,0.9019925,-52.0029565
 Brazil,Bahia,26.113539,-80.106204
 Brazil,Ceará,-5.4983977,-39.3206241
@@ -567,13 +567,13 @@ Brazil,Roraima,2.7375971,-62.0750998
 Brazil,Sergipe,-10.5740934,-37.3856581
 Brazil,São Paulo,-23.5505199,-46.6333094
 Brazil,Tocantins,-10.17528,-48.2982474
-British Indian Ocean Territory,All,-6.0,71.5
-Brunei,All,4.5,114.66666666
+British Indian Ocean Territory,All,-6,71.5
+Brunei,All,4.5,114.6666667
 Brunei Darussalam,Belait District,4.3750749,114.6192899
 Brunei Darussalam,Brunei-Muara District,4.9311206,114.9516869
 Brunei Darussalam,Temburong District,4.6204128,115.141484
 Brunei Darussalam,Tutong District,4.7140373,114.6667939
-Bulgaria,All,43.0,25.0
+Bulgaria,All,43,25
 Bulgaria,Blagoevgrad Province,42.0208614,23.0943356
 Bulgaria,Burgas Province,42.5048,27.4626079
 Bulgaria,Dobrich Province,43.572786,27.8272802
@@ -602,7 +602,7 @@ Bulgaria,Veliko Tarnovo Province,43.0756539,25.61715
 Bulgaria,Vidin Province,43.9961739,22.8679515
 Bulgaria,Vratsa Province,43.2101806,23.552921
 Bulgaria,Yambol Province,42.4841494,26.5035296
-Burkina Faso,All,13.0,-2.0
+Burkina Faso,All,13,-2
 Burkina Faso,Balé Province,11.7820602,-3.0175712
 Burkina Faso,Bam Province,13.446133,-1.5983959
 Burkina Faso,Banwa Province,12.1323053,-4.1513764
@@ -659,7 +659,7 @@ Burkina Faso,Yatenga Province,13.6249344,-2.3813621
 Burkina Faso,Ziro Province,11.6094995,-1.9099238
 Burkina Faso,Zondoma Province,13.1165926,-2.4208713
 Burkina Faso,Zoundwéogo Province,11.6141174,-0.9820668
-Burundi,All,-3.5,30.0
+Burundi,All,-3.5,30
 Burundi,Bubanza Province,-3.1572403,29.3714909
 Burundi,Bujumbura Mairie Province,-3.3884141,29.3482646
 Burundi,Bujumbura Rural Province,-3.5090144,29.464359
@@ -693,7 +693,7 @@ Cabo Verde,Sal,26.5958122,-80.2045083
 Cabo Verde,Santa Catarina,-27.2423392,-50.2188556
 Cabo Verde,Santa Catarina do Fogo,14.9309104,-24.3222577
 Cabo Verde,Santa Cruz,36.9741171,-122.0307963
-Cabo Verde,Sotavento Islands,15.0,-24.0
+Cabo Verde,Sotavento Islands,15,-24
 Cabo Verde,São Domingos,15.0286165,-23.563922
 Cabo Verde,São Filipe,14.8951679,-24.4945636
 Cabo Verde,São Lourenço dos Órgãos,15.0537841,-23.6085612
@@ -701,7 +701,7 @@ Cabo Verde,São Miguel,37.780411,-25.4970466
 Cabo Verde,São Vicente,-23.9607157,-46.3962022
 Cabo Verde,Tarrafal,15.2760578,-23.7484077
 Cabo Verde,Tarrafal de São Nicolau,16.5636498,-24.354942
-Cambodia,All,13.0,105.0
+Cambodia,All,13,105
 Cambodia,Banteay Meanchey Province,13.7531914,102.989615
 Cambodia,Battambang Province,13.0286971,102.989615
 Cambodia,Kampong Cham Province,12.0982918,105.3131185
@@ -727,7 +727,7 @@ Cambodia,Svay Rieng Province,11.142722,105.8290298
 Cambodia,Tai Po District,22.45085,114.16422
 Cambodia,Takéo Province,10.9321519,104.798771
 Cameroon,Adamawa,9.3264751,12.3983853
-Cameroon,All,6.0,12.0
+Cameroon,All,6,12
 Cameroon,East,39.0185336,-94.2792411
 Cameroon,Far North,66.7613451,124.123753
 Cameroon,Littoral,48.4622757,-68.5178071
@@ -737,7 +737,7 @@ Cameroon,South,37.631595,-97.3458409
 Cameroon,Southwest,36.1908813,-95.8897448
 Cameroon,West,37.0364989,-95.6705987
 Canada,Alberta,53.9332706,-116.5765035
-Canada,All,60.0,-95.0
+Canada,All,60,-95
 Canada,British Columbia,53.7266683,-127.6476205
 Canada,Manitoba,53.7608608,-98.8138762
 Canada,New Brunswick,46.5653163,-66.4619164
@@ -749,10 +749,10 @@ Canada,Ontario,51.253775,-85.323214
 Canada,Prince Edward Island,46.510712,-63.4168136
 Canada,Quebec,52.9399159,-73.5491361
 Canada,Saskatchewan,52.9399159,-106.4508639
-Canada,Yukon,35.5067215,-97.7625441
-Cape Verde,All,16.0,-24.0
+Canada,Yukon,64,-135
+Cape Verde,All,16,-24
 Cayman Islands,All,19.5,-80.5
-Central African Republic,All,7.0,21.0
+Central African Republic,All,7,21
 Central African Republic,Bamingui-Bangoran Prefecture,8.2733455,20.7122465
 Central African Republic,Bangui,4.3946735,18.5581899
 Central African Republic,Basse-Kotto Prefecture,4.8719319,21.2845025
@@ -770,7 +770,7 @@ Central African Republic,Ouham Prefecture,7.090911,17.668887
 Central African Republic,Ouham-Pendé Prefecture,6.4850984,16.1580937
 Central African Republic,Sangha-Mbaéré,3.4368607,16.3463791
 Central African Republic,Vakaga Prefecture,9.5113296,22.2384017
-Chad,All,15.0,19.0
+Chad,All,15,19
 Chad,Bahr el Gazel,14.7702266,16.912251
 Chad,Batha Region,13.9371775,18.4276047
 Chad,Borkou,17.8688845,18.8076195
@@ -794,7 +794,7 @@ Chad,Sila Region,12.13074,21.2845025
 Chad,Tandjilé Region,9.6625729,16.7234639
 Chad,Tibesti Region,21.3650031,16.912251
 Chad,Wadi Fira Region,15.0892416,21.4752851
-Chile,All,-30.0,-71.0
+Chile,All,-30,-71
 Chile,Antofagasta Region,-23.8369104,-69.2877535
 Chile,Araucanía Region,-38.948921,-72.331113
 Chile,Arica y Parinacota Region,-18.5940485,-69.4784541
@@ -811,7 +811,7 @@ Chile,Santiago Metropolitan Region,-33.4375545,-70.6504896
 Chile,Tarapacá Region,-20.2028799,-69.2877535
 Chile,Valparaíso,-33.047238,-71.6126885
 Chile,Ñuble Region,-36.7225743,-71.7622481
-China,All,35.0,105.0
+China,All,35,105
 China,Anhui,30.6006773,117.9249002
 China,Beijing,39.9041999,116.4073963
 China,Chongqing,29.4315861,106.912251
@@ -826,7 +826,7 @@ China,Heilongjiang,47.1216472,128.738231
 China,Henan,34.2904302,113.3823545
 China,Hong Kong,22.3193039,114.1693611
 China,Hubei,30.7378118,112.2384017
-China,Hunan,36.7341294,-95.9344902
+China,Hunan,29.117001,110.478996
 China,Inner Mongolia,43.37822,115.0594815
 China,Jiangsu,33.1401715,119.7889248
 China,Jiangxi,27.0874564,114.9042208
@@ -846,9 +846,9 @@ China,Tibet Autonomous Region,30.1533605,88.7878678
 China,Xinjiang,42.5246357,87.5395855
 China,Yunnan,24.4752847,101.3431058
 China,Zhejiang,29.1416432,119.7889248
-Christmas Island,All,-10.5,105.66666666
+Christmas Island,All,-10.5,105.6666667
 Cocos (Keeling) Islands,All,-12.5,96.83333333
-Colombia,All,4.0,-72.0
+Colombia,All,4,-72
 Colombia,Amazonas Department,-1.4429123,-71.5723953
 Colombia,Antioquia Department,7.1986064,-75.3412179
 Colombia,Arauca Department,6.547306,-71.0022311
@@ -885,7 +885,7 @@ Comoros,All,-12.16666666,44.25
 Comoros,Anjouan,-12.2138145,44.4370606
 Comoros,Grande Comore,-11.7167338,43.3680788
 Comoros,Mohéli,-12.3377376,43.7334089
-Congo,All,-1.0,15.0
+Congo,All,-1,15
 Congo Republic,Bouenza Department,-4.1128079,13.7289167
 Congo Republic,Brazzaville,-4.2633597,15.2428853
 Congo Republic,Cuvette Department,-0.2877446,16.1580937
@@ -898,17 +898,17 @@ Congo Republic,Plateaux Department,-2.0680088,15.4068079
 Congo Republic,Pointe-Noire,-4.7691623,11.866362
 Congo Republic,Pool Department,-3.7762628,14.8454619
 Congo Republic,Sangha Department,1.4662328,15.4068079
-Congo The Democratic Republic Of The,All,0.0,25.0
-Cook Islands,All,-21.23333333,-159.76666666
+Congo The Democratic Republic Of The,All,0,25
+Cook Islands,All,-21.23333333,-159.7666667
 Costa Rica,Alajuela Province,10.391583,-84.4382721
-Costa Rica,All,10.0,-84.0
+Costa Rica,All,10,-84
 Costa Rica,Guanacaste Province,10.6267399,-85.4436706
 Costa Rica,Heredia Province,10.473523,-84.0167423
 Costa Rica,Limón Province,9.9896398,-83.0332417
 Costa Rica,Provincia de Cartago,9.8622311,-83.9214187
 Costa Rica,Puntarenas Province,9.2169531,-83.336188
 Costa Rica,San José Province,9.9129727,-84.0768294
-Cote D'Ivoire (Ivory Coast),All,8.0,-5.0
+Cote D'Ivoire (Ivory Coast),All,8,-5
 Cote d'Ivoire,Abidjan,5.3599517,-4.0082563
 Cote d'Ivoire,Agnéby,5.3224503,-4.3449529
 Cote d'Ivoire,Bafing Region,8.3252047,-7.5247243
@@ -960,7 +960,7 @@ Croatia,Zagreb,45.8150108,15.9819189
 Croatia,Zagreb County,45.8706612,16.395491
 Croatia,Šibenik-Knin County,43.9281485,16.1037694
 Croatia (Hrvatska),All,45.16666666,15.5
-Cuba,All,21.5,-80.0
+Cuba,All,21.5,-80
 Cuba,Artemisa Province,22.7522903,-82.9931607
 Cuba,Camagüey Province,21.2167247,-77.7452081
 Cuba,Ciego de Ávila Province,21.9329515,-78.5660852
@@ -978,7 +978,7 @@ Cuba,Sancti Spíritus Province,21.9938214,-79.4703885
 Cuba,Santiago de Cuba Province,20.2397682,-75.9927652
 Cuba,Villa Clara Province,22.4937204,-79.9192702
 Curaçao,All,12.116667,-68.933333
-Cyprus,All,35.0,33.0
+Cyprus,All,35,33
 Cyprus,Famagusta District,35.2857023,33.8411288
 Cyprus,Kyrenia District,35.299194,33.2363246
 Cyprus,Larnaca District,34.8507206,33.4831906
@@ -1121,14 +1121,14 @@ DR Congo,Tanganyika Province,-6.2740118,27.9249002
 DR Congo,Tshopo District,0.5455462,24.9042208
 DR Congo,Tshuapa District,-0.9903023,23.0288844
 DR Congo,Équateur,-1.831239,-78.183406
-Denmark,All,56.0,10.0
+Denmark,All,56,10
 Denmark,Capital Region of Denmark,55.6751812,12.5493261
 Denmark,Central Denmark Region,56.302139,9.302777
 Denmark,North Denmark Region,56.8307416,9.4930527
 Denmark,Region Zealand,55.4632518,11.7214979
 Denmark,Region of Southern Denmark,55.3307714,9.0924903
 Djibouti,Ali Sabieh Region,11.1928973,42.941698
-Djibouti,All,11.5,43.0
+Djibouti,All,11.5,43
 Djibouti,Arta Region,11.5255528,42.8479474
 Djibouti,Dikhil Region,11.1054336,42.3704744
 Djibouti,Djibouti,11.825138,42.590275
@@ -1139,7 +1139,7 @@ Dominica,Saint Joseph Parish,39.0222712,-94.7176504
 Dominica,Saint Luke Parish,42.1051363,-80.0570722
 Dominica,Saint Paul Parish,38.86146,-90.7435619
 Dominica,Saint Peter Parish,40.4524194,-80.0085056
-Dominican Republic,All,19.0,-70.66666666
+Dominican Republic,All,19,-70.66666666
 Dominican Republic,Azua Province,18.4552709,-70.7380928
 Dominican Republic,Baoruco Province,18.4879898,-71.4182249
 Dominican Republic,Barahona Province,18.2139066,-71.1043759
@@ -1171,8 +1171,8 @@ Dominican Republic,Santiago Rodríguez Province,19.4713181,-71.3395801
 Dominican Republic,Santo Domingo Province,18.5104253,-69.8404054
 Dominican Republic,Sánchez Ramírez Province,19.052706,-70.1492264
 Dominican Republic,Valverde Province,19.5881221,-70.980331
-East Timor,All,-8.83333333,125.91666666
-Ecuador,All,-2.0,-77.5
+East Timor,All,-8.83333333,125.9166667
+Ecuador,All,-2,-77.5
 Ecuador,Azuay Province,-2.8943068,-78.9968344
 Ecuador,Bolívar Province,-1.7095828,-79.0450429
 Ecuador,Carchi Province,0.5026912,-77.9042521
@@ -1197,7 +1197,7 @@ Ecuador,Sucumbíos Province,0.0889231,-76.8897557
 Ecuador,Tungurahua Province,-1.2635284,-78.5660852
 Ecuador,Zamora-Chinchipe Province,-4.0655892,-78.9503525
 Egypt,Alexandria Governorate,30.8760568,29.742604
-Egypt,All,27.0,30.0
+Egypt,All,27,30
 Egypt,Aswan Governorate,23.6966498,32.7181375
 Egypt,Asyut Governorate,27.2133831,31.4456179
 Egypt,Beheira Governorate,30.8480986,30.3435506
@@ -1237,7 +1237,7 @@ El Salvador,San Vicente Department,13.5868561,-88.7493998
 El Salvador,Santa Ana Department,14.1461121,-89.5120084
 El Salvador,Sonsonate Department,13.682358,-89.6628111
 El Salvador,Usulután Department,13.4470634,-88.556531
-Equatorial Guinea,All,2.0,10.0
+Equatorial Guinea,All,2,10
 Equatorial Guinea,Annobón Province,-1.4268782,5.6352801
 Equatorial Guinea,Bioko Norte Province,3.6595072,8.7921836
 Equatorial Guinea,Bioko Sur Province,3.4209785,8.6160674
@@ -1247,14 +1247,14 @@ Equatorial Guinea,Kié-Ntem Province,2.028093,11.0711758
 Equatorial Guinea,Litoral Province,1.5750244,9.8124935
 Equatorial Guinea,Río Muni,1.4610606,9.6786894
 Equatorial Guinea,Wele-Nzas Province,1.4166162,11.0711758
-Eritrea,All,15.0,39.0
+Eritrea,All,15,39
 Eritrea,Anseba Region,16.4745531,37.8087693
 Eritrea,Debub Region,14.9478692,39.1543677
 Eritrea,Gash-Barka Region,15.4068825,37.6386622
 Eritrea,Maekel Region,15.3551409,38.8623683
 Eritrea,Northern Red Sea Region,16.2583997,38.8205454
 Eritrea,Southern Red Sea Region,13.5137103,41.7606472
-Estonia,All,59.0,26.0
+Estonia,All,59,26
 Estonia,Harju County,59.3334239,25.2466974
 Estonia,Hiiu County,58.9239553,22.5919468
 Estonia,Ida-Viru County,59.2592663,27.4136535
@@ -1276,7 +1276,7 @@ Eswatini,Manzini District,-26.5081999,31.3713164
 Eswatini,Shiselweni District,-26.9827577,31.3541631
 Ethiopia,Addis Ababa,8.9806034,38.7577605
 Ethiopia,Afar Region,11.7559388,40.958688
-Ethiopia,All,8.0,38.0
+Ethiopia,All,8,38
 Ethiopia,Amhara Region,11.3494247,37.9784585
 Ethiopia,Benishangul-Gumuz Region,10.7802889,35.5657862
 Ethiopia,Dire Dawa,9.6008747,41.850142
@@ -1286,8 +1286,8 @@ Ethiopia,Oromia Region,7.5460377,40.6346851
 Ethiopia,Somali Region,6.6612293,43.7908453
 Ethiopia,"Southern Nations, Nationalities, and Peoples' Region",6.5156911,36.954107
 Ethiopia,Tigray Region,14.0323336,38.3165725
-Falkland Islands,All,-51.75,-59.0
-Faroe Islands,All,62.0,-7.0
+Falkland Islands,All,-51.75,-59
+Faroe Islands,All,62,-7
 Fiji,Ba,36.0613893,-95.8005872
 Fiji,Bua,43.0964584,-89.50088
 Fiji,Cakaudrove,-16.5814105,179.5120084
@@ -1307,8 +1307,8 @@ Fiji,Rotuma,-12.5025069,177.0724164
 Fiji,Serua,-18.1804749,178.050979
 Fiji,Tailevu,-17.8269111,178.293248
 Fiji,Western Division,42.9662198,-78.7021134
-Fiji Islands,All,-18.0,175.0
-Finland,All,64.0,26.0
+Fiji Islands,All,-18,175
+Finland,All,64,26
 Finland,Central Finland,62.5666743,25.5549445
 Finland,Central Ostrobothnia,63.5621735,24.0013631
 Finland,Eastern Finland Province,62.5633891,28.5024042
@@ -1330,7 +1330,7 @@ Finland,Southern Savonia,61.6945148,27.8005015
 Finland,Tavastia Proper,60.907015,24.3005498
 Finland,Uusimaa,60.21872,25.271621
 Finland,Åland Islands,60.1785247,19.9156105
-France,All,46.0,2.0
+France,All,46,2
 France,Alo,40.7158362,-73.9596317
 France,Alsace,48.3181795,7.4416241
 France,Aquitaine,44.7002222,-0.2995785
@@ -1373,10 +1373,10 @@ France,Upper Normandy,49.524641,0.8828329
 France,Uvea,41.983298,-87.668362
 France,Wallis and Futuna,-14.2938,-178.1165
 France,Île-de-France,48.8499198,2.6370411
-French Guiana,All,4.0,-53.0
-French Polynesia,All,-15.0,-140.0
+French Guiana,All,4,-53
+French Polynesia,All,-15,-140
 French Southern Territories,All,-49.25,69.167
-Gabon,All,-1.0,11.75
+Gabon,All,-1,11.75
 Gabon,Estuaire Province,0.4432864,10.0807298
 Gabon,Haut-Ogooué Province,-1.4762544,13.914399
 Gabon,Moyen-Ogooué Province,-0.442784,10.439656
@@ -1394,7 +1394,7 @@ Gambia,Upper River Division,13.4257366,-14.0072348
 Gambia,West Coast Division,5.9772798,116.0754288
 Gambia The,All,13.46666666,-16.56666666
 Georgia,Adjara,41.6005626,42.0688383
-Georgia,All,42.0,43.5
+Georgia,All,42,43.5
 Georgia,Autonomous Republic of Abkhazia,43.0015544,41.023407
 Georgia,Guria,41.9442736,42.0458091
 Georgia,Imereti,42.230108,42.9008664
@@ -1408,7 +1408,7 @@ Georgia,Samtskhe-Javakheti,41.5479296,43.27764
 Georgia,Senaki Municipality,42.269636,42.0656896
 Georgia,Shida Kartli,42.0756944,43.9540462
 Georgia,Tbilisi,41.7151377,44.827096
-Germany,All,51.0,9.0
+Germany,All,51,9
 Germany,Baden-Württemberg,48.6616037,9.3501336
 Germany,Bavaria,48.7904472,11.4978895
 Germany,Berlin,52.5200066,13.404954
@@ -1425,7 +1425,7 @@ Germany,Saxony,51.1045407,13.2017384
 Germany,Saxony-Anhalt,51.9502649,11.6922734
 Germany,Schleswig-Holstein,54.2193672,9.6961167
 Germany,Thuringia,51.0109892,10.845346
-Ghana,All,8.0,-2.0
+Ghana,All,8,-2
 Ghana,Ashanti Region,6.7470436,-1.5208624
 Ghana,Brong-Ahafo Region,7.9559247,-1.6760691
 Ghana,Greater Accra Region,5.8142836,0.0746767
@@ -1435,7 +1435,7 @@ Ghana,Volta Region,6.5781373,0.4502368
 Gibraltar,All,36.13333333,-5.35
 Greece,Achaea Regional Unit,38.1158729,21.9522491
 Greece,Aetolia-Acarnania Regional Unit,38.7084386,21.3798928
-Greece,All,39.0,22.0
+Greece,All,39,22
 Greece,Arcadia Prefecture,37.5557825,22.3337769
 Greece,Attica Region,38.0457568,23.8584737
 Greece,Boeotia Regional Unit,38.3663664,23.0965064
@@ -1470,13 +1470,13 @@ Greece,South Aegean,37.0855302,25.1489215
 Greece,Thessaloniki Regional Unit,40.6400629,22.9444191
 Greece,West Greece Region,38.5115496,21.5706786
 Greece,West Macedonia Region,40.3004058,21.7903559
-Greenland,All,72.0,-40.0
+Greenland,All,72,-40
 Grenada,All,12.11666666,-61.66666666
 Grenada,Carriacou and Petite Martinique,12.4785888,-61.4493842
 Grenada,Saint John Parish,30.1118331,-90.4879916
 Grenada,Saint Mark Parish,40.5881863,-73.9495701
 Guadeloupe,All,16.25,-61.583333
-Guam,All,13.46666666,144.78333333
+Guam,All,13.46666666,144.7833333
 Guatemala,All,15.5,-90.25
 Guatemala,Alta Verapaz Department,15.5942883,-90.1494988
 Guatemala,Baja Verapaz Department,15.1255867,-90.3748354
@@ -1500,7 +1500,7 @@ Guatemala,Sololá Department,14.748523,-91.2891036
 Guatemala,Suchitepéquez Department,14.4215982,-91.4048249
 Guatemala,Totonicapán Department,14.9173402,-91.3613923
 Guernsey and Alderney,All,49.46666666,-2.58333333
-Guinea,All,11.0,-10.0
+Guinea,All,11,-10
 Guinea,Beyla Prefecture,8.9198178,-8.3088441
 Guinea,Boffa Prefecture,10.1808254,-14.0391615
 Guinea,Boké Prefecture,11.0847379,-14.3791912
@@ -1541,7 +1541,7 @@ Guinea,Siguiri Prefecture,11.4148113,-9.1788304
 Guinea,Tougué Prefecture,11.3841583,-11.6157773
 Guinea,Télimélé Prefecture,10.9089364,-13.0299331
 Guinea,Yomou Prefecture,7.5696279,-9.2591571
-Guinea-Bissau,All,12.0,-15.0
+Guinea-Bissau,All,12,-15
 Guinea-Bissau,Bafatá,12.1735243,-14.652952
 Guinea-Bissau,Biombo Region,11.8529061,-15.7351171
 Guinea-Bissau,Bolama Region,11.1480591,-16.1345705
@@ -1552,7 +1552,7 @@ Guinea-Bissau,Oio Region,12.2760709,-15.3131185
 Guinea-Bissau,Quinara Region,11.795562,-15.1726816
 Guinea-Bissau,Sul Province,-10.2866578,20.7122465
 Guinea-Bissau,Tombali Region,11.3632696,-14.9856176
-Guyana,All,5.0,-59.0
+Guyana,All,5,-59
 Guyana,Barima-Waini,7.4882419,-59.6564494
 Guyana,Cuyuni-Mazaruni,6.4642141,-60.2110752
 Guyana,Demerara-Mahaica,6.546426,-58.0982046
@@ -1563,7 +1563,7 @@ Guyana,Pomeroon-Supenaam,7.1294166,-58.9206295
 Guyana,Potaro-Siparuni,4.7855853,-59.2879977
 Guyana,Upper Demerara-Berbice,5.3064879,-58.1892921
 Guyana,Upper Takutu-Upper Essequibo,2.9239595,-58.7373634
-Haiti,All,19.0,-72.41666666
+Haiti,All,19,-72.41666666
 Haiti,Artibonite,19.362902,-72.4258145
 Haiti,Centre,32.8370251,-96.7773882
 Haiti,Grand'Anse,12.0166667,-61.7666667
@@ -1575,7 +1575,7 @@ Haiti,Ouest,45.4547249,-73.6502365
 Haiti,Sud,29.9213248,-90.0973772
 Haiti,Sud-Est,18.2783598,-72.3547915
 Heard Island and McDonald Islands,All,-53.1,72.51666666
-Honduras,All,15.0,-86.5
+Honduras,All,15,-86.5
 Honduras,Atlántida Department,15.6696283,-87.1422895
 Honduras,Bay Islands Department,16.4826614,-85.8793252
 Honduras,Choluteca Department,13.2504325,-87.1422895
@@ -1611,8 +1611,8 @@ Hong Kong,Wan Chai,22.27968,114.17168
 Hong Kong,Wong Tai Sin,22.33353,114.19686
 Hong Kong,Yau Tsim Mong,22.32138,114.1726
 Hong Kong,Yuen Long District,22.44559,114.02218
-Hong Kong S.A.R.,All,22.25,114.16666666
-Hungary,All,47.0,20.0
+Hong Kong S.A.R.,All,22.25,114.1666667
+Hungary,All,47,20
 Hungary,Baranya County,46.0484585,18.2719173
 Hungary,Borsod-Abaúj-Zemplén County,48.2939401,20.6934112
 Hungary,Budapest,47.497912,19.040235
@@ -1655,13 +1655,13 @@ Hungary,Veszprém County,47.0930974,17.9100763
 Hungary,Zala County,46.7384404,16.9152252
 Hungary,Zalaegerszeg,46.8416936,16.8416322
 Hungary,Érd,47.3919718,18.904544
-Iceland,All,65.0,-18.0
+Iceland,All,65,-18
 Iceland,Capital Region,38.5656957,-92.1816949
 Iceland,Northeastern Region,43.2994285,-74.2179326
 Iceland,Northwestern Region,41.9133932,-73.0471688
 Iceland,Southern Peninsula Region,63.9154803,-22.3649667
 Iceland,Westfjords,65.919615,-21.8811764
-India,All,20.0,77.0
+India,All,20,77
 India,Andaman and Nicobar Islands,11.7400867,92.6586401
 India,Andhra Pradesh,15.9128998,79.7399875
 India,Arunachal Pradesh,28.2179994,94.7277528
@@ -1698,7 +1698,7 @@ India,Uttar Pradesh,26.8467088,80.9461592
 India,Uttarakhand,30.066753,79.0192997
 India,West Bengal,22.9867569,87.8549755
 Indonesia,Aceh,4.695135,96.7493993
-Indonesia,All,-5.0,120.0
+Indonesia,All,-5,120
 Indonesia,Bali,-8.3405389,115.0919509
 Indonesia,Bangka Belitung Islands,-2.7410513,106.4405872
 Indonesia,Banten,-6.4058172,106.0640179
@@ -1714,7 +1714,7 @@ Indonesia,Jakarta,-6.2087634,106.845599
 Indonesia,Jambi,-1.6101229,103.6131203
 Indonesia,Kalimantan,0.9618834,114.5548495
 Indonesia,Lampung,-4.5585849,105.4068079
-Indonesia,Lesser Sunda Islands,-9.0,120.0
+Indonesia,Lesser Sunda Islands,-9,120
 Indonesia,Maluku,-3.2384616,130.1452734
 Indonesia,Maluku Islands,-2.8646166,129.5765974
 Indonesia,North Kalimantan,3.0730929,116.0413889
@@ -1737,7 +1737,7 @@ Indonesia,West Papua,-1.3361154,133.1747162
 Indonesia,West Sulawesi,-2.8441371,119.2320784
 Indonesia,West Sumatra,-0.7399397,100.8000051
 Iran,Alborz Province,35.9960467,50.9289246
-Iran,All,32.0,53.0
+Iran,All,32,53
 Iran,Ardabil Province,38.4853276,47.8911209
 Iran,Bushehr Province,28.7620739,51.5150077
 Iran,Chaharmahal and Bakhtiari Province,31.9970419,50.6613849
@@ -1765,13 +1765,13 @@ Iran,Semnan Province,35.2255585,54.4342138
 Iran,Sistan and Baluchestan,27.5299906,60.5820676
 Iran,South Khorasan Province,32.5175643,59.1041758
 Iran,Tehran Province,35.7248416,51.381653
-Iran,West Azarbaijan Province,37.4550062,45.0
+Iran,West Azarbaijan Province,37.4550062,45
 Iran,Yazd Province,32.1006387,54.4342138
 Iran,Zanjan Province,36.5018185,48.3988186
 Iraq,Al Anbar Governorate,32.5597614,41.9196471
 Iraq,Al Muthanna Governorate,29.9133171,45.2993862
 Iraq,Al-Qādisiyyah Governorate,32.043691,45.1494505
-Iraq,All,33.0,44.0
+Iraq,All,33,44
 Iraq,Babylon Governorate,32.468191,44.5501935
 Iraq,Baghdad Governorate,33.3152618,44.3660653
 Iraq,Basra Governorate,30.5114252,47.8296253
@@ -1786,7 +1786,7 @@ Iraq,Nineveh Governorate,36.229574,42.2362435
 Iraq,Saladin Governorate,34.5337527,43.483738
 Iraq,Sulaymaniyah Governorate,35.5466348,45.3003683
 Iraq,Wasit Governorate,32.6024094,45.7520985
-Ireland,All,53.0,-8.0
+Ireland,All,53,-8
 Ireland,Connacht,53.8376243,-8.9584481
 Ireland,County Carlow,52.7232217,-6.8108295
 Ireland,County Cavan,53.9765424,-7.2996623
@@ -1968,7 +1968,7 @@ Jamaica,Trelawny Parish,18.3526143,-77.6077865
 Jamaica,Westmoreland Parish,18.2944378,-78.1564432
 Japan,Aichi Prefecture,35.0182505,137.2923893
 Japan,Akita Prefecture,40.1376293,140.334341
-Japan,All,36.0,138.0
+Japan,All,36,138
 Japan,Aomori Prefecture,40.7657077,140.9175879
 Japan,Chiba Prefecture,35.3354155,140.1832516
 Japan,Ehime Prefecture,33.6025306,132.7857583
@@ -2015,7 +2015,7 @@ Japan,Ōita Prefecture,33.1589299,131.3611121
 Japan,Ōsaka Prefecture,34.6413315,135.5629394
 Jersey,All,49.25,-2.16666666
 Jordan,Ajloun Governorate,32.3325584,35.7516844
-Jordan,All,31.0,36.0
+Jordan,All,31,36
 Jordan,Amman Governorate,31.9453633,35.9283895
 Jordan,Aqaba Governorate,29.532086,35.0062821
 Jordan,Balqa Governorate,32.0366806,35.728848
@@ -2029,7 +2029,7 @@ Jordan,Tafilah Governorate,30.8338063,35.6160513
 Jordan,Zarqa Governorate,32.0608505,36.0942121
 Kazakhstan,Akmola Region,51.916532,69.4110494
 Kazakhstan,Aktobe Region,48.7797078,57.9974378
-Kazakhstan,All,48.0,68.0
+Kazakhstan,All,48,68
 Kazakhstan,Almaty,43.2220146,76.8512485
 Kazakhstan,Almaty Region,45.0119227,78.4229392
 Kazakhstan,Atyrau Region,47.1076188,51.914133
@@ -2045,7 +2045,7 @@ Kazakhstan,Nur-Sultan,51.1605227,71.4703558
 Kazakhstan,Pavlodar Region,52.2878444,76.9733453
 Kazakhstan,Turkestan Region,43.3666958,68.4094405
 Kazakhstan,West Kazakhstan Province,49.5679727,50.8066616
-Kenya,All,1.0,38.0
+Kenya,All,1,38
 Kenya,Baringo County,0.8554988,36.0893406
 Kenya,Bomet County,-0.8015009,35.3027226
 Kenya,Bungoma County,0.5695252,34.5583766
@@ -2097,12 +2097,12 @@ Kenya,Uasin Gishu District,0.5527638,35.3027226
 Kenya,Vihiga District,0.0767553,34.7077665
 Kenya,Wajir County,1.6360475,40.3088626
 Kenya,West Pokot County,1.6210076,35.3905046
-Kiribati,All,1.41666666,173.0
+Kiribati,All,1.41666666,173
 Kiribati,Gilbert Islands,0.3524262,174.7552634
 Kiribati,Line Islands,1.7429439,-157.2132826
 Kiribati,Phoenix Islands,33.3284369,-111.9824774
-Korea North,All,40.0,127.0
-Korea South,All,37.0,127.5
+Korea North,All,40,127
+Korea South,All,37,127.5
 Kosovo,All,42.5612909,20.3403035
 Kosovo,Gjilan District,42.4635206,21.4694011
 Kosovo,Kosovska Mitrovica District,42.8913909,20.8659995
@@ -2127,8 +2127,8 @@ Kyrgyz Republic,Naryn Region,41.2943227,75.3412179
 Kyrgyz Republic,Osh,36.0631399,-95.9182895
 Kyrgyz Republic,Osh Region,39.8407366,72.8988069
 Kyrgyz Republic,Talas Region,42.2867339,72.5204827
-Kyrgyzstan,All,41.0,75.0
-Laos,All,18.0,105.0
+Kyrgyzstan,All,41,75
+Laos,All,18,105
 Laos,Attapeu Province,14.93634,107.1011931
 Laos,Bokeo Province,20.2872662,100.7097867
 Laos,Bolikhamsai Province,18.4362924,104.4723301
@@ -2151,7 +2151,7 @@ Latvia,Aglona Municipality,56.1089006,27.1286227
 Latvia,Aizkraukle Municipality,56.646108,25.2370854
 Latvia,Aizpute Municipality,56.7182596,21.6072759
 Latvia,Aknīste Municipality,56.1613037,25.7484827
-Latvia,All,57.0,25.0
+Latvia,All,57,25
 Latvia,Aloja Municipality,57.767136,24.8770839
 Latvia,Alsunga Municipality,56.9828531,21.5555919
 Latvia,Alūksne Municipality,57.4254485,27.0424968
@@ -2302,7 +2302,7 @@ Liberia,River Cess County,5.9025328,-9.456155
 Liberia,River Gee County,5.2604894,-7.87216
 Liberia,Sinoe County,5.49871,-8.6600586
 Libya,Al Wahat District,29.0466808,21.8568586
-Libya,All,25.0,17.0
+Libya,All,25,17
 Libya,Benghazi,32.1194242,20.0867909
 Libya,Derna District,32.755613,22.6377432
 Libya,Ghat District,24.9640371,10.1759285
@@ -2336,7 +2336,7 @@ Liechtenstein,Triesen,47.1097988,9.5248296
 Liechtenstein,Triesenberg,47.1224511,9.5701985
 Liechtenstein,Vaduz,47.1410303,9.5209277
 Lithuania,Akmenė District Municipality,56.2455029,22.7471169
-Lithuania,All,56.0,24.0
+Lithuania,All,56,24
 Lithuania,Alytus City Municipality,54.3962938,24.0458761
 Lithuania,Alytus County,54.2000214,24.1512634
 Lithuania,Alytus District Municipality,54.3297496,24.1960931
@@ -2423,7 +2423,7 @@ Luxembourg,Grevenmacher District,49.680851,6.4407524
 Luxembourg,Luxembourg District,49.5953706,6.1333178
 Macau S.A.R.,All,22.16666666,113.55
 Macedonia,Aerodrom Municipality,41.9464363,21.4931713
-Macedonia,All,41.83333333,22.0
+Macedonia,All,41.83333333,22
 Macedonia,Aračinovo Municipality,42.0247381,21.5766407
 Macedonia,Berovo Municipality,41.6661929,22.762883
 Macedonia,Bitola Municipality,41.0363302,21.3321974
@@ -2507,14 +2507,14 @@ Macedonia,Čučer-Sandevo Municipality,42.1483946,21.4037407
 Macedonia,Štip Municipality,41.7079297,22.1907122
 Macedonia,Šuto Orizari Municipality,42.0290416,21.4097027
 Macedonia,Želino Municipality,41.9006531,21.1175767
-Madagascar,All,-20.0,47.0
+Madagascar,All,-20,47
 Madagascar,Antananarivo Province,-18.7051474,46.8252838
 Madagascar,Antsiranana Province,-13.771539,49.5279996
 Madagascar,Fianarantsoa Province,-22.353624,46.8252838
 Madagascar,Mahajanga Province,-16.523883,46.516262
 Madagascar,Toamasina Province,-18.1442811,49.3957836
 Madagascar,Toliara Province,-23.3516191,43.6854936
-Malawi,All,-13.5,34.0
+Malawi,All,-13.5,34
 Malawi,Balaka District,-15.0506595,35.0828588
 Malawi,Blantyre District,-15.6778541,34.9506625
 Malawi,Chikwawa District,-16.1958446,34.7740793
@@ -2563,7 +2563,7 @@ Malaysia,Terengganu,5.3116916,103.1324154
 Maldives,Addu Atoll,-0.6300995,73.1585626
 Maldives,Alif Alif Atoll,4.085,72.8515479
 Maldives,Alif Dhaal Atoll,3.6543302,72.8042797
-Maldives,All,3.25,73.0
+Maldives,All,3.25,73
 Maldives,Dhaalu Atoll,2.8468502,72.9460566
 Maldives,Faafu Atoll,3.2309409,72.9460566
 Maldives,Gaafu Alif Atoll,0.6124813,73.323708
@@ -2585,7 +2585,7 @@ Maldives,South Province,-21.7482006,166.1783739
 Maldives,Thaa Atoll,2.4311161,73.1821623
 Maldives,Upper South Province,0.2307,73.2794846
 Maldives,Vaavu Atoll,3.3955438,73.5122928
-Mali,All,17.0,-4.0
+Mali,All,17,-4
 Mali,Bamako,12.6392316,-8.0028892
 Mali,Gao Region,16.9066332,1.5208624
 Mali,Kayes Region,14.0818308,-9.9018131
@@ -2666,12 +2666,12 @@ Malta,Żebbuġ Malta,35.8764648,14.439084
 Malta,Żejtun,35.8548714,14.5363969
 Malta,Żurrieq,35.8216306,14.4810648
 Man (Isle of),All,54.25,-4.5
-Marshall Islands,All,9.0,168.0
+Marshall Islands,All,9,168
 Marshall Islands,Ralik Chain,8.136146,164.8867956
 Marshall Islands,Ratak Chain,10.2763276,170.5500937
-Martinique,All,14.666667,-61.0
+Martinique,All,14.666667,-61
 Mauritania,Adrar Region,19.8652176,-12.8054753
-Mauritania,All,20.0,-12.0
+Mauritania,All,20,-12
 Mauritania,Assaba Region,16.7759558,-11.5248055
 Mauritania,Brakna Region,17.2317561,-13.1740348
 Mauritania,Dakhlet Nouadhibou,20.5985588,-16.2522143
@@ -2706,7 +2706,7 @@ Mauritius,Savanne District,-20.473953,57.4853561
 Mauritius,Vacoas-Phoenix,-20.2984026,57.4938355
 Mayotte,All,-12.83333333,45.16666666
 Mexico,Aguascalientes,21.8852562,-102.2915677
-Mexico,All,23.0,-102.0
+Mexico,All,23,-102
 Mexico,Baja California,30.8406338,-115.2837585
 Mexico,Baja California Sur,26.0444446,-111.6660725
 Mexico,Campeche,19.8301251,-90.5349087
@@ -2743,7 +2743,7 @@ Micronesia,All,6.91666666,158.25
 "Micronesia, Fed. Sts.",Kosrae State,5.3095618,162.9814877
 "Micronesia, Fed. Sts.",Pohnpei State,6.8541254,158.2623822
 "Micronesia, Fed. Sts.",Yap State,8.671649,142.8439335
-Moldova,All,47.0,29.0
+Moldova,All,47,29
 Moldova,Anenii Noi District,46.8795663,29.2312175
 Moldova,Basarabeasca District,46.423706,28.8935492
 Moldova,Bender Municipality,46.8227551,29.4620101
@@ -2784,7 +2784,7 @@ Monaco,All,43.73333333,7.4
 Monaco,La Colle,43.7327465,7.4137276
 Monaco,La Condamine,43.7350665,7.419906
 Monaco,Moneghetti,43.7364927,7.4153383
-Mongolia,All,46.0,105.0
+Mongolia,All,46,105
 Mongolia,Arkhangai Province,47.8971101,100.7240165
 Mongolia,Bayan-Ölgii Province,48.3983254,89.6625915
 Mongolia,Bayankhongor Province,45.1526707,100.1073667
@@ -2832,7 +2832,7 @@ Montenegro,Žabljak Municipality,43.1555152,19.1226018
 Montserrat,All,16.75,-62.2
 Morocco,Al Haouz Province,31.2956729,-7.87216
 Morocco,Al Hoceïma Province,35.2445589,-3.9317468
-Morocco,All,32.0,-5.0
+Morocco,All,32,-5
 Morocco,Aousserd Province,22.5521538,-14.3297353
 Morocco,Assa-Zag Province,28.1402395,-9.7232673
 Morocco,Azilal Province,32.004262,-6.5783387
@@ -2893,7 +2893,7 @@ Morocco,Taza Province,34.2788953,-3.5812692
 Morocco,Tiznit Province,29.693392,-9.732157
 Morocco,Tétouan Province,35.5888995,-5.3625516
 Morocco,Zagora Province,30.5786093,-5.8987139
-Mozambique,All,-18.25,35.0
+Mozambique,All,-18.25,35
 Mozambique,Cabo Delgado Province,-12.3335474,39.3206241
 Mozambique,Gaza Province,-23.0221928,32.7181375
 Mozambique,Inhambane Province,-22.8527997,34.5508758
@@ -2905,7 +2905,7 @@ Mozambique,Niassa Province,-12.7826202,36.6093926
 Mozambique,Sofala Province,-19.2039073,34.8624166
 Mozambique,Tete Province,-15.6596056,32.7181375
 Mozambique,Zambezia Province,-16.5638987,36.6093926
-Myanmar,All,22.0,98.0
+Myanmar,All,22,98
 Myanmar,Ayeyarwady Region,17.0342125,95.2266675
 Myanmar,Bago,17.3220711,96.4663286
 Myanmar,Chin State,22.0086978,93.5812692
@@ -2921,9 +2921,9 @@ Myanmar,Sagaing Region,24.428381,95.3939551
 Myanmar,Shan State,22.0361985,98.1338558
 Myanmar,Tanintharyi Region,12.4706876,99.0128926
 Myanmar,Yangon Region,16.9143488,96.1526985
-Namibia,All,-22.0,17.0
+Namibia,All,-22,17
 Nauru,Aiwo District,-0.5340012,166.9138873
-Nauru,All,-0.53333333,166.91666666
+Nauru,All,-0.53333333,166.9166667
 Nauru,Anabar District,-0.5133517,166.9484624
 Nauru,Anetan District,-0.5064343,166.9427006
 Nauru,Anibare District,-0.5294758,166.9513432
@@ -2937,7 +2937,7 @@ Nauru,Meneng District,-0.546724,166.938379
 Nauru,Nibok District,-0.5196208,166.9189301
 Nauru,Uaboe District,-0.5202222,166.9311761
 Nauru,Yaren District,-0.5466857,166.9210913
-Nepal,All,28.0,84.0
+Nepal,All,28,84
 Nepal,Bagmati Zone,28.0367577,85.4375574
 Nepal,Bheri Zone,28.517456,81.7787021
 Nepal,Dhaulagiri Zone,28.611176,83.5070203
@@ -2971,7 +2971,7 @@ Netherlands,Utrecht,52.0907374,5.1214201
 Netherlands,Zeeland,51.4940309,3.8496815
 Netherlands The,All,52.5,5.75
 New Caledonia,All,-21.5,165.5
-New Zealand,All,-41.0,174.0
+New Zealand,All,-41,174
 New Zealand,Auckland Region,-36.6675328,174.7733325
 New Zealand,Bay of Plenty Region,-37.4233917,176.7416374
 New Zealand,Canterbury Region,-43.7542275,171.1637245
@@ -2989,7 +2989,7 @@ New Zealand,Tasman District,-41.4571184,172.820974
 New Zealand,Waikato Region,-37.6190862,175.023346
 New Zealand,Wellington Region,-41.0299323,175.4375574
 New Zealand,West Coast Region,62.4113634,-149.0729714
-Nicaragua,All,13.0,-85.0
+Nicaragua,All,13,-85
 Nicaragua,Boaco Department,12.469284,-85.6614682
 Nicaragua,Carazo Department,11.7274729,-86.2158497
 Nicaragua,Chinandega Department,12.8820062,-87.1422895
@@ -3007,7 +3007,7 @@ Nicaragua,Rivas Department,11.402349,-85.684578
 Nicaragua,Río San Juan Department,11.478161,-84.7733325
 Nicaragua,South Caribbean Coast Autonomous Region,12.1918502,-84.1012861
 Niger,Agadez Region,20.6670752,12.0718281
-Niger,All,16.0,8.0
+Niger,All,16,8
 Niger,Diffa Region,13.6768647,12.7135121
 Niger,Dosso Region,13.1513947,3.4195527
 Niger,Maradi Region,13.8018074,7.4381355
@@ -3017,7 +3017,7 @@ Niger,Zinder Region,15.1718881,10.2600125
 Nigeria,Abia State,5.4527354,7.5248414
 Nigeria,Adamawa State,9.3264751,12.3983853
 Nigeria,Akwa Ibom State,4.9057371,7.8536675
-Nigeria,All,10.0,8.0
+Nigeria,All,10,8
 Nigeria,Anambra State,6.2208997,6.9369559
 Nigeria,Bauchi State,10.7760624,9.9991943
 Nigeria,Bayelsa State,4.7719071,6.0698526
@@ -3050,7 +3050,7 @@ Nigeria,Sokoto State,13.0533143,5.3222722
 Nigeria,Taraba State,7.9993616,10.7739863
 Nigeria,Yobe State,12.293876,11.4390411
 Nigeria,Zamfara State,12.1221805,6.2235819
-Niue,All,-19.03333333,-169.86666666
+Niue,All,-19.03333333,-169.8666667
 Norfolk Island,All,-29.03333333,167.95
 North Korea,Chagang Province,40.7202809,126.5621137
 North Korea,Kangwon Province,38.8432393,127.5597067
@@ -3065,7 +3065,7 @@ North Korea,South Hwanghae Province,38.2007215,125.4781926
 North Korea,South Pyongan Province,39.3539178,126.168271
 Northern Mariana Islands,All,15.2,145.75
 Norway,Akershus,28.3704203,-81.5468058
-Norway,All,62.0,10.0
+Norway,All,62,10
 Norway,Buskerud,60.4846025,8.6983764
 Norway,Finnmark,70.4830388,26.0135107
 Norway,Hedmark,61.3967311,11.5627369
@@ -3093,14 +3093,14 @@ Oman,Al Batinah Region,24.3419846,56.7298904
 Oman,Al Batinah South Governorate,23.4314903,57.4239796
 Oman,Al Buraimi Governorate,24.1671413,56.1142253
 Oman,Al Wusta Governorate,19.9571078,56.2756846
-Oman,All,21.0,57.0
+Oman,All,21,57
 Oman,Ash Sharqiyah North Governorate,22.7141196,58.5308064
 Oman,Ash Sharqiyah Region,22.7141196,58.5308064
 Oman,Ash Sharqiyah South Governorate,22.0158249,59.3251922
 Oman,Dhofar Governorate,17.0322121,54.1425214
 Oman,Musandam Governorate,26.1986144,56.2460949
 Oman,Muscat Governorate,23.5880307,58.3828717
-Pakistan,All,30.0,70.0
+Pakistan,All,30,70
 Pakistan,Azad Kashmir,33.9259055,73.7810334
 Pakistan,Balochistan,28.4907332,65.0957792
 Pakistan,Federally Administered Tribal Areas,32.667476,69.8597406
@@ -3127,7 +3127,7 @@ Palau,Ngiwal,7.5614764,134.6160619
 Palau,Peleliu,7.0022906,134.2431628
 Palau,Sonsorol,5.3268119,132.2239117
 Palestinian Territory Occupied,All,31.9,35.2
-Panama,All,9.0,-80.0
+Panama,All,9,-80
 Panama,Bocas del Toro Province,9.4165521,-82.5207787
 Panama,Chiriquí Province,8.584898,-82.3885783
 Panama,Coclé Province,8.6266068,-80.365865
@@ -3160,8 +3160,8 @@ Papua New Guinea,Sandaun Province,-3.7126179,141.6834275
 Papua New Guinea,Southern Highlands Province,-6.4179083,143.5635637
 Papua New Guinea,West New Britain Province,-5.7047432,150.0259466
 Papua New Guinea,Western Highlands Province,-5.6268128,144.2593118
-Papua new Guinea,All,-6.0,147.0
-Paraguay,All,-23.0,-58.0
+Papua new Guinea,All,-6,147
+Paraguay,All,-23,-58
 Paraguay,Alto Paraguay Department,-20.0852508,-59.4720904
 Paraguay,Alto Paraná Department,-25.6075546,-54.9611836
 Paraguay,Amambay Department,-22.5590272,-56.0249982
@@ -3179,7 +3179,7 @@ Paraguay,Paraguarí Department,-25.6262174,-57.1520642
 Paraguay,Presidente Hayes Department,-23.3512605,-58.7373634
 Paraguay,San Pedro Department,-24.1948668,-56.561647
 Paraguay,Ñeembucú Department,-27.0299114,-57.825395
-Peru,All,-10.0,-76.0
+Peru,All,-10,-76
 Peru,Apurímac,-14.0504533,-73.087749
 Peru,Arequipa,-16.4090474,-71.537451
 Peru,Ayacucho,-13.1638737,-74.2235641
@@ -3208,7 +3208,7 @@ Philippines,Agusan del Norte,8.9456259,125.5319234
 Philippines,Agusan del Sur,8.0463888,126.0615384
 Philippines,Aklan,11.8166109,122.0941541
 Philippines,Albay,13.1774827,123.5280072
-Philippines,All,13.0,122.0
+Philippines,All,13,122
 Philippines,Antique,37.0358695,-95.6361694
 Philippines,Apayao,18.0120304,121.1710389
 Philippines,Aurora,36.970891,-93.717979
@@ -3302,7 +3302,7 @@ Philippines,Zamboanga Sibugay,7.5225247,122.3107517
 Philippines,Zamboanga del Norte,8.3886282,123.1688883
 Philippines,Zamboanga del Sur,7.8383054,123.2966657
 Pitcairn Island,All,-25.06666666,-130.1
-Poland,All,52.0,20.0
+Poland,All,52,20
 Poland,Greater Poland Voivodeship,52.279986,17.3522939
 Poland,Kuyavian-Pomeranian Voivodeship,53.1648363,18.4834224
 Poland,Lesser Poland Voivodeship,49.7225306,20.2503358
@@ -3319,7 +3319,7 @@ Poland,Warmian-Masurian Voivodeship,53.8671117,20.7027861
 Poland,West Pomeranian Voivodeship,53.4657891,15.1822581
 Poland,Łódź Voivodeship,51.4634771,19.1726974
 Poland,Świętokrzyskie Voivodeship,50.6261041,20.9406279
-Portugal,All,39.5,-8.0
+Portugal,All,39.5,-8
 Portugal,Aveiro,40.7209023,-8.5721016
 Portugal,Açores,37.7412488,-25.6755944
 Portugal,Beja,37.9687786,-7.87216
@@ -3352,7 +3352,7 @@ Qatar,Madinat ash Shamal,26.1182743,51.2157265
 Qatar,Umm Salal Municipality,25.4875242,51.396568
 Reunion,All,-21.15,55.5
 Romania,Alba,44.7009153,8.0356911
-Romania,All,46.0,25.0
+Romania,All,46,25
 Romania,Arad County,46.2283651,21.6597819
 Romania,Arges,45.0722527,24.8142726
 Romania,Bacău County,46.3258184,26.662378
@@ -3394,7 +3394,7 @@ Romania,Tulcea County,45.0450565,29.0324912
 Romania,Vaslui County,46.4631059,27.7398031
 Romania,Vrancea County,45.8134876,27.0657531
 Romania,Vâlcea County,45.0798051,24.0835283
-Russia,All,60.0,100.0
+Russia,All,60,100
 Russia,Altai Krai,51.7936298,82.6758596
 Russia,Altai Republic,50.6181924,86.2199308
 Russia,Amur Oblast,54.6035065,127.4801721
@@ -3415,7 +3415,7 @@ Russia,Kaluga Oblast,54.3872666,35.1889094
 Russia,Kamchatka Krai,61.4343981,166.7884131
 Russia,Karachay-Cherkess Republic,43.8845143,41.7303939
 Russia,Kemerovo Oblast,54.7574648,87.4055288
-Russia,Khabarovsk Krai,50.5888431,135.0
+Russia,Khabarovsk Krai,50.5888431,135
 Russia,Khanty-Mansi Autonomous Okrug,62.2287062,70.6410057
 Russia,Kirov Oblast,58.4198529,50.2097248
 Russia,Komi Republic,63.8630539,54.831269
@@ -3440,14 +3440,14 @@ Russia,Orenburg Oblast,51.7634026,54.6188188
 Russia,Oryol Oblast,52.7856414,36.9242344
 Russia,Penza Oblast,53.1412105,44.0940048
 Russia,Perm Krai,58.8231929,56.5872481
-Russia,Primorsky Krai,45.0525641,135.0
+Russia,Primorsky Krai,45.0525641,135
 Russia,Pskov Oblast,56.7708599,29.094009
 Russia,Republic of Adygea,44.8229155,40.1754463
 Russia,Republic of Bashkortostan,54.2312172,56.1645257
 Russia,Republic of Buryatia,54.8331146,112.406053
 Russia,Republic of Dagestan,42.1431886,47.0949799
 Russia,Republic of Ingushetia,43.4051698,44.8202999
-Russia,Republic of Kalmykia,46.1867176,45.0
+Russia,Republic of Kalmykia,46.1867176,45
 Russia,Republic of Karelia,63.1558702,32.9905552
 Russia,Republic of Khakassia,53.0452281,90.3982145
 Russia,Republic of Mordovia,54.2369441,44.068397
@@ -3479,7 +3479,7 @@ Russia,Voronezh Oblast,50.8589713,39.8644374
 Russia,Yamalo-Nenets Autonomous Okrug,66.0653057,76.9345193
 Russia,Yaroslavl Oblast,57.8991523,38.8388633
 Russia,Zabaykalsky Krai,53.0928771,116.9676561
-Rwanda,All,-2.0,30.0
+Rwanda,All,-2,30
 Rwanda,Kigali district,-1.9440727,30.0618851
 Saint Helena,All,-15.95,-5.7
 Saint Kitts And Nevis,All,17.33333333,-62.75
@@ -3490,7 +3490,7 @@ Saint-Barthelemy,All,18.5,-63.41666666
 Saint-Martin (French part),All,18.08333333,-63.95
 Samoa,A'ana,-13.898418,-171.9752995
 Samoa,Aiga-i-le-Tai,-13.8513791,-172.0325401
-Samoa,All,-13.58333333,-172.33333333
+Samoa,All,-13.58333333,-172.3333333
 Samoa,Atua,-13.9787053,-171.6254283
 Samoa,Fa'asaleleaga,-13.6307638,-172.2365981
 Samoa,Gaga'emauga,-13.5428666,-172.366887
@@ -3510,7 +3510,7 @@ San Marino,Fiorentino,43.9078337,12.4581209
 San Marino,Montegiardino,43.9052999,12.4810542
 San Marino,San Marino,43.94236,12.457777
 San Marino,Serravalle,44.7232084,8.8574005
-Sao Tome and Principe,All,1.0,7.0
+Sao Tome and Principe,All,1,7
 Sao Tome and Principe,Príncipe Province,1.6139381,7.4056928
 Sao Tome and Principe,São Tomé Province,0.3301924,6.733343
 Saudi Arabia,'Asir Region,19.0969062,42.8637875
@@ -3518,7 +3518,7 @@ Saudi Arabia,Al Bahah Region,20.2722739,41.441251
 Saudi Arabia,Al Jawf Region,29.887356,39.3206241
 Saudi Arabia,Al Madinah Region,24.8403977,39.3206241
 Saudi Arabia,Al-Qassim Region,26.207826,43.483738
-Saudi Arabia,All,25.0,45.0
+Saudi Arabia,All,25,45
 Saudi Arabia,Ha'il Region,27.7076143,41.9196471
 Saudi Arabia,Jizan Region,17.1738176,42.7076107
 Saudi Arabia,Makkah Region,21.5235584,41.9196471
@@ -3526,7 +3526,7 @@ Saudi Arabia,Najran Region,18.3514664,45.6007108
 Saudi Arabia,Northern Borders Region,30.0799162,42.8637875
 Saudi Arabia,Riyadh Region,22.7554385,46.2091547
 Saudi Arabia,Tabuk Region,28.2453335,37.6386622
-Senegal,All,14.0,-14.0
+Senegal,All,14,-14
 Senegal,Dakar,14.716677,-17.4676861
 Senegal,Diourbel Region,14.7283085,-16.2522143
 Senegal,Fatick,14.3390167,-16.4111425
@@ -3541,7 +3541,7 @@ Senegal,Sédhiou,12.704604,-15.5562304
 Senegal,Tambacounda Region,13.5619011,-13.1740348
 Senegal,Thiès Region,14.7910052,-16.9358604
 Senegal,Ziguinchor,12.5641479,-16.2639825
-Serbia,All,44.0,21.0
+Serbia,All,44,21
 Serbia,Belgrade,44.786568,20.4489216
 Serbia,Bor District,44.0698918,22.0985086
 Serbia,Braničevo District,44.6982246,21.5446775
@@ -3823,7 +3823,7 @@ Slovenia,Žetale Municipality,46.2742833,15.7913359
 Slovenia,Žiri Municipality,46.0472499,14.1098451
 Slovenia,Žirovnica Municipality,46.3954403,14.1539632
 Slovenia,Žužemberk Municipality,45.820035,14.9535919
-Solomon Islands,All,-8.0,159.0
+Solomon Islands,All,-8,159
 Solomon Islands,Choiseul Province,-7.0501494,156.9511459
 Solomon Islands,Guadalcanal Province,-9.5773284,160.1455805
 Solomon Islands,Honiara,-9.4456381,159.9728999
@@ -3832,7 +3832,7 @@ Solomon Islands,Makira-Ulawa Province,-10.5737447,161.8096941
 Solomon Islands,Malaita Province,-8.9446168,160.9071236
 Solomon Islands,Rennell and Bellona Province,-11.6131435,160.1693949
 Solomon Islands,Temotu Province,-10.686929,166.0623979
-Somalia,All,10.0,49.0
+Somalia,All,10,49
 Somalia,Awdal Region,10.6334285,43.329466
 Somalia,Bakool,4.3657221,44.0960311
 Somalia,Banaadir,2.1187375,45.3369459
@@ -3849,7 +3849,7 @@ Somalia,Mudug,6.5656726,47.7637565
 Somalia,Nugal,43.2793861,17.0339205
 Somalia,Sanaag Region,10.3938218,47.7637565
 Somalia,Togdheer Region,9.4460587,45.2993862
-South Africa,All,-29.0,24.0
+South Africa,All,-29,24
 South Africa,Eastern Cape,-32.2968402,26.419389
 South Africa,Free State,37.6858525,-97.2811256
 South Africa,Gauteng,-26.2707593,28.1122679
@@ -3859,7 +3859,7 @@ South Africa,Mpumalanga,-25.565336,30.5279096
 South Africa,North West,32.758852,-97.328806
 South Africa,Northern Cape,-29.0466808,21.8568586
 South Africa,Western Cape,-33.2277918,21.8568586
-South Georgia,All,-54.5,-37.0
+South Georgia,All,-54.5,-37
 South Korea,Busan,35.1795543,129.0756416
 South Korea,Daegu,35.8714354,128.601445
 South Korea,Daejeon,36.3504119,127.3845475
@@ -3877,7 +3877,7 @@ South Korea,South Chungcheong Province,36.5184,126.8
 South Korea,South Gyeongsang Province,35.4606,128.2132
 South Korea,South Jeolla Province,34.8679,126.991
 South Korea,Ulsan,35.5383773,129.3113596
-South Sudan,All,7.0,30.0
+South Sudan,All,7,30
 South Sudan,Central Equatoria,4.6144063,31.2626366
 South Sudan,Eastern Equatoria,5.0692995,33.438353
 South Sudan,Jonglei State,7.1819619,32.3560952
@@ -3888,7 +3888,7 @@ South Sudan,Upper Nile,9.8894202,32.7181375
 South Sudan,Warrap,8.0886238,28.6410641
 South Sudan,Western Bahr el Ghazal,8.6452399,25.2837585
 South Sudan,Western Equatoria,5.3471799,28.299435
-Spain,All,40.0,-4.0
+Spain,All,40,-4
 Spain,Andalusia,37.5442706,-4.7277528
 Spain,Aragon,41.5976275,-0.9056623
 Spain,Asturias,43.3613953,-5.8593267
@@ -3917,7 +3917,7 @@ Spain,Valencia,39.4840108,-0.7532809
 Spain,Valladolid Province,41.6517375,-4.724495
 Spain,Zamora Province,41.6095744,-5.8987139
 Spain,Ávila,40.6934511,-4.8935627
-Sri Lanka,All,7.0,81.0
+Sri Lanka,All,7,81
 Sri Lanka,Ampara District,7.2911685,81.6723761
 Sri Lanka,Anuradhapura District,8.3318305,80.4029017
 Sri Lanka,Badulla District,6.9934009,81.0549815
@@ -3981,7 +3981,7 @@ St. Vincent and the Grenadines,Saint George Parish,42.957609,-81.326705
 St. Vincent and the Grenadines,Saint Patrick Parish,39.7509186,-94.8450556
 Sudan,Al Jazirah,14.8859611,33.438353
 Sudan,Al Qadarif,14.024307,35.3685679
-Sudan,All,15.0,30.0
+Sudan,All,15,30
 Sudan,Blue Nile,47.598673,-122.334419
 Sudan,Central Darfur,14.3782747,24.9042208
 Sudan,East Darfur,14.3782747,24.9042208
@@ -3998,7 +3998,7 @@ Sudan,South Kordofan,11.1990192,29.4179324
 Sudan,West Darfur,12.8463561,23.0011989
 Sudan,West Kordofan,11.1990192,29.4179324
 Sudan,White Nile,9.3321516,31.46153
-Suriname,All,4.0,-56.0
+Suriname,All,4,-56
 Suriname,Brokopondo District,4.7710247,-55.0493375
 Suriname,Commewijne District,5.740211,-54.8731219
 Suriname,Coronie District,5.6943271,-56.2929381
@@ -4009,9 +4009,9 @@ Suriname,Paramaribo District,5.8520355,-55.2038278
 Suriname,Saramacca District,5.7240813,-55.6689636
 Suriname,Sipaliwini District,3.6567382,-56.2035387
 Suriname,Wanica District,5.7323762,-55.2701235
-Svalbard And Jan Mayen Islands,All,78.0,20.0
+Svalbard And Jan Mayen Islands,All,78,20
 Swaziland,All,-26.5,31.5
-Sweden,All,62.0,15.0
+Sweden,All,62,15
 Sweden,Blekinge,56.2783837,15.0180058
 Sweden,Dalarna County,61.0917012,14.6663653
 Sweden,Gotland County,57.4684121,18.4867447
@@ -4033,7 +4033,7 @@ Sweden,Västra Götaland County,58.2527926,13.0596425
 Sweden,Örebro County,59.535036,15.0065731
 Sweden,Östergötland County,58.3453635,15.5197844
 Switzerland,Aargau,47.3876664,8.2554295
-Switzerland,All,47.0,8.0
+Switzerland,All,47,8
 Switzerland,Appenzell Ausserrhoden,47.366481,9.3000916
 Switzerland,Appenzell Innerrhoden,47.3161925,9.4316573
 Switzerland,Basel-Landschaft,47.4418122,7.7644002
@@ -4061,7 +4061,7 @@ Switzerland,canton of Zürich,47.359536,8.6356452
 Syria,Al-Hasakah Governorate,36.405515,40.7969149
 Syria,Al-Raqqah Governorate,35.9594106,38.9981052
 Syria,Aleppo Governorate,36.2262393,37.4681396
-Syria,All,35.0,38.0
+Syria,All,35,38
 Syria,As-Suwayda Governorate,32.7989156,36.7819505
 Syria,Damascus Governorate,33.5151444,36.3931354
 Syria,Daraa Governorate,32.9248813,36.1762615
@@ -4073,7 +4073,7 @@ Syria,Latakia Governorate,35.6129791,36.0023225
 Syria,Quneitra Governorate,33.0776318,35.8934136
 Syria,Rif Dimashq Governorate,33.5167289,36.954107
 Syria,Tartus Governorate,35.0006652,36.0023225
-Taiwan,All,23.5,121.0
+Taiwan,All,23.5,121
 Taiwan,Changhua County,24.0517963,120.5161352
 Taiwan,Chiayi City,23.4800751,120.4491113
 Taiwan,Chiayi County,23.4518428,120.2554615
@@ -4097,12 +4097,12 @@ Taiwan,Taitung County,22.7972447,121.0713702
 Taiwan,Taoyuan City,24.9936281,121.3009798
 Taiwan,Yilan County,24.7021073,121.7377502
 Taiwan,Yunlin County,23.7092033,120.4313373
-Tajikistan,All,39.0,71.0
+Tajikistan,All,39,71
 Tajikistan,Gorno-Badakhshan Autonomous Province,38.412732,73.087749
 Tajikistan,Khatlon Province,37.9113562,69.097023
 Tajikistan,Sughd Province,39.5155326,69.097023
 Tajikistan,districts of Republican Subordination,39.0857902,70.2408325
-Tanzania,All,-6.0,35.0
+Tanzania,All,-6,35
 Tanzania,Arusha Region,-3.3869254,36.6829927
 Tanzania,Dar es Salaam Region,-6.792354,39.2083284
 Tanzania,Dodoma Region,-6.5738228,36.2630846
@@ -4132,7 +4132,7 @@ Tanzania,Tanga Region,-5.3049789,38.3165725
 Tanzania,Zanzibar Central/South Region,-6.2642851,39.4450281
 Tanzania,Zanzibar North Region,-5.9395093,39.2791011
 Tanzania,Zanzibar Urban/West Region,-6.2298136,39.2583293
-Thailand,All,15.0,100.0
+Thailand,All,15,100
 Thailand,Amnat Charoen,15.8656783,104.6257774
 Thailand,Ang Thong,14.5896054,100.455052
 Thailand,Bangkok,13.7563309,100.5017651
@@ -4222,20 +4222,20 @@ Timor-Leste,Liquiçá Municipality,-8.6674095,125.2587964
 Timor-Leste,Manatuto District,-8.5155608,126.0159255
 Timor-Leste,Manufahi Municipality,-9.0145495,125.8279959
 Timor-Leste,Viqueque Municipality,-8.8597918,126.3633516
-Togo,All,8.0,1.16666666
+Togo,All,8,1.16666666
 Togo,Centrale Region,8.6586029,1.0586135
 Togo,Kara Region,9.7216393,1.0586135
 Togo,Maritime,41.6551493,-83.5278467
 Togo,Plateaux Region,7.6101378,1.0586135
 Togo,Savanes Region,10.5291781,0.5257823
-Tokelau,All,-9.0,-172.0
-Tonga,All,-20.0,-175.0
+Tokelau,All,-9,-172
+Tonga,All,-20,-175
 Tonga,Haʻapai,-19.75,-174.366667
 Tonga,Niuas,-15.9594,-173.783
 Tonga,Tongatapu,-21.1465968,-175.2515482
 Tonga,Vavaʻu,-18.622756,-173.9902982
 Tonga,ʻEua,37.09024,-95.712891
-Trinidad And Tobago,All,11.0,-61.0
+Trinidad And Tobago,All,11,-61
 Trinidad and Tobago,Arima,46.7931604,-71.2584311
 Trinidad and Tobago,Chaguanas,10.5168387,-61.4114482
 Trinidad and Tobago,Couva-Tabaquite-Talparo Regional Corporation,10.4297145,-61.373521
@@ -4252,7 +4252,7 @@ Trinidad and Tobago,Sangre Grande Regional Corporation,10.5852939,-61.1315813
 Trinidad and Tobago,Siparia Regional Corporation,10.1245626,-61.5603244
 Trinidad and Tobago,Tunapuna-Piarco Regional Corporation,10.6859096,-61.3035248
 Trinidad and Tobago,Western Tobago,11.1897072,-60.7795452
-Tunisia,All,34.0,9.0
+Tunisia,All,34,9
 Tunisia,Ariana Governorate,36.9922751,10.1255164
 Tunisia,Ben Arous Governorate,36.6435606,10.2151578
 Tunisia,Bizerte Governorate,37.1609397,9.634135
@@ -4280,7 +4280,7 @@ Turkey,Adana Province,37.2612315,35.3905046
 Turkey,Adıyaman Province,37.9078291,38.4849923
 Turkey,Afyonkarahisar Province,38.7391099,30.7120023
 Turkey,Aksaray Province,38.3352043,33.9750018
-Turkey,All,39.0,35.0
+Turkey,All,39,35
 Turkey,Amasya Province,40.6516608,35.9037966
 Turkey,Ankara Province,39.7805245,32.7181375
 Turkey,Antalya Province,37.0951672,31.0793705
@@ -4359,27 +4359,27 @@ Turkey,İzmir Province,38.3591693,27.2676116
 Turkey,Şanlıurfa Province,37.3569102,39.1543677
 Turkey,Şırnak Province,37.4187481,42.4918338
 Turkmenistan,Ahal Region,38.6399398,59.4720904
-Turkmenistan,All,40.0,60.0
+Turkmenistan,All,40,60
 Turkmenistan,Ashgabat,37.9600766,58.3260629
 Turkmenistan,Balkan Region,41.8101472,21.0937311
 Turkmenistan,Daşoguz Region,41.8368737,59.9651904
 Turkmenistan,Lebap Region,38.1272462,64.7162415
 Turkmenistan,Mary Region,36.9481623,62.4504154
 Turks And Caicos Islands,All,21.75,-71.58333333
-Tuvalu,All,-8.0,178.0
+Tuvalu,All,-8,178
 Tuvalu,Funafuti,-8.5211471,179.1961926
 Tuvalu,Nanumanga,-6.2858019,176.319928
 Tuvalu,Nanumea,-5.6881617,176.1370148
 Tuvalu,Niutao Island Council,-6.1064258,177.3438429
 Tuvalu,Nui,-7.2388768,177.1485232
-Tuvalu,Nukufetau,-8.0,178.5
+Tuvalu,Nukufetau,-8,178.5
 Tuvalu,Nukulaelae,-9.381111,179.852222
 Tuvalu,Vaitupu,-7.4767327,178.6747675
 Uganda,Abim District,2.706698,33.6595337
 Uganda,Adjumani District,3.2548527,31.7195459
 Uganda,Agago District,2.925082,33.3486147
 Uganda,Alebtong District,2.2545773,33.3486147
-Uganda,All,1.0,32.0
+Uganda,All,1,32
 Uganda,Amolatar District,1.6054402,32.8084496
 Uganda,Amudat District,1.7916224,34.906551
 Uganda,Amuria District,2.03017,33.6427533
@@ -4501,7 +4501,7 @@ Uganda,Wakiso District,0.063019,32.4467238
 Uganda,Western Region,40.7667215,-111.8877203
 Uganda,Yumbe District,3.4698023,31.2483291
 Uganda,Zombo District,2.5544293,30.9417368
-Ukraine,All,49.0,32.0
+Ukraine,All,49,32
 Ukraine,Autonomous Republic of Crimea,44.952117,34.102417
 Ukraine,Cherkasy Oblast,49.444433,32.059767
 Ukraine,Chernihiv Oblast,51.4982,31.2893499
@@ -4529,7 +4529,7 @@ Ukraine,Zaporizhzhya Oblast,47.8388,35.139567
 Ukraine,Zhytomyr Oblast,50.25465,28.6586669
 United Arab Emirates,Abu Dhabi Emirate,24.453884,54.3773438
 United Arab Emirates,Ajman Emirate,25.4052165,55.5136433
-United Arab Emirates,All,24.0,54.0
+United Arab Emirates,All,24,54
 United Arab Emirates,Dubai,25.2048493,55.2707828
 United Arab Emirates,Fujairah,25.1288099,56.3264849
 United Arab Emirates,Ras al-Khaimah,25.6741343,55.9804173
@@ -4537,7 +4537,7 @@ United Arab Emirates,Sharjah Emirate,25.0753974,55.7578403
 United Arab Emirates,Umm al-Quwain,25.5426324,55.5475348
 United Kingdom,Aberdeen,57.149717,-2.094278
 United Kingdom,Aberdeenshire,57.2868723,-2.3815684
-United Kingdom,All,54.0,-2.0
+United Kingdom,All,54,-2
 United Kingdom,Angus,37.2757886,-95.6501033
 United Kingdom,Antrim,54.7195338,-6.2072498
 United Kingdom,Antrim and Newtownabbey,54.6956887,-5.9481069
@@ -4785,7 +4785,7 @@ United Kingdom,Worcestershire,52.2545225,-2.2668382
 United Kingdom,Wrexham County Borough,53.0301378,-3.0261487
 United States,Alabama,32.3182314,-86.902298
 United States,Alaska,64.2008413,-149.4936733
-United States,All,38.0,-97.0
+United States,All,38,-97
 United States,American Samoa,-14.270972,-170.132217
 United States,Arizona,34.0489281,-111.0937311
 United States,Arkansas,35.20105,-91.8318334
@@ -4850,8 +4850,8 @@ United States,Washington,47.7510741,-120.7401385
 United States,West Virginia,38.5976262,-80.4549026
 United States,Wisconsin,43.7844397,-88.7878678
 United States,Wyoming,43.0759678,-107.2902839
-United States Minor Outlying Islands,All,0.0,0.0
-Uruguay,All,-33.0,-56.0
+United States Minor Outlying Islands,All,0,0
+Uruguay,All,-33,-56
 Uruguay,Artigas Department,-30.6175112,-56.9594559
 Uruguay,Canelones Department,-34.5408717,-55.93076
 Uruguay,Cerro Largo Department,-32.4411032,-54.3521753
@@ -4871,7 +4871,7 @@ Uruguay,San José Department,37.3492968,-121.9056049
 Uruguay,Soriano Department,-33.5102792,-57.7498103
 Uruguay,Tacuarembó Department,-31.7206837,-55.9859887
 Uruguay,Treinta y Tres Department,-33.0685086,-54.2858627
-Uzbekistan,All,41.0,64.0
+Uzbekistan,All,41,64
 Uzbekistan,Andijan Region,40.7685941,72.236379
 Uzbekistan,Bukhara Region,40.2504162,63.2032151
 Uzbekistan,Fergana Region,40.4568081,71.2874209
@@ -4886,7 +4886,7 @@ Uzbekistan,Surxondaryo Region,37.9409005,67.5708536
 Uzbekistan,Tashkent,41.2994958,69.2400734
 Uzbekistan,Tashkent Region,41.2213234,69.8597406
 Uzbekistan,Xorazm Region,41.3565336,60.8566686
-Vanuatu,All,-16.0,167.0
+Vanuatu,All,-16,167
 Vanuatu,Malampa,-16.4011405,167.6077865
 Vanuatu,Penama,-15.3795758,167.9053182
 Vanuatu,Sanma,-15.4840017,166.9182097
@@ -4894,7 +4894,7 @@ Vanuatu,Shefa,32.805765,35.169971
 Vanuatu,Tafea,-18.7237827,169.0645056
 Vanuatu,Torba,37.07653,27.456573
 Vatican City State (Holy See),All,41.9,12.45
-Venezuela,All,8.0,-66.0
+Venezuela,All,8,-66
 Venezuela,Amazonas,-3.4168427,-65.8560646
 Venezuela,Anzoátegui,8.5913073,-63.9586111
 Venezuela,Apure,6.9269483,-68.5247149
@@ -4920,7 +4920,7 @@ Venezuela,Táchira,7.9137001,-72.1416132
 Venezuela,Vargas,29.3052268,-94.7913854
 Venezuela,Yaracuy,10.339389,-68.8108849
 Venezuela,Zulia,10.2910237,-72.1416132
-Vietnam,All,16.16666666,107.83333333
+Vietnam,All,16.16666666,107.8333333
 Vietnam,An Giang,10.5215836,105.1258955
 Vietnam,Bà Rịa-Vũng Tàu,10.5417397,107.2429976
 Vietnam,Bình Dương,11.3254024,106.477017
@@ -4987,7 +4987,7 @@ Vietnam,Đồng Tháp,10.4937989,105.6881788
 Virgin Islands (British),All,18.431383,-64.62305
 Virgin Islands (US),All,18.34,-64.93
 Wallis And Futuna Islands,All,-13.3,-176.2
-Western Sahara,All,24.5,-13.0
+Western Sahara,All,24.5,-13
 Yemen,'Adan Governorate,12.8257481,44.7943804
 Yemen,'Amran Governorate,16.2569214,43.9436788
 Yemen,Abyan Governorate,13.6343413,46.0563212
@@ -4996,7 +4996,7 @@ Yemen,Al Hudaydah Governorate,15.3053072,43.0194897
 Yemen,Al Jawf Governorate,16.7901819,45.2993862
 Yemen,Al Mahrah Governorate,16.5238423,51.6834275
 Yemen,Al Mahwit Governorate,15.3963229,43.5606946
-Yemen,All,15.0,48.0
+Yemen,All,15,48
 Yemen,Dhamar Governorate,14.7195344,44.2479015
 Yemen,Hadhramaut Governorate,16.9304135,49.3653149
 Yemen,Hajjah Governorate,16.1180631,43.329466
@@ -5010,7 +5010,7 @@ Yemen,Sana'a Governorate,15.3168913,44.4748018
 Yemen,Shabwah Governorate,14.7546303,46.516262
 Yemen,Socotra Governorate,12.4634205,53.8237385
 Yemen,Ta'izz Governorate,13.5775886,44.0177989
-Zambia,All,-15.0,30.0
+Zambia,All,-15,30
 Zambia,Central Province,7.2564996,80.7214417
 Zambia,Copperbelt Province,-13.0570073,27.5495846
 Zambia,Eastern Province,23.1669688,49.3653149
@@ -5021,7 +5021,7 @@ Zambia,Northern Province,8.8855027,80.2767327
 Zambia,Northwestern Province,-13.0050258,24.9042208
 Zambia,Southern Province,6.237375,80.543845
 Zambia,Western Province,6.9016086,80.0087746
-Zimbabwe,All,-20.0,30.0
+Zimbabwe,All,-20,30
 Zimbabwe,Bulawayo Province,-20.1489505,28.5331038
 Zimbabwe,Harare Province,-17.8216288,31.0492259
 Zimbabwe,Manicaland,-18.9216386,32.174605
