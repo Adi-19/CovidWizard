@@ -4,7 +4,10 @@ import dash_core_components as dcc
 import dash_html_components as html
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
 from werkzeug.serving import run_simple
+import pandas as pd
+import numpy as np
 import plotly
+import plotly.graph_objects as go
 import json
 
 from server import server
@@ -137,10 +140,12 @@ def reset_global():
     global selected_type_ts 
     global selected_scale_ts
     global selected_agegrp
+    global selected_polcountry
     selected_data_ts = 'confirmed' 
     selected_type_ts = 'new'
     selected_scale_ts = 'linear'
     selected_agegrp = '0-10'
+    selected_polcountry = 'Afghanistan'
 
 @server.route('/data_ts', methods=['GET', 'POST'])
 def change_data_ts():
@@ -207,14 +212,98 @@ def changeencode(data, cols):
         data[col] = data[col].astype('str').str.encode('utf-8')
     return data 
 
+
+selected_polcountry = 'Afghanistan'
+
+def make_polmap(_X, inc, dec, location, SELECTED, graph_json=True):
+    indexes = _X[_X.CountryName==SELECTED].index.tolist()
+    country_region = pd.pivot_table(oxgormint.cr, index=['CountryName', 'RegionName'])
+    X_temp = pd.pivot_table(_X[_X.CountryName==SELECTED], index=['CountryName', 'RegionName']).join(country_region)
+    txt = pd.DataFrame(inc[indexes])
+
+    for col in range(8):
+        txt[col] = txt[col].map({True:'Increase', False:'Same'})
+
+    # Create the figure and feed it all the prepared columns
+    color = inc[indexes].sum(axis=1)-dec[indexes].sum(axis=1)
+    size = color*25
+    size[color<0] = -color[color<0]/2
+    size[color==0] = 1
+    customdata = np.stack((X_temp.index, np.array(color)), axis=-1)
+    customdata = np.hstack((customdata, txt))
+
+    fig = plt_polmap(X_temp, SELECTED, size, color, customdata)
+    if graph_json:
+        graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+        return graphJSON
+    return fig
+
+def plt_polmap(X_temp, SELECTED, size, color, customdata):
+    fig = go.Figure()
+
+    fig.add_trace(go.Scattermapbox(
+            lat=X_temp['latitude'],
+            lon=X_temp['longitude'],
+            mode='markers',
+            marker=go.scattermapbox.Marker(
+                sizemin=10,
+                size=size,
+                color=color,
+                cmin=-8,
+                cmax=8,
+                colorscale=[[0, "#00d1ff"],
+                        [0.3, "#12c2e9"],
+                        [0.5, "#c471ed"],
+                        [0.7, "#f64f59"],
+                        [1, "#ff000f"]],
+                showscale=True,
+                colorbar={'title':'Change', 'titleside':'top', 'thickness':4,}, 
+                cauto=False,),
+            customdata=customdata,
+            hovertemplate='<extra></extra>' + 
+                            '<em>%{customdata[0]}</em><br>' + 
+                            '🚨 Increase in level: %{customdata[1]}<br>' + 
+                            'School closing: %{customdata[2]}<br>' + 
+                            'Workplace closing: %{customdata[3]}<br>' + 
+                            'Public Events Cancel: %{customdata[4]}<br>' + 
+                            'Restrictions on Gathering: %{customdata[5]}<br>' + 
+                            'Closure of Public Transport: %{customdata[6]}<br>' + 
+                            'Stay at Home requirement: %{customdata[7]}<br>' + 
+                            'Restrictions on Internal Movement: %{customdata[8]}<br>' + 
+                            'International travel controls: %{customdata[9]}<br>',
+            ),
+    )
+
+    # Specify layout information
+    fig.update_layout(
+        mapbox=dict(
+            accesstoken='pk.eyJ1IjoiZW5yaWNvamFjb2JzIiwiYSI6ImNrcXN5cTR0MjBvM2cyb28zdzF5dnM2bG8ifQ.H55kEL_vM4bTRLhS3CdytQ', #
+            center=go.layout.mapbox.Center(lat=X_temp.xs(SELECTED).xs('All')['latitude'], lon=X_temp.xs(SELECTED).xs('All')['longitude']),
+            zoom=2
+        ),
+        margin=dict(t=10, b=10, r=10, l=10)
+    )
+
+    return fig    
+
 @server.route('/analysis-2')
 def analysis2():
+    global selected_polcountry
     reset_home()
     prediction, increase, decrease = oxgormint.predict_bstpolicy()
-    prediction = prediction.values.tolist()
-    increase = increase.tolist()
-    decrease = decrease.tolist()
-    return render_template('analysis-2.html', prediction=prediction, increase=increase, decrease=decrease)
+    countries = prediction.CountryName.unique().tolist()
+    pol_countrygraph = make_polmap(prediction, increase, decrease, oxgormint.cr, selected_polcountry)
+    return render_template('analysis-2.html', countries=countries, plot=pol_countrygraph)
+
+@server.route('/policycountry', methods=['GET', 'POST'])
+def policycountry():
+    global selected_polcountry
+    selected_polcountry = request.args['selected']
+    prediction, increase, decrease = oxgormint.predict_bstpolicy()
+    countries = prediction.CountryName.unique().tolist()
+    graphJSON = make_polmap(prediction, increase, decrease, oxgormint.cr, selected_polcountry)
+
+    return graphJSON
 
 @server.route('/analysis-3')
 def analysis3():

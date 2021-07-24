@@ -65,3 +65,20 @@ $('#change_grp').on('change', function () {
         }
     });
 })
+
+$('#change_country').on('change', function () {
+
+    $.ajax({
+        url: "/policycountry",
+        type: "GET",
+        contentType: 'application/json;charset=UTF-8',
+        data: {
+            'selected': document.getElementById('change_country').value
+
+        },
+        dataType: "json",
+        success: function (data) {
+            Plotly.newPlot('bar_graph', data);
+        }
+    });
+})
