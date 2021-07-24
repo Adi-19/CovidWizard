@@ -1,4 +1,4 @@
-from flask import request, render_template,Flask
+from flask import request, render_template, redirect, Flask
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -55,6 +55,7 @@ def index():
     ## For Region and SubRegion
     global selected_country
     global region_selected
+    global adminMode
     reset_global()
 
     index.country = request.form.get("search-country")
@@ -127,7 +128,8 @@ def index():
                            news=news, lvl=lvl, ml_war=ml_war,
                            cnf=cnf, actv=actv, recv=recv, dead=dead, 
                            per_fvax=per_fvax, per_svax=per_svax,
-                           plot=graphJSON, agegrpplt=agegrpplt, allageplt=allageplt)
+                           plot=graphJSON, agegrpplt=agegrpplt, allageplt=allageplt,
+                           adminMode=adminMode)
 
 
 selected_data_ts = 'confirmed' 
@@ -199,13 +201,15 @@ def change_grp():
 
 @server.route('/analysis')
 def analysis():
+    global adminMode
     reset_home()
-    return render_template('analysis.html')
+    return render_template('analysis.html', adminMode=adminMode)
 
 @server.route('/analysis-1')
 def analysis1():
+    global adminMode
     reset_home()
-    return render_template('analysis-1.html')
+    return render_template('analysis-1.html', adminMode=adminMode)
 
 def changeencode(data, cols):
     for col in cols:
@@ -288,12 +292,13 @@ def plt_polmap(X_temp, SELECTED, size, color, customdata):
 
 @server.route('/analysis-2')
 def analysis2():
+    global adminMode
     global selected_polcountry
     reset_home()
     prediction, increase, decrease = oxgormint.predict_bstpolicy()
     countries = prediction.CountryName.unique().tolist()
     pol_countrygraph = make_polmap(prediction, increase, decrease, oxgormint.cr, selected_polcountry)
-    return render_template('analysis-2.html', countries=countries, plot=pol_countrygraph)
+    return render_template('analysis-2.html', countries=countries, plot=pol_countrygraph, adminMode=adminMode)
 
 @server.route('/policycountry', methods=['GET', 'POST'])
 def policycountry():
@@ -307,14 +312,63 @@ def policycountry():
 
 @server.route('/analysis-3')
 def analysis3():
+    global adminMode
     reset_home()
-    return render_template('analysis-3.html')
+    return render_template('analysis-3.html', adminMode=adminMode)
 
 
 @server.route('/resources')
 def resources():
     reset_home()
-    return render_template('resources.html')
+    return render_template('resources.html', adminMode=adminMode)
+
+@server.route('/login', methods=['GET', 'POST'])
+def login():
+    global adminMode
+    global superUser
+
+    reset_home()
+    email = request.form.get("email")
+    password = request.form.get("password")
+    for em, pas in superUser.items():
+        if (email==em and password==pas):
+            adminMode = True
+            return redirect("/")
+    ## Wrong EmailId or Pass
+    return render_template('login.html')
+
+@server.route('/signup', methods=['GET', 'POST'])
+def signup():
+    global adminMode
+    global superUser
+
+    reset_home()
+    email = request.form.get("email")
+    password = request.form.get("password")
+    password_repeat = request.form.get("password_repeat")
+    
+    if email:
+        for em, pas in superUser.items():
+            if em==email:
+                return render_template('register.html')
+        if (password!=password_repeat):
+            return render_template('register.html')
+
+        superUser[email] = password
+        return redirect("login")
+
+    return render_template('register.html')
+
+@server.route('/logout', methods=['GET', 'POST'])
+def logout():
+    global adminMode
+    reset_home()
+    adminMode = False
+    return redirect("/")
+
+## Login ::Temporary for prototype::
+superUser = {'admin@admin.com': 'admin'}      #username: password
+adminMode = False                   #set to true if loggen in
 
 if __name__ == '__main__':
     run_simple('0.0.0.0', 8000, app)

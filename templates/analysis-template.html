@@ -28,12 +28,24 @@
                     <div class="sidebar-brand-text mx-3"><span>Covid wizard</span></div>
                 </a>
                 <hr class="sidebar-divider my-0">
-                <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                <ul class="list-unstyled">
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('index') }}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                    {% if adminMode %}
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('analysis') }}"><i class="fas fa-user"></i><span>Analysis</span></a></li>
+                    {% endif %}
+                    {% if not(adminMode) %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('login') }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none">
+                                <path d="M15.4857 20H19.4857C20.5903 20 21.4857 19.1046 21.4857 18V6C21.4857 4.89543 20.5903 4 19.4857 4H15.4857V6H19.4857V18H15.4857V20Z" fill="currentColor"></path>
+                                <path d="M10.1582 17.385L8.73801 15.9768L12.6572 12.0242L3.51428 12.0242C2.96199 12.0242 2.51428 11.5765 2.51428 11.0242C2.51429 10.4719 2.962 10.0242 3.51429 10.0242L12.6765 10.0242L8.69599 6.0774L10.1042 4.6572L16.4951 10.9941L10.1582 17.385Z" fill="currentColor"></path>
+                            </svg>
+                            <span>LogIn</span>
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('signup') }}"><i class="fas fa-arrow-right"></i><span>SignUp</span></a></li>
+                    {% endif %}
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('resources') }}"><i class="fas fa-table"></i><span>Resources</span></a></li>
-                    <li class="nav-item"></li>
-                    <li class="nav-item"></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -46,8 +58,38 @@
                         <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search">
                             <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for Global" autocomplete="on"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
                         </form>
+                        <ul class="navbar-nav flex-nowrap ms-auto">
+                            <li class="nav-item dropdown no-arrow">
+                                <div class="nav-item dropdown no-arrow">
+                                    {% if adminMode %}
+                                    <a aria-expanded="false" data-bs-toggle="dropdown" class="dropdown-toggle nav-link" href="#">
+                                        <span class="d-none d-lg-inline me-2 text-gray-600 small">Admin</span>
+                                        <img class="border rounded-circle img-profile" src="static/assets/img/avatars/admin.jpg" />
+                                    </a>
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
+                                        <a class="dropdown-item" href="{{url_for('logout')}}">
+                                            <i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>
+                                            Logout
+                                        </a>
+                                    </div>
+                                    {% else %}
+                                    <a aria-expanded="false" data-bs-toggle="dropdown" class="dropdown-toggle nav-link" href="#">
+                                        <span class="d-none d-lg-inline me-2 text-gray-600 small">Anonymous User</span>
+                                        <img class="border rounded-circle img-profile" src="static/assets/img/avatars/user.jpg" />
+                                    </a>
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
+                                        <a class="dropdown-item" href="{{url_for('login')}}">
+                                            <i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>
+                                            LogIn
+                                        </a>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </nav>
+                {% if adminMode %}
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4">{% block heading %}{% endblock %}</h3>
                 </div>
@@ -68,6 +110,11 @@
                         {% block content %}{% endblock %}
                     </div>
                 </div>
+                {% else %}
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4">Please LogIn to see Analysis</h3>
+                </div>
+                {% endif %}
                 <footer class="bg-white sticky-footer">
                     <div class="container my-auto">
                         <div class="text-center my-auto copyright"><span>Copyright © Covid Wizard 2021</span></div>

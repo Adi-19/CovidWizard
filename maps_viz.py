@@ -9,9 +9,9 @@ from sklearn.preprocessing import LabelEncoder
 class OxfordGormint:
     def __init__(self, fetch=True):
         if fetch:
-            self.data = pd.read_csv('https://github.com/OxCGRT/covid-policy-tracker/blob/master/data/OxCGRT_latest.csv?raw=true')
+            self.data = pd.read_csv('https://github.com/OxCGRT/covid-policy-tracker/blob/master/data/OxCGRT_latest.csv?raw=true', low_memory=False)
         else:
-            self.data = pd.read_csv('data/OxCGRT_latest.csv')
+            self.data = pd.read_csv('data/OxCGRT_latest.csv', low_memory=False)
         self.cr = pd.read_csv('data/CountryStateLL.csv')
         self.access_token = 'pk.eyJ1IjoiZW5yaWNvamFjb2JzIiwiYSI6ImNrcXN5cTR0MjBvM2cyb28zdzF5dnM2bG8ifQ.H55kEL_vM4bTRLhS3CdytQ'
         self.gormintdata = None
