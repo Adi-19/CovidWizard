@@ -44,8 +44,8 @@ stages:
         python -m pip install --upgrade pip
         pip install setup
         pip install -r requirements.txt
-        export ENDPOINT = $(ENDPOINT)
-        export APIKEY = $(APIKEY)
+        export ENDPOINT=$(ENDPOINT)
+        export APIKEY=$(APIKEY)
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
 
