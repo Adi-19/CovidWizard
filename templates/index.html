@@ -8,6 +8,7 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
     <script src="https://kit.fontawesome.com/a239f99cfd.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="static/assets/fonts/fontawesome-all.min.css">
@@ -18,12 +19,20 @@
     <link rel="stylesheet" href="static/assets/css/Swiper-Slider-Card-For-Blog-Or-Product-1.css">
     <link rel="stylesheet" href="static/assets/css/Swiper-Slider-Card-For-Blog-Or-Product.css">
     <link rel="stylesheet" href="static/assets/css/x-dropdown.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body id="page-top">
     <div id="wrapper">
         <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: var(--bs-dark);width: auto;height: auto;">
-            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                     <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-virus" style="font-size:48px;"></i></div>
                     <div class="sidebar-brand-text mx-3"><span>Covid wizard</span></div>
                 </a>
@@ -31,7 +40,7 @@
                 <ul class="list-unstyled">
                     <li class="nav-item"><a class="nav-link active" href="{{ url_for('index') }}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                     {% if adminMode %}
-                        <li class="nav-item"><a class="nav-link" href="{{ url_for('analysis') }}"><i class="fas fa-user"></i><span>Analysis</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('analysis') }}"><i class="fas fa-user"></i><span>Analysis</span></a></li>
                     {% endif %}
                     {% if not(adminMode) %}
                     <li class="nav-item">
@@ -61,7 +70,7 @@
                                 <button class="btn btn-primary py-0" role="button" type="submit"><i class="fas fa-search"></i></button>
                             </div>
                         </form>
-                        
+
                         <ul class="navbar-nav flex-nowrap ms-auto">
                             <li class="nav-item dropdown no-arrow">
                                 <div class="nav-item dropdown no-arrow">
@@ -281,10 +290,45 @@
                                 <div class="card-header d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
                                     <h6 class="text-primary fw-bold m-0">Coronavirus Self-Checker</h6>
                                 </div>
-                                <div class="card-body text-center">
-                                    <div data-cdc-widget='healthBot' data-cdc-theme='theme1' class='cdc-widget-color-white' data-cdc-language='en-us'></div>
-                                    <script src='https://t.cdc.gov/1M1B'></script>
+                                
+                                <div class="card-body text-center" style="padding-top: 16px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;">
+                                    <div id="chatbox">
+                                        <div class="text-start" style="background: var(--bs-info);margin-right: 40%;margin-left: 10%;border-radius: 5px;color: var(--bs-light);padding: 5px;padding-bottom: 0px;">
+                                            <p class="text-start"><img class="rounded-circle" src="avatars/avatar5.jpeg" style="width: 20%;height: 20%;margin: 5px;" />Hi there!</p>
+                                        </div>
+                                        <div class="text-end" style="background: var(--bs-blue);margin-right: 10%;margin-left: 40%;border-radius: 5px;color: var(--bs-light);padding: 5px;padding-bottom: 0px;">
+                                            <p class="text-end">Hi there!<img class="rounded-circle" src="avatars/avatar4.jpeg" style="width: 20%;height: 20%;margin: 5px;" /></p>
+                                        </div>
+                                    </div>
+                                    <textarea id="textInput" class="form-control" name="msg" style="margin: 0px;padding-bottom: 4px;padding-top: 16px;padding-right: 16px;"></textarea>
+                                    <button class="btn btn-outline-primary btn-sm" type="submit" id="buttonInput" style="margin-bottom: 20%;margin-left: 2%;">Check</button>
                                 </div>
+
+                                <script>
+                                    function getResponse() {
+                                        let userText = $("#textInput").val();
+                                        let userHtml = '<div class="text-end" style="background: var(--bs-blue);margin-right: 10%;margin-left: 40%;border-radius: 5px;color: var(--bs-light);padding: 5px;padding-bottom: 0px;">' + 
+                                            '<p class="text-end">' + userText + '<img class="rounded-circle" src="avatars/avatar4.jpeg" style="width: 20%;height: 20%;margin: 5px;" /></p>' + '</div>';
+                                        $("#textInput").val("");
+                                        $("#chatbox").append(userHtml);
+
+                                        $.get("/get", { msg: userText }).done(function (data) {
+                                            var botHtml = '<div class="text-start" style="background: var(--bs-info);margin-right: 40%;margin-left: 10%;border-radius: 5px;color: var(--bs-light);padding: 5px;padding-bottom: 0px;">' +
+                                                '<p class="text-start"><img class="rounded-circle" src="avatars/avatar5.jpeg" style="width: 20%;height: 20%;margin: 5px;" />' + data + '</p></div>';
+                                            $("#chatbox").append(botHtml);
+                                        });
+                                    }
+                                    $("#textInput").keypress(function (e) {
+                                        //if enter key is pressed
+                                        if (e.which == 13) {
+                                            getResponse();
+                                        }
+                                    });
+                                    $("#buttonInput").click(function () {
+                                        getResponse();
+                                    });
+                                </script>
+
                             </div>
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3" style="padding: 12px 16px;">
@@ -369,6 +413,8 @@
     <script src="{{ url_for('static', filename='assets/js/jquery-1.11.1.min.js') }}"></script>
     <script src="{{ url_for('static', filename='assets/js/plots.js') }}"></script>
     <script src="{{ url_for('static', filename='assets/js/chatbot.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="static/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="static/assets/js/chart.min.js"></script>
     <script src="static/assets/js/bs-init.js"></script>
