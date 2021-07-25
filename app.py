@@ -24,7 +24,7 @@ from NLPbot import AzureCognitive
 from hotspot import Hotspot
 
 
-DEBUG = True
+DEBUG = False
 
 stats = Stat()
 ts = TimeSeries()
