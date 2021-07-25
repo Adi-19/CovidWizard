@@ -1,13 +1,16 @@
 from azure.ai.textanalytics import TextAnalyticsClient
 from azure.core.credentials import AzureKeyCredential
+import os
+from azure.ai.textanalytics import TextAnalyticsClient
+from azure.core.credentials import AzureKeyCredential
 import joblib
 import numpy as np
 
 class AzureCognitive:
     def __init__(self, ):
-        self.model = joblib.load('model/model.pkl')
-        self.key = '2b4b5aade54348d0918b20e39446f15e'
-        self.endpoint = 'https://covidwizardta.cognitiveservices.azure.com/'
+        self.model = joblib.load('Model/model.pkl')
+        self.key = os.environ.get("APIKEY")
+        self.endpoint = os.environ.get("ENDPOINT")
 
     def authenticate_client(self, ):
         ta_credential = AzureKeyCredential(self.key)
