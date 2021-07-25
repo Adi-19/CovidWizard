@@ -20,6 +20,7 @@ from analysis_policycc import app as cclose_dash
 from analysis_econpol import app as econ_dash
 from age_gender import AgeGender
 from stats import Stat
+from NLPbot import AzureCognitive
 
 
 DEBUG = True
@@ -28,6 +29,7 @@ stats = Stat()
 ts = TimeSeries()
 subreg = SubRegion()
 wendi = Wendor()
+az = AzureCognitive()
 ag = AgeGender(fetch=not(DEBUG))                    # For downloading data, change fetch to True
 
 ## Real Map
@@ -365,6 +367,15 @@ def logout():
     reset_home()
     adminMode = False
     return redirect("/")
+
+@server.route('/get')
+def get_bot_response():
+    global az
+
+    userText = request.args.get('msg')
+    resp = az.get_prediction(userText)
+
+    return str(resp)
 
 ## Login ::Temporary for prototype::
 superUser = {'admin@admin.com': 'admin'}      #username: password
