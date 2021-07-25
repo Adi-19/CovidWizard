@@ -21,6 +21,7 @@ from analysis_econpol import app as econ_dash
 from age_gender import AgeGender
 from stats import Stat
 from NLPbot import AzureCognitive
+from hotspot import Hotspot
 
 
 DEBUG = True
@@ -29,6 +30,7 @@ stats = Stat()
 ts = TimeSeries()
 subreg = SubRegion()
 wendi = Wendor()
+hotspot = Hotspot()
 az = AzureCognitive()
 ag = AgeGender(fetch=not(DEBUG))                    # For downloading data, change fetch to True
 
@@ -376,6 +378,15 @@ def get_bot_response():
     resp = az.get_prediction(userText)
 
     return str(resp)
+
+hotspotg = hotspot.find(js=True)
+@server.route('/hotspot')
+def hotspot():
+    global hotspotg
+    global adminMode
+
+    return render_template('hotspot.html', hotspotg=hotspotg, adminMode=adminMode)
+
 
 ## Login ::Temporary for prototype::
 superUser = {'admin@admin.com': 'admin'}      #username: password

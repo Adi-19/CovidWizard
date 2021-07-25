@@ -1,0 +1,26 @@
+{% extends "analysis-template.html" %}
+
+{% block tabtitle %}Hotspot Predictor{% endblock %}
+
+{% block heading %} Hotspot Predictor {% endblock %}
+
+{% block description %} Our Hotspot predictor algorithm relies on Machine Learning and finds the best projection of cases for next week.<br>
+        Possible hotspots are shown in Red coloured blob. <strong>Please wait while we find possible hotspots.</strong> {% endblock %}
+
+{% block content %}
+<div class="card shadow mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center" style="padding-top: 12px;padding-left: 12px;">
+        <h6 class="text-primary fw-bold m-0">Index Visualization</h6>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="chart" id="hotspotg">
+                <script>
+                    var graphs = {{hotspotg | safe}};
+                    Plotly.plot('hotspotg',graphs,{responsive: true});
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
