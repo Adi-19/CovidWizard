@@ -32,7 +32,7 @@ subreg = SubRegion()
 wendi = Wendor()
 hotspot = Hotspot()
 az = AzureCognitive()
-ag = AgeGender(fetch=not(DEBUG))                    # For downloading data, change fetch to True
+ag = AgeGender(fetch=False)                    # For downloading data, change fetch to True
 
 ## Real Map
 fig = oxgormint.animate()
