@@ -72,7 +72,7 @@ class Hotspot:
 				mode='markers',
 				marker=go.scattermapbox.Marker(
 					sizemin=20,
-					size=(waaw[0]*waaw[1])/4,
+					size=(waaw[0]*waaw[1])/50,
 					color=waaw[0],
 					cmin=0,
 					cmax=1,
