@@ -16,7 +16,7 @@ class Wendor:
         if api:
             self.api = api
         else:
-            self.api = 'pub_53281c22a3fd5612af826a5631d17cf166e'
+            self.api = 'pub_631b7b66088d67ab749d3ffc641e6bb5f60'
         self.category = 'category=health&q=coronavirus%20OR%20covid'
         self.language = '&language=en'
 

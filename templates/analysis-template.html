@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Analysis</title>
+    <title>{% block tabtitle %}{% endblock %} - CovidWizard</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
     <script src="https://kit.fontawesome.com/a239f99cfd.js" crossorigin="anonymous"></script>
@@ -18,21 +18,25 @@
     <link rel="stylesheet" href="static/assets/css/Swiper-Slider-Card-For-Blog-Or-Product-1.css">
     <link rel="stylesheet" href="static/assets/css/Swiper-Slider-Card-For-Blog-Or-Product.css">
     <link rel="stylesheet" href="static/assets/css/x-dropdown.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
 </head>
 
 <body id="page-top">
     <div id="wrapper">
         <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: var(--bs-dark);width: auto;height: auto;">
-            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="{{ url_for('index') }}">
                     <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-virus" style="font-size:48px;"></i></div>
                     <div class="sidebar-brand-text mx-3"><span>Covid wizard</span></div>
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="list-unstyled">
-                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('index') }}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                    {% if adminMode %}
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('analysis') }}"><i class="fas fa-user"></i><span>Analysis</span></a></li>
-                    {% endif %}
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('hotspot') }}"><i class="fa fa-bullseye"></i><span>Hotspot Finder</span></a></li>
                     {% if not(adminMode) %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('login') }}">

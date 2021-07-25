@@ -32,16 +32,15 @@
     <div id="wrapper">
         <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: var(--bs-dark);width: auto;height: auto;">
             <div class="container-fluid d-flex flex-column p-0">
-                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="{{ url_for('index') }}">
                     <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-virus" style="font-size:48px;"></i></div>
                     <div class="sidebar-brand-text mx-3"><span>Covid wizard</span></div>
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="list-unstyled">
                     <li class="nav-item"><a class="nav-link active" href="{{ url_for('index') }}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                    {% if adminMode %}
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('analysis') }}"><i class="fas fa-user"></i><span>Analysis</span></a></li>
-                    {% endif %}
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('hotspot') }}"><i class="fa fa-bullseye"></i><span>Hotspot Finder</span></a></li>
                     {% if not(adminMode) %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('login') }}">
@@ -292,15 +291,15 @@
                                 </div>
                                 
                                 <div class="card-body text-center" style="padding-top: 16px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;">
-                                    <div id="chatbox">
+                                    <div id="chatbox" style="max-height:20%">
                                         <div class="text-start" style="background: var(--bs-info);margin-right: 40%;margin-left: 10%;border-radius: 5px;color: var(--bs-light);padding: 5px;padding-bottom: 0px;">
-                                            <p class="text-start"><img class="rounded-circle" src="avatars/avatar5.jpeg" style="width: 20%;height: 20%;margin: 5px;" />Hi there!</p>
+                                            <p class="text-start"><img class="rounded-circle" src="static/assets/img/avatars/robodoc.jpg" style="width: 20%;height: 20%;margin: 5px;" />Hi there!</p>
                                         </div>
-                                        <div class="text-end" style="background: var(--bs-blue);margin-right: 10%;margin-left: 40%;border-radius: 5px;color: var(--bs-light);padding: 5px;padding-bottom: 0px;">
-                                            <p class="text-end">Hi there!<img class="rounded-circle" src="avatars/avatar4.jpeg" style="width: 20%;height: 20%;margin: 5px;" /></p>
+                                        <div class="text-start" style="background: var(--bs-info);margin-right: 40%;margin-left: 10%;border-radius: 5px;color: var(--bs-light);padding: 5px;padding-bottom: 0px;">
+                                            <p class="text-start"><img class="rounded-circle" src="static/assets/img/avatars/robodoc.jpg" style="width: 20%;height: 20%;margin: 5px;" />How are you feeling today?</p>
                                         </div>
                                     </div>
-                                    <textarea id="textInput" class="form-control" name="msg" style="margin: 0px;padding-bottom: 4px;padding-top: 16px;padding-right: 16px;"></textarea>
+                                    <textarea id="textInput" name="msg" style="margin: 0px;padding-bottom: 4px;padding-top: 16px;padding-right: 16px;"></textarea>
                                     <button class="btn btn-outline-primary btn-sm" type="submit" id="buttonInput" style="margin-bottom: 20%;margin-left: 2%;">Check</button>
                                 </div>
 
@@ -308,13 +307,13 @@
                                     function getResponse() {
                                         let userText = $("#textInput").val();
                                         let userHtml = '<div class="text-end" style="background: var(--bs-blue);margin-right: 10%;margin-left: 40%;border-radius: 5px;color: var(--bs-light);padding: 5px;padding-bottom: 0px;">' + 
-                                            '<p class="text-end">' + userText + '<img class="rounded-circle" src="avatars/avatar4.jpeg" style="width: 20%;height: 20%;margin: 5px;" /></p>' + '</div>';
+                                            '<p class="text-end">' + userText + '<img class="rounded-circle" src="static/assets/img/avatars/user.jpg" style="width: 20%;height: 20%;margin: 5px;" /></p>' + '</div>';
                                         $("#textInput").val("");
                                         $("#chatbox").append(userHtml);
 
                                         $.get("/get", { msg: userText }).done(function (data) {
                                             var botHtml = '<div class="text-start" style="background: var(--bs-info);margin-right: 40%;margin-left: 10%;border-radius: 5px;color: var(--bs-light);padding: 5px;padding-bottom: 0px;">' +
-                                                '<p class="text-start"><img class="rounded-circle" src="avatars/avatar5.jpeg" style="width: 20%;height: 20%;margin: 5px;" />' + data + '</p></div>';
+                                                '<p class="text-start"><img class="rounded-circle" src="static/assets/img/avatars/robodoc.jpg" style="width: 20%;height: 20%;margin: 5px;" />' + data + '</p></div>';
                                             $("#chatbox").append(botHtml);
                                         });
                                     }
