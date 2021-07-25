@@ -46,7 +46,7 @@ stages:
         pip install -r requirements.txt
         export ENDPOINT=$(ENDPOINT)
         export APIKEY=$(APIKEY)
-        sudo apt-get install libgomp1 -y
+        sudo apt-get install libgomp1
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
 
