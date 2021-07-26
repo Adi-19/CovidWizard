@@ -135,7 +135,7 @@
                             <i class="fas fa-exclamation-triangle"></i>
                             <p class="m-0">
                                 Danger! Weekly New Average Cases Rising Above Two Weeks Average and
-                                Machine Learning predicts worse condition!
+                                we predict worse condition!
                             </p>
                             <p class="m-0">Stay Home and Stay Safe!</p>
                         </div>
@@ -151,7 +151,7 @@
                     <div class="card textwhite bg-warning text-white shadow" style="margin: 16px;">
                         <div class="card-body">
                             <p class="m-0">
-                                Lookout! Machine Learning Model Predicts rise in cases!<br>
+                                Lookout! Possible rise in cases!<br>
                                 Stay Home and Prove ML wrong.
                                 <i class="fas fa-smile"></i>
                             </p>
@@ -285,50 +285,7 @@
                             </div>
                         </div>
                         <div class="col-lg-5 col-xl-4">
-                            <div class="card shadow mb-4">
-                                <div class="card-header d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
-                                    <h6 class="text-primary fw-bold m-0">Coronavirus Self-Checker</h6>
-                                </div>
-                                
-                                <div class="card-body text-center" style="padding-top: 16px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;">
-                                    <div id="chatbox" style="max-height:20%">
-                                        <div class="text-start" style="background: var(--bs-info);margin-right: 40%;margin-left: 10%;border-radius: 5px;color: var(--bs-light);padding: 5px;padding-bottom: 0px;">
-                                            <p class="text-start"><img class="rounded-circle" src="static/assets/img/avatars/robodoc.jpg" style="width: 20%;height: 20%;margin: 5px;" />Hi there!</p>
-                                        </div>
-                                        <div class="text-start" style="background: var(--bs-info);margin-right: 40%;margin-left: 10%;border-radius: 5px;color: var(--bs-light);padding: 5px;padding-bottom: 0px;">
-                                            <p class="text-start"><img class="rounded-circle" src="static/assets/img/avatars/robodoc.jpg" style="width: 20%;height: 20%;margin: 5px;" />How are you feeling today?</p>
-                                        </div>
-                                    </div>
-                                    <textarea id="textInput" name="msg" style="margin: 0px;padding-bottom: 4px;padding-top: 16px;padding-right: 16px;"></textarea>
-                                    <button class="btn btn-outline-primary btn-sm" type="submit" id="buttonInput" style="margin-bottom: 20%;margin-left: 2%;">Check</button>
-                                </div>
-
-                                <script>
-                                    function getResponse() {
-                                        let userText = $("#textInput").val();
-                                        let userHtml = '<div class="text-end" style="background: var(--bs-blue);margin-right: 10%;margin-left: 40%;border-radius: 5px;color: var(--bs-light);padding: 5px;padding-bottom: 0px;">' + 
-                                            '<p class="text-end">' + userText + '<img class="rounded-circle" src="static/assets/img/avatars/user.jpg" style="width: 20%;height: 20%;margin: 5px;" /></p>' + '</div>';
-                                        $("#textInput").val("");
-                                        $("#chatbox").append(userHtml);
-
-                                        $.get("/get", { msg: userText }).done(function (data) {
-                                            var botHtml = '<div class="text-start" style="background: var(--bs-info);margin-right: 40%;margin-left: 10%;border-radius: 5px;color: var(--bs-light);padding: 5px;padding-bottom: 0px;">' +
-                                                '<p class="text-start"><img class="rounded-circle" src="static/assets/img/avatars/robodoc.jpg" style="width: 20%;height: 20%;margin: 5px;" />' + data + '</p></div>';
-                                            $("#chatbox").append(botHtml);
-                                        });
-                                    }
-                                    $("#textInput").keypress(function (e) {
-                                        //if enter key is pressed
-                                        if (e.which == 13) {
-                                            getResponse();
-                                        }
-                                    });
-                                    $("#buttonInput").click(function () {
-                                        getResponse();
-                                    });
-                                </script>
-
-                            </div>
+                            
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3" style="padding: 12px 16px;">
                                     <h6 class="text-primary fw-bold m-0">Vaccination</h6>
