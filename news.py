@@ -44,27 +44,33 @@ class Wendor:
         if dummy:
             return [['#', '2021-04-25 05:14:05', 'Coronavirus dummy updates', 
                      'Coronavirus dummy Live Updates: Dummy records x lakh new Covid cases, 2,767 deaths', '#']*5]
-        if (country=='Global'):
+        if (country=='World'):
             url = self.baseurl + self.api1 + '&' + self.category + self.language
         else:
             url = self.baseurl + self.api1 + '&country=' + country2code(country) + '&' + self.category + self.language
         request = requests.get(url)
         if request.status_code==429:
-            if (country=='Global'):
+            if (country=='World'):
                 url = self.baseurl + self.api2 + '&' + self.category + self.language
             else:
                 url = self.baseurl + self.api2 + '&country=' + country2code(country) + '&' + self.category + self.language
             request = requests.get(url)
         if request.status_code==429:
-            if (country=='Global'):
+            if (country=='World'):
                 url = self.baseurl + self.api3 + '&' + self.category + self.language
             else:
                 url = self.baseurl + self.api3 + '&country=' + country2code(country) + '&' + self.category + self.language
             request = requests.get(url)
 
         if ((request.status_code!=200) or (request.json()['totalResults']<k)):
-            url = self.baseurl + self.api + '&' + self.category + self.language     # Go Global
+            url = self.baseurl + self.api1 + '&' + self.category + self.language     # Go Global
             request = requests.get(url)
+            if request.status_code==429:
+                url = self.baseurl + self.api2 + '&country=' + country2code(country) + '&' + self.category + self.language
+                request = requests.get(url)
+            if request.status_code==429:
+                url = self.baseurl + self.api3 + '&country=' + country2code(country) + '&' + self.category + self.language
+                request = requests.get(url)         
 
         response = request.json()
 
