@@ -16,7 +16,9 @@ class Wendor:
         if api:
             self.api = api
         else:
-            self.api = 'pub_631b7b66088d67ab749d3ffc641e6bb5f60'
+            self.api1 = 'pub_645e4b5c7cf5563649ba4ded1aaf8661e0b'
+            self.api2 = 'pub_6462a0b64d41ed8a506e7f8e8350325010d'
+            self.api3 = 'pub_6474201ff02c6762ebec18a4f7103d8e34f'
         self.category = 'category=health&q=coronavirus%20OR%20covid'
         self.language = '&language=en'
 
@@ -43,10 +45,23 @@ class Wendor:
             return [['#', '2021-04-25 05:14:05', 'Coronavirus dummy updates', 
                      'Coronavirus dummy Live Updates: Dummy records x lakh new Covid cases, 2,767 deaths', '#']*5]
         if (country=='Global'):
-            url = self.baseurl + self.api + '&' + self.category + self.language
+            url = self.baseurl + self.api1 + '&' + self.category + self.language
         else:
-            url = self.baseurl + self.api + '&country=' + country2code(country) + '&' + self.category + self.language
+            url = self.baseurl + self.api1 + '&country=' + country2code(country) + '&' + self.category + self.language
         request = requests.get(url)
+        if request.status_code==429:
+            if (country=='Global'):
+                url = self.baseurl + self.api2 + '&' + self.category + self.language
+            else:
+                url = self.baseurl + self.api2 + '&country=' + country2code(country) + '&' + self.category + self.language
+            request = requests.get(url)
+        if request.status_code==429:
+            if (country=='Global'):
+                url = self.baseurl + self.api3 + '&' + self.category + self.language
+            else:
+                url = self.baseurl + self.api3 + '&country=' + country2code(country) + '&' + self.category + self.language
+            request = requests.get(url)
+
         if ((request.status_code!=200) or (request.json()['totalResults']<k)):
             url = self.baseurl + self.api + '&' + self.category + self.language     # Go Global
             request = requests.get(url)
@@ -55,5 +70,3 @@ class Wendor:
 
         news = self.get_top_k(response, k)
         return news
-
-
