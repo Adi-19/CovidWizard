@@ -2,7 +2,7 @@ azure-ai-textanalytics==5.1.0
 azure-common==1.1.27
 azure-core==1.16.0
 Brotli==1.0.9
-certifi==2021.5.30
+certifi==2022.12.7
 chardet==4.0.0
 click==8.0.1
 colorama==0.4.4
